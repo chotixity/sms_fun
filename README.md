@@ -1,16 +1,5 @@
-# sms_fun
+This is a fun project that is meant to help me manage my expenditure on mpesa. it records messages as they come in. Filters for the one from Mpesa and Updates the UI.
 
-A new Flutter project.
+The Idea is to categorize them based on outoings and incomings, give me the ability to add a description to a transcation, Ability to search for for transactions based on the receiver of the money.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+It is currently supporting android only
