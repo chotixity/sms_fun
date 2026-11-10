@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:sms_fun/src/android/incoming_sms.dart';
+import 'package:sms_fun/src/android/sms_inbox.dart';
 
 void main() => runApp(const MyApp());
 
@@ -24,9 +27,7 @@ class MpesaReceiverPage extends StatefulWidget {
 
 class _MpesaReceiverPageState extends State<MpesaReceiverPage>
     with WidgetsBindingObserver {
-  static const platform = MethodChannel('com.example.sms_fun/mpesa');
-  static const EventChannel _eventChannel =
-      EventChannel('com.example.sms_fun/mpesa_events');
+  StreamSubscription<String>? _incomingSubscription;
   List<String> _mpesaMessages = [];
   bool _hasPermission = false;
 
@@ -35,12 +36,12 @@ class _MpesaReceiverPageState extends State<MpesaReceiverPage>
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _checkPermission();
-    _listenForNewMessages();
   }
 
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
+    _incomingSubscription?.cancel();
     super.dispose();
   }
 
@@ -52,10 +53,10 @@ class _MpesaReceiverPageState extends State<MpesaReceiverPage>
   }
 
   void _listenForNewMessages() {
-    _eventChannel.receiveBroadcastStream().listen((dynamic event) {
+    _incomingSubscription ??= incomingMpesaMessages().listen((message) {
       setState(() {
-        _mpesaMessages = List<String>.from(_mpesaMessages)
-          ..add(event as String);
+        // Newest first, matching readMpesaMessages().
+        _mpesaMessages = [message, ..._mpesaMessages];
       });
     });
   }
@@ -67,6 +68,7 @@ class _MpesaReceiverPageState extends State<MpesaReceiverPage>
     });
     if (_hasPermission) {
       _getMessages();
+      _listenForNewMessages();
     }
   }
 
@@ -77,36 +79,27 @@ class _MpesaReceiverPageState extends State<MpesaReceiverPage>
     });
     if (_hasPermission) {
       _getMessages();
+      _listenForNewMessages();
     }
   }
 
   Future<void> _getMessages() async {
-    if (!_hasPermission) {
-      return;
-    }
     try {
-      final List<dynamic> result =
-          await platform.invokeMethod('getMpesaMessages');
+      final List<String> messages = readMpesaMessages();
       setState(() {
-        _mpesaMessages = List<String>.from(result);
+        _mpesaMessages = messages;
       });
-    } on PlatformException catch (e) {
-      print("Failed to get MPESA messages: '${e.message}'.");
+    }  catch (e) {
+      print("Failed to read MPESA messages: '${e.toString()}'.");
     }
   }
 
-  Future<void> _clearMessages() async {
-    if (!_hasPermission) {
-      return;
-    }
-    try {
-      await platform.invokeMethod('clearMpesaMessages');
-      setState(() {
-        _mpesaMessages.clear();
-      });
-    } on PlatformException catch (e) {
-      print("Failed to clear MPESA messages: '${e.message}'.");
-    }
+  // SMS can't be deleted unless this is the default SMS app, so this only
+  // clears the list; refresh reloads it from the inbox.
+  void _clearMessages() {
+    setState(() {
+      _mpesaMessages = [];
+    });
   }
 
   @override
