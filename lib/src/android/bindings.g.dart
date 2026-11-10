@@ -269,6 +269,14513 @@ final class $IncomingSmsListener$Type$
   String get signature => r'Lcom/example/sms_fun/IncomingSmsListener;';
 }
 
+/// from: `com.example.sms_fun.WidgetBridge`
+extension type WidgetBridge._(jni$_.JObject _$this) implements jni$_.JObject {
+  static final _class =
+      jni$_.JClass.forName(r'com/example/sms_fun/WidgetBridge');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<WidgetBridge> type = $WidgetBridge$Type$();
+  static final _id_INSTANCE = _class.staticFieldId(
+    r'INSTANCE',
+    r'Lcom/example/sms_fun/WidgetBridge;',
+  );
+
+  /// from: `static public final com.example.sms_fun.WidgetBridge INSTANCE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static WidgetBridge get INSTANCE =>
+      _id_INSTANCE.get(_class, WidgetBridge.type) as WidgetBridge;
+
+  static final _id_set$listener = _class.staticMethodId(
+    r'setListener',
+    r'(Lcom/example/sms_fun/WidgetUpdateListener;)V',
+  );
+
+  static final _set$listener = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallStaticVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public fun setListener(l: com.example.sms_fun.WidgetUpdateListener?): kotlin.Unit`
+  static set listener(WidgetUpdateListener? widgetUpdateListener) {
+    final _$$classRef = _class.reference;
+    final _$widgetUpdateListener =
+        widgetUpdateListener?.reference ?? jni$_.jNullReference;
+    _set$listener(_$$classRef.pointer, _id_set$listener.pointer,
+            _$widgetUpdateListener.pointer)
+        .check();
+  }
+
+  static final _id_dispatch = _class.staticMethodId(
+    r'dispatch',
+    r'()V',
+  );
+
+  static final _dispatch = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JThrowablePtr Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallStaticVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public fun dispatch(): kotlin.Unit`
+  static void dispatch() {
+    final _$$classRef = _class.reference;
+    _dispatch(_$$classRef.pointer, _id_dispatch.pointer).check();
+  }
+}
+
+final class $WidgetBridge$Type$ extends jni$_.JType<WidgetBridge> {
+  @jni$_.internal
+  const $WidgetBridge$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Lcom/example/sms_fun/WidgetBridge;';
+}
+
+/// from: `com.example.sms_fun.WidgetUpdateListener`
+extension type WidgetUpdateListener._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class =
+      jni$_.JClass.forName(r'com/example/sms_fun/WidgetUpdateListener');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<WidgetUpdateListener> type =
+      $WidgetUpdateListener$Type$();
+
+  /// Maps a specific port to the implemented interface.
+  static final core$_.Map<core$_.int, $WidgetUpdateListener> _$impls = {};
+  static jni$_.JObjectPtr _$invoke(
+    core$_.int port,
+    jni$_.JObjectPtr descriptor,
+    jni$_.JObjectPtr args,
+  ) {
+    return _$invokeMethod(
+      port,
+      jni$_.MethodInvocation.fromAddresses(
+        0,
+        descriptor.address,
+        args.address,
+      ),
+    );
+  }
+
+  static final jni$_.Pointer<
+          jni$_.NativeFunction<
+              jni$_.JObjectPtr Function(
+                  jni$_.Int64, jni$_.JObjectPtr, jni$_.JObjectPtr)>>
+      _$invokePointer = jni$_.Pointer.fromFunction(_$invoke);
+
+  static jni$_.Pointer<jni$_.Void> _$invokeMethod(
+    core$_.int $p,
+    jni$_.MethodInvocation $i,
+  ) {
+    try {
+      final $d = $i.methodDescriptor.toDartString(releaseOriginal: true);
+      final $a = $i.args;
+      if ($d == r'onUpdateRequested()V') {
+        _$impls[$p]!.onUpdateRequested();
+        return jni$_.nullptr;
+      }
+    } catch (e) {
+      return jni$_.ProtectedJniExtensions.newDartException(e);
+    }
+    return jni$_.nullptr;
+  }
+
+  static void implementIn(
+    jni$_.JImplementer implementer,
+    $WidgetUpdateListener $impl,
+  ) {
+    late final jni$_.RawReceivePort $p;
+    $p = jni$_.RawReceivePort(($m) {
+      if ($m == null) {
+        _$impls.remove($p.sendPort.nativePort);
+        $p.close();
+        return;
+      }
+      final $i = jni$_.MethodInvocation.fromMessage($m);
+      final $r = _$invokeMethod($p.sendPort.nativePort, $i);
+      $i.args?.release();
+      jni$_.ProtectedJniExtensions.returnResult($i.result, $r);
+    });
+    implementer.add(
+      r'com.example.sms_fun.WidgetUpdateListener',
+      $p,
+      _$invokePointer,
+      [
+        if ($impl.onUpdateRequested$async) r'onUpdateRequested()V',
+      ],
+    );
+    final $a = $p.sendPort.nativePort;
+    _$impls[$a] = $impl;
+  }
+
+  factory WidgetUpdateListener.implement(
+    $WidgetUpdateListener $impl,
+  ) {
+    final $i = jni$_.JImplementer();
+    implementIn($i, $impl);
+    return $i.implement<WidgetUpdateListener>();
+  }
+}
+
+extension WidgetUpdateListener$$Methods on WidgetUpdateListener {
+  static final _id_onUpdateRequested =
+      WidgetUpdateListener._class.instanceMethodId(
+    r'onUpdateRequested',
+    r'()V',
+  );
+
+  static final _onUpdateRequested = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JThrowablePtr Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public fun onUpdateRequested(): kotlin.Unit`
+  void onUpdateRequested() {
+    final _$$selfRef = reference;
+    _onUpdateRequested(_$$selfRef.pointer, _id_onUpdateRequested.pointer)
+        .check();
+  }
+}
+
+abstract base mixin class $WidgetUpdateListener {
+  factory $WidgetUpdateListener({
+    required void Function() onUpdateRequested,
+    core$_.bool onUpdateRequested$async,
+  }) = _$WidgetUpdateListener;
+
+  void onUpdateRequested();
+  core$_.bool get onUpdateRequested$async => false;
+}
+
+final class _$WidgetUpdateListener with $WidgetUpdateListener {
+  _$WidgetUpdateListener({
+    required void Function() onUpdateRequested,
+    this.onUpdateRequested$async = false,
+  }) : _onUpdateRequested = onUpdateRequested;
+
+  final void Function() _onUpdateRequested;
+  final core$_.bool onUpdateRequested$async;
+
+  void onUpdateRequested() {
+    return _onUpdateRequested();
+  }
+}
+
+final class $WidgetUpdateListener$Type$
+    extends jni$_.JType<WidgetUpdateListener> {
+  @jni$_.internal
+  const $WidgetUpdateListener$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Lcom/example/sms_fun/WidgetUpdateListener;';
+}
+
+/// from: `android.appwidget.AppWidgetManager`
+extension type AppWidgetManager._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class =
+      jni$_.JClass.forName(r'android/appwidget/AppWidgetManager');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<AppWidgetManager> type = $AppWidgetManager$Type$();
+  static final _id_ACTION_APPWIDGET_BIND = _class.staticFieldId(
+    r'ACTION_APPWIDGET_BIND',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APPWIDGET_BIND`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APPWIDGET_BIND =>
+      _id_ACTION_APPWIDGET_BIND.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_APPWIDGET_CONFIGURE = _class.staticFieldId(
+    r'ACTION_APPWIDGET_CONFIGURE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APPWIDGET_CONFIGURE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APPWIDGET_CONFIGURE =>
+      _id_ACTION_APPWIDGET_CONFIGURE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_APPWIDGET_DELETED = _class.staticFieldId(
+    r'ACTION_APPWIDGET_DELETED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APPWIDGET_DELETED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APPWIDGET_DELETED =>
+      _id_ACTION_APPWIDGET_DELETED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_APPWIDGET_DISABLED = _class.staticFieldId(
+    r'ACTION_APPWIDGET_DISABLED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APPWIDGET_DISABLED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APPWIDGET_DISABLED =>
+      _id_ACTION_APPWIDGET_DISABLED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_APPWIDGET_ENABLED = _class.staticFieldId(
+    r'ACTION_APPWIDGET_ENABLED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APPWIDGET_ENABLED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APPWIDGET_ENABLED =>
+      _id_ACTION_APPWIDGET_ENABLED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_APPWIDGET_HOST_RESTORED = _class.staticFieldId(
+    r'ACTION_APPWIDGET_HOST_RESTORED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APPWIDGET_HOST_RESTORED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APPWIDGET_HOST_RESTORED =>
+      _id_ACTION_APPWIDGET_HOST_RESTORED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_APPWIDGET_OPTIONS_CHANGED = _class.staticFieldId(
+    r'ACTION_APPWIDGET_OPTIONS_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APPWIDGET_OPTIONS_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APPWIDGET_OPTIONS_CHANGED =>
+      _id_ACTION_APPWIDGET_OPTIONS_CHANGED.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_APPWIDGET_PICK = _class.staticFieldId(
+    r'ACTION_APPWIDGET_PICK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APPWIDGET_PICK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APPWIDGET_PICK =>
+      _id_ACTION_APPWIDGET_PICK.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_APPWIDGET_RESTORED = _class.staticFieldId(
+    r'ACTION_APPWIDGET_RESTORED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APPWIDGET_RESTORED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APPWIDGET_RESTORED =>
+      _id_ACTION_APPWIDGET_RESTORED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_APPWIDGET_UPDATE = _class.staticFieldId(
+    r'ACTION_APPWIDGET_UPDATE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APPWIDGET_UPDATE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APPWIDGET_UPDATE =>
+      _id_ACTION_APPWIDGET_UPDATE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_APPWIDGET_ID = _class.staticFieldId(
+    r'EXTRA_APPWIDGET_ID',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_APPWIDGET_ID`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_APPWIDGET_ID =>
+      _id_EXTRA_APPWIDGET_ID.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_APPWIDGET_IDS = _class.staticFieldId(
+    r'EXTRA_APPWIDGET_IDS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_APPWIDGET_IDS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_APPWIDGET_IDS =>
+      _id_EXTRA_APPWIDGET_IDS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_APPWIDGET_OLD_IDS = _class.staticFieldId(
+    r'EXTRA_APPWIDGET_OLD_IDS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_APPWIDGET_OLD_IDS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_APPWIDGET_OLD_IDS =>
+      _id_EXTRA_APPWIDGET_OLD_IDS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_APPWIDGET_OPTIONS = _class.staticFieldId(
+    r'EXTRA_APPWIDGET_OPTIONS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_APPWIDGET_OPTIONS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_APPWIDGET_OPTIONS =>
+      _id_EXTRA_APPWIDGET_OPTIONS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_APPWIDGET_PREVIEW = _class.staticFieldId(
+    r'EXTRA_APPWIDGET_PREVIEW',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_APPWIDGET_PREVIEW`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_APPWIDGET_PREVIEW =>
+      _id_EXTRA_APPWIDGET_PREVIEW.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_APPWIDGET_PROVIDER = _class.staticFieldId(
+    r'EXTRA_APPWIDGET_PROVIDER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_APPWIDGET_PROVIDER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_APPWIDGET_PROVIDER =>
+      _id_EXTRA_APPWIDGET_PROVIDER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_APPWIDGET_PROVIDER_PROFILE = _class.staticFieldId(
+    r'EXTRA_APPWIDGET_PROVIDER_PROFILE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_APPWIDGET_PROVIDER_PROFILE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_APPWIDGET_PROVIDER_PROFILE =>
+      _id_EXTRA_APPWIDGET_PROVIDER_PROFILE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_CUSTOM_EXTRAS = _class.staticFieldId(
+    r'EXTRA_CUSTOM_EXTRAS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CUSTOM_EXTRAS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CUSTOM_EXTRAS =>
+      _id_EXTRA_CUSTOM_EXTRAS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_CUSTOM_INFO = _class.staticFieldId(
+    r'EXTRA_CUSTOM_INFO',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CUSTOM_INFO`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CUSTOM_INFO =>
+      _id_EXTRA_CUSTOM_INFO.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_HOST_ID = _class.staticFieldId(
+    r'EXTRA_HOST_ID',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_HOST_ID`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_HOST_ID =>
+      _id_EXTRA_HOST_ID.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  /// from: `static public final int INVALID_APPWIDGET_ID`
+  static const INVALID_APPWIDGET_ID = 0;
+  static final _id_META_DATA_APPWIDGET_PROVIDER = _class.staticFieldId(
+    r'META_DATA_APPWIDGET_PROVIDER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String META_DATA_APPWIDGET_PROVIDER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get META_DATA_APPWIDGET_PROVIDER =>
+      _id_META_DATA_APPWIDGET_PROVIDER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_OPTION_APPWIDGET_HOST_CATEGORY = _class.staticFieldId(
+    r'OPTION_APPWIDGET_HOST_CATEGORY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String OPTION_APPWIDGET_HOST_CATEGORY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get OPTION_APPWIDGET_HOST_CATEGORY =>
+      _id_OPTION_APPWIDGET_HOST_CATEGORY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_OPTION_APPWIDGET_MAX_HEIGHT = _class.staticFieldId(
+    r'OPTION_APPWIDGET_MAX_HEIGHT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String OPTION_APPWIDGET_MAX_HEIGHT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get OPTION_APPWIDGET_MAX_HEIGHT =>
+      _id_OPTION_APPWIDGET_MAX_HEIGHT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_OPTION_APPWIDGET_MAX_WIDTH = _class.staticFieldId(
+    r'OPTION_APPWIDGET_MAX_WIDTH',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String OPTION_APPWIDGET_MAX_WIDTH`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get OPTION_APPWIDGET_MAX_WIDTH =>
+      _id_OPTION_APPWIDGET_MAX_WIDTH.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_OPTION_APPWIDGET_MIN_HEIGHT = _class.staticFieldId(
+    r'OPTION_APPWIDGET_MIN_HEIGHT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String OPTION_APPWIDGET_MIN_HEIGHT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get OPTION_APPWIDGET_MIN_HEIGHT =>
+      _id_OPTION_APPWIDGET_MIN_HEIGHT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_OPTION_APPWIDGET_MIN_WIDTH = _class.staticFieldId(
+    r'OPTION_APPWIDGET_MIN_WIDTH',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String OPTION_APPWIDGET_MIN_WIDTH`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get OPTION_APPWIDGET_MIN_WIDTH =>
+      _id_OPTION_APPWIDGET_MIN_WIDTH.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_OPTION_APPWIDGET_RESTORE_COMPLETED = _class.staticFieldId(
+    r'OPTION_APPWIDGET_RESTORE_COMPLETED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String OPTION_APPWIDGET_RESTORE_COMPLETED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get OPTION_APPWIDGET_RESTORE_COMPLETED =>
+      _id_OPTION_APPWIDGET_RESTORE_COMPLETED.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_OPTION_APPWIDGET_SIZES = _class.staticFieldId(
+    r'OPTION_APPWIDGET_SIZES',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String OPTION_APPWIDGET_SIZES`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get OPTION_APPWIDGET_SIZES =>
+      _id_OPTION_APPWIDGET_SIZES.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_getInstance = _class.staticMethodId(
+    r'getInstance',
+    r'(Landroid/content/Context;)Landroid/appwidget/AppWidgetManager;',
+  );
+
+  static final _getInstance = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `static public android.appwidget.AppWidgetManager getInstance(android.content.Context context)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static AppWidgetManager? getInstance(
+    Context? context,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$context = context?.reference ?? jni$_.jNullReference;
+    return _getInstance(
+            _$$classRef.pointer, _id_getInstance.pointer, _$context.pointer)
+        .object<AppWidgetManager?>();
+  }
+}
+
+extension AppWidgetManager$$Methods on AppWidgetManager {
+  static final _id_getAppWidgetIds = AppWidgetManager._class.instanceMethodId(
+    r'getAppWidgetIds',
+    r'(Landroid/content/ComponentName;)[I',
+  );
+
+  static final _getAppWidgetIds = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public int[] getAppWidgetIds(android.content.ComponentName componentName)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JIntArray? getAppWidgetIds(
+    ComponentName? componentName,
+  ) {
+    final _$$selfRef = reference;
+    final _$componentName = componentName?.reference ?? jni$_.jNullReference;
+    return _getAppWidgetIds(_$$selfRef.pointer, _id_getAppWidgetIds.pointer,
+            _$componentName.pointer)
+        .object<jni$_.JIntArray?>();
+  }
+
+  static final _id_updateAppWidget = AppWidgetManager._class.instanceMethodId(
+    r'updateAppWidget',
+    r'(Landroid/content/ComponentName;Landroid/widget/RemoteViews;)V',
+  );
+
+  static final _updateAppWidget = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JThrowablePtr Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void updateAppWidget(android.content.ComponentName componentName, android.widget.RemoteViews remoteViews)`
+  void updateAppWidget(
+    ComponentName? componentName,
+    RemoteViews? remoteViews,
+  ) {
+    final _$$selfRef = reference;
+    final _$componentName = componentName?.reference ?? jni$_.jNullReference;
+    final _$remoteViews = remoteViews?.reference ?? jni$_.jNullReference;
+    _updateAppWidget(_$$selfRef.pointer, _id_updateAppWidget.pointer,
+            _$componentName.pointer, _$remoteViews.pointer)
+        .check();
+  }
+
+  static final _id_updateAppWidget$1 = AppWidgetManager._class.instanceMethodId(
+    r'updateAppWidget',
+    r'(ILandroid/widget/RemoteViews;)V',
+  );
+
+  static final _updateAppWidget$1 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Int32, jni$_.Pointer<jni$_.Void>)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, core$_.int, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void updateAppWidget(int i, android.widget.RemoteViews remoteViews)`
+  void updateAppWidget$1(
+    core$_.int i,
+    RemoteViews? remoteViews,
+  ) {
+    final _$$selfRef = reference;
+    final _$remoteViews = remoteViews?.reference ?? jni$_.jNullReference;
+    _updateAppWidget$1(_$$selfRef.pointer, _id_updateAppWidget$1.pointer, i,
+            _$remoteViews.pointer)
+        .check();
+  }
+
+  static final _id_updateAppWidget$2 = AppWidgetManager._class.instanceMethodId(
+    r'updateAppWidget',
+    r'([ILandroid/widget/RemoteViews;)V',
+  );
+
+  static final _updateAppWidget$2 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JThrowablePtr Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void updateAppWidget(int[] is, android.widget.RemoteViews remoteViews)`
+  void updateAppWidget$2(
+    jni$_.JIntArray? is$,
+    RemoteViews? remoteViews,
+  ) {
+    final _$$selfRef = reference;
+    final _$is$ = is$?.reference ?? jni$_.jNullReference;
+    final _$remoteViews = remoteViews?.reference ?? jni$_.jNullReference;
+    _updateAppWidget$2(_$$selfRef.pointer, _id_updateAppWidget$2.pointer,
+            _$is$.pointer, _$remoteViews.pointer)
+        .check();
+  }
+}
+
+final class $AppWidgetManager$Type$ extends jni$_.JType<AppWidgetManager> {
+  @jni$_.internal
+  const $AppWidgetManager$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/appwidget/AppWidgetManager;';
+}
+
+/// from: `android.widget.RemoteViews$ActionException`
+extension type RemoteViews$ActionException._(jni$_.JObject _$this)
+    implements RuntimeException {
+  static final _class =
+      jni$_.JClass.forName(r'android/widget/RemoteViews$ActionException');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<RemoteViews$ActionException> type =
+      $RemoteViews$ActionException$Type$();
+  static final _id_new$ = _class.constructorId(
+    r'(Ljava/lang/Exception;)V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(java.lang.Exception exception)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory RemoteViews$ActionException(
+    Exception? exception,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$exception = exception?.reference ?? jni$_.jNullReference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer, _$exception.pointer)
+        .object<RemoteViews$ActionException>();
+  }
+
+  static final _id_new$1 = _class.constructorId(
+    r'(Ljava/lang/String;)V',
+  );
+
+  static final _new$1 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory RemoteViews$ActionException.new$1(
+    jni$_.JString? string,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _new$1(_$$classRef.pointer, _id_new$1.pointer, _$string.pointer)
+        .object<RemoteViews$ActionException>();
+  }
+}
+
+final class $RemoteViews$ActionException$Type$
+    extends jni$_.JType<RemoteViews$ActionException> {
+  @jni$_.internal
+  const $RemoteViews$ActionException$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/widget/RemoteViews$ActionException;';
+}
+
+/// from: `android.widget.RemoteViews$DrawInstructions$Builder`
+extension type RemoteViews$DrawInstructions$Builder._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class = jni$_.JClass.forName(
+      r'android/widget/RemoteViews$DrawInstructions$Builder');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<RemoteViews$DrawInstructions$Builder> type =
+      $RemoteViews$DrawInstructions$Builder$Type$();
+  static final _id_new$ = _class.constructorId(
+    r'(Ljava/util/List;)V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(java.util.List<byte[]> list)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory RemoteViews$DrawInstructions$Builder(
+    jni$_.JList<jni$_.JByteArray?>? list,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$list = list?.reference ?? jni$_.jNullReference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer, _$list.pointer)
+        .object<RemoteViews$DrawInstructions$Builder>();
+  }
+}
+
+extension RemoteViews$DrawInstructions$Builder$$Methods
+    on RemoteViews$DrawInstructions$Builder {
+  static final _id_build =
+      RemoteViews$DrawInstructions$Builder._class.instanceMethodId(
+    r'build',
+    r'()Landroid/widget/RemoteViews$DrawInstructions;',
+  );
+
+  static final _build = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public android.widget.RemoteViews$DrawInstructions build()`
+  /// The returned object must be released after use, by calling the [release] method.
+  RemoteViews$DrawInstructions? build() {
+    final _$$selfRef = reference;
+    return _build(_$$selfRef.pointer, _id_build.pointer)
+        .object<RemoteViews$DrawInstructions?>();
+  }
+}
+
+final class $RemoteViews$DrawInstructions$Builder$Type$
+    extends jni$_.JType<RemoteViews$DrawInstructions$Builder> {
+  @jni$_.internal
+  const $RemoteViews$DrawInstructions$Builder$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature =>
+      r'Landroid/widget/RemoteViews$DrawInstructions$Builder;';
+}
+
+/// from: `android.widget.RemoteViews$DrawInstructions`
+extension type RemoteViews$DrawInstructions._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class =
+      jni$_.JClass.forName(r'android/widget/RemoteViews$DrawInstructions');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<RemoteViews$DrawInstructions> type =
+      $RemoteViews$DrawInstructions$Type$();
+  static final _id_get$supportedVersion = _class.staticMethodId(
+    r'getSupportedVersion',
+    r'()J',
+  );
+
+  static final _get$supportedVersion = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallStaticLongMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `static public long getSupportedVersion()`
+  static core$_.int get supportedVersion {
+    final _$$classRef = _class.reference;
+    return _get$supportedVersion(
+            _$$classRef.pointer, _id_get$supportedVersion.pointer)
+        .long;
+  }
+}
+
+final class $RemoteViews$DrawInstructions$Type$
+    extends jni$_.JType<RemoteViews$DrawInstructions> {
+  @jni$_.internal
+  const $RemoteViews$DrawInstructions$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/widget/RemoteViews$DrawInstructions;';
+}
+
+/// from: `android.widget.RemoteViews$RemoteCollectionItems$Builder`
+extension type RemoteViews$RemoteCollectionItems$Builder._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class = jni$_.JClass.forName(
+      r'android/widget/RemoteViews$RemoteCollectionItems$Builder');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<RemoteViews$RemoteCollectionItems$Builder> type =
+      $RemoteViews$RemoteCollectionItems$Builder$Type$();
+  static final _id_new$ = _class.constructorId(
+    r'()V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public void <init>()`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory RemoteViews$RemoteCollectionItems$Builder() {
+    final _$$classRef = _class.reference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer)
+        .object<RemoteViews$RemoteCollectionItems$Builder>();
+  }
+}
+
+extension RemoteViews$RemoteCollectionItems$Builder$$Methods
+    on RemoteViews$RemoteCollectionItems$Builder {
+  static final _id_addItem =
+      RemoteViews$RemoteCollectionItems$Builder._class.instanceMethodId(
+    r'addItem',
+    r'(JLandroid/widget/RemoteViews;)Landroid/widget/RemoteViews$RemoteCollectionItems$Builder;',
+  );
+
+  static final _addItem = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Int64, jni$_.Pointer<jni$_.Void>)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, core$_.int, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.widget.RemoteViews$RemoteCollectionItems$Builder addItem(long j, android.widget.RemoteViews remoteViews)`
+  /// The returned object must be released after use, by calling the [release] method.
+  RemoteViews$RemoteCollectionItems$Builder? addItem(
+    core$_.int j,
+    RemoteViews? remoteViews,
+  ) {
+    final _$$selfRef = reference;
+    final _$remoteViews = remoteViews?.reference ?? jni$_.jNullReference;
+    return _addItem(
+            _$$selfRef.pointer, _id_addItem.pointer, j, _$remoteViews.pointer)
+        .object<RemoteViews$RemoteCollectionItems$Builder?>();
+  }
+
+  static final _id_build =
+      RemoteViews$RemoteCollectionItems$Builder._class.instanceMethodId(
+    r'build',
+    r'()Landroid/widget/RemoteViews$RemoteCollectionItems;',
+  );
+
+  static final _build = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public android.widget.RemoteViews$RemoteCollectionItems build()`
+  /// The returned object must be released after use, by calling the [release] method.
+  RemoteViews$RemoteCollectionItems? build() {
+    final _$$selfRef = reference;
+    return _build(_$$selfRef.pointer, _id_build.pointer)
+        .object<RemoteViews$RemoteCollectionItems?>();
+  }
+
+  static final _id_setHasStableIds =
+      RemoteViews$RemoteCollectionItems$Builder._class.instanceMethodId(
+    r'setHasStableIds',
+    r'(Z)Landroid/widget/RemoteViews$RemoteCollectionItems$Builder;',
+  );
+
+  static final _setHasStableIds = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<(jni$_.Int32,)>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.int)>();
+
+  /// from: `public android.widget.RemoteViews$RemoteCollectionItems$Builder setHasStableIds(boolean z)`
+  /// The returned object must be released after use, by calling the [release] method.
+  RemoteViews$RemoteCollectionItems$Builder? setHasStableIds(
+    core$_.bool z,
+  ) {
+    final _$$selfRef = reference;
+    return _setHasStableIds(
+            _$$selfRef.pointer, _id_setHasStableIds.pointer, z ? 1 : 0)
+        .object<RemoteViews$RemoteCollectionItems$Builder?>();
+  }
+
+  static final _id_setViewTypeCount =
+      RemoteViews$RemoteCollectionItems$Builder._class.instanceMethodId(
+    r'setViewTypeCount',
+    r'(I)Landroid/widget/RemoteViews$RemoteCollectionItems$Builder;',
+  );
+
+  static final _setViewTypeCount = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<(jni$_.Int32,)>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.int)>();
+
+  /// from: `public android.widget.RemoteViews$RemoteCollectionItems$Builder setViewTypeCount(int i)`
+  /// The returned object must be released after use, by calling the [release] method.
+  RemoteViews$RemoteCollectionItems$Builder? setViewTypeCount(
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    return _setViewTypeCount(
+            _$$selfRef.pointer, _id_setViewTypeCount.pointer, i)
+        .object<RemoteViews$RemoteCollectionItems$Builder?>();
+  }
+}
+
+final class $RemoteViews$RemoteCollectionItems$Builder$Type$
+    extends jni$_.JType<RemoteViews$RemoteCollectionItems$Builder> {
+  @jni$_.internal
+  const $RemoteViews$RemoteCollectionItems$Builder$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature =>
+      r'Landroid/widget/RemoteViews$RemoteCollectionItems$Builder;';
+}
+
+/// from: `android.widget.RemoteViews$RemoteCollectionItems`
+extension type RemoteViews$RemoteCollectionItems._(jni$_.JObject _$this)
+    implements jni$_.JObject, Parcelable {
+  static final _class =
+      jni$_.JClass.forName(r'android/widget/RemoteViews$RemoteCollectionItems');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<RemoteViews$RemoteCollectionItems> type =
+      $RemoteViews$RemoteCollectionItems$Type$();
+  static final _id_CREATOR = _class.staticFieldId(
+    r'CREATOR',
+    r'Landroid/os/Parcelable$Creator;',
+  );
+
+  /// from: `static public final android.os.Parcelable$Creator<android.widget.RemoteViews$RemoteCollectionItems> CREATOR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Parcelable$$Creator? get CREATOR =>
+      _id_CREATOR.getNullable(_class, Parcelable$$Creator.type)
+          as Parcelable$$Creator?;
+}
+
+extension RemoteViews$RemoteCollectionItems$$Methods
+    on RemoteViews$RemoteCollectionItems {
+  static final _id_describeContents =
+      RemoteViews$RemoteCollectionItems._class.instanceMethodId(
+    r'describeContents',
+    r'()I',
+  );
+
+  static final _describeContents = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int describeContents()`
+  core$_.int describeContents() {
+    final _$$selfRef = reference;
+    return _describeContents(_$$selfRef.pointer, _id_describeContents.pointer)
+        .integer;
+  }
+
+  static final _id_get$itemCount =
+      RemoteViews$RemoteCollectionItems._class.instanceMethodId(
+    r'getItemCount',
+    r'()I',
+  );
+
+  static final _get$itemCount = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int getItemCount()`
+  core$_.int get itemCount {
+    final _$$selfRef = reference;
+    return _get$itemCount(_$$selfRef.pointer, _id_get$itemCount.pointer)
+        .integer;
+  }
+
+  static final _id_getItemId =
+      RemoteViews$RemoteCollectionItems._class.instanceMethodId(
+    r'getItemId',
+    r'(I)J',
+  );
+
+  static final _getItemId = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<(jni$_.Int32,)>)>>('globalEnv_CallLongMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.int)>();
+
+  /// from: `public long getItemId(int i)`
+  core$_.int getItemId(
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    return _getItemId(_$$selfRef.pointer, _id_getItemId.pointer, i).long;
+  }
+
+  static final _id_getItemView =
+      RemoteViews$RemoteCollectionItems._class.instanceMethodId(
+    r'getItemView',
+    r'(I)Landroid/widget/RemoteViews;',
+  );
+
+  static final _getItemView = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<(jni$_.Int32,)>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.int)>();
+
+  /// from: `public android.widget.RemoteViews getItemView(int i)`
+  /// The returned object must be released after use, by calling the [release] method.
+  RemoteViews? getItemView(
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    return _getItemView(_$$selfRef.pointer, _id_getItemView.pointer, i)
+        .object<RemoteViews?>();
+  }
+
+  static final _id_get$viewTypeCount =
+      RemoteViews$RemoteCollectionItems._class.instanceMethodId(
+    r'getViewTypeCount',
+    r'()I',
+  );
+
+  static final _get$viewTypeCount = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int getViewTypeCount()`
+  core$_.int get viewTypeCount {
+    final _$$selfRef = reference;
+    return _get$viewTypeCount(_$$selfRef.pointer, _id_get$viewTypeCount.pointer)
+        .integer;
+  }
+
+  static final _id_hasStableIds =
+      RemoteViews$RemoteCollectionItems._class.instanceMethodId(
+    r'hasStableIds',
+    r'()Z',
+  );
+
+  static final _hasStableIds = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public boolean hasStableIds()`
+  core$_.bool hasStableIds() {
+    final _$$selfRef = reference;
+    return _hasStableIds(_$$selfRef.pointer, _id_hasStableIds.pointer).boolean;
+  }
+
+  static final _id_writeToParcel =
+      RemoteViews$RemoteCollectionItems._class.instanceMethodId(
+    r'writeToParcel',
+    r'(Landroid/os/Parcel;I)V',
+  );
+
+  static final _writeToParcel = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public void writeToParcel(android.os.Parcel parcel, int i)`
+  void writeToParcel(
+    Parcel? parcel,
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    final _$parcel = parcel?.reference ?? jni$_.jNullReference;
+    _writeToParcel(
+            _$$selfRef.pointer, _id_writeToParcel.pointer, _$parcel.pointer, i)
+        .check();
+  }
+}
+
+final class $RemoteViews$RemoteCollectionItems$Type$
+    extends jni$_.JType<RemoteViews$RemoteCollectionItems> {
+  @jni$_.internal
+  const $RemoteViews$RemoteCollectionItems$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/widget/RemoteViews$RemoteCollectionItems;';
+}
+
+/// from: `android.widget.RemoteViews$RemoteResponse`
+extension type RemoteViews$RemoteResponse._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class =
+      jni$_.JClass.forName(r'android/widget/RemoteViews$RemoteResponse');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<RemoteViews$RemoteResponse> type =
+      $RemoteViews$RemoteResponse$Type$();
+  static final _id_new$ = _class.constructorId(
+    r'()V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public void <init>()`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory RemoteViews$RemoteResponse() {
+    final _$$classRef = _class.reference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer)
+        .object<RemoteViews$RemoteResponse>();
+  }
+
+  static final _id_fromFillInIntent = _class.staticMethodId(
+    r'fromFillInIntent',
+    r'(Landroid/content/Intent;)Landroid/widget/RemoteViews$RemoteResponse;',
+  );
+
+  static final _fromFillInIntent = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `static public android.widget.RemoteViews$RemoteResponse fromFillInIntent(android.content.Intent intent)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static RemoteViews$RemoteResponse? fromFillInIntent(
+    Intent? intent,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$intent = intent?.reference ?? jni$_.jNullReference;
+    return _fromFillInIntent(
+            _$$classRef.pointer, _id_fromFillInIntent.pointer, _$intent.pointer)
+        .object<RemoteViews$RemoteResponse?>();
+  }
+
+  static final _id_fromPendingIntent = _class.staticMethodId(
+    r'fromPendingIntent',
+    r'(Landroid/app/PendingIntent;)Landroid/widget/RemoteViews$RemoteResponse;',
+  );
+
+  static final _fromPendingIntent = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `static public android.widget.RemoteViews$RemoteResponse fromPendingIntent(android.app.PendingIntent pendingIntent)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static RemoteViews$RemoteResponse? fromPendingIntent(
+    PendingIntent? pendingIntent,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$pendingIntent = pendingIntent?.reference ?? jni$_.jNullReference;
+    return _fromPendingIntent(_$$classRef.pointer,
+            _id_fromPendingIntent.pointer, _$pendingIntent.pointer)
+        .object<RemoteViews$RemoteResponse?>();
+  }
+}
+
+extension RemoteViews$RemoteResponse$$Methods on RemoteViews$RemoteResponse {
+  static final _id_addSharedElement =
+      RemoteViews$RemoteResponse._class.instanceMethodId(
+    r'addSharedElement',
+    r'(ILjava/lang/String;)Landroid/widget/RemoteViews$RemoteResponse;',
+  );
+
+  static final _addSharedElement = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Int32, jni$_.Pointer<jni$_.Void>)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, core$_.int, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.widget.RemoteViews$RemoteResponse addSharedElement(int i, java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  RemoteViews$RemoteResponse? addSharedElement(
+    core$_.int i,
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _addSharedElement(_$$selfRef.pointer, _id_addSharedElement.pointer,
+            i, _$string.pointer)
+        .object<RemoteViews$RemoteResponse?>();
+  }
+}
+
+final class $RemoteViews$RemoteResponse$Type$
+    extends jni$_.JType<RemoteViews$RemoteResponse> {
+  @jni$_.internal
+  const $RemoteViews$RemoteResponse$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/widget/RemoteViews$RemoteResponse;';
+}
+
+/// from: `android.widget.RemoteViews$RemoteView`
+extension type RemoteViews$RemoteView._(jni$_.JObject _$this)
+    implements jni$_.JObject, Annotation {
+  static final _class =
+      jni$_.JClass.forName(r'android/widget/RemoteViews$RemoteView');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<RemoteViews$RemoteView> type =
+      $RemoteViews$RemoteView$Type$();
+
+  /// Maps a specific port to the implemented interface.
+  static final core$_.Map<core$_.int, $RemoteViews$RemoteView> _$impls = {};
+  static jni$_.JObjectPtr _$invoke(
+    core$_.int port,
+    jni$_.JObjectPtr descriptor,
+    jni$_.JObjectPtr args,
+  ) {
+    return _$invokeMethod(
+      port,
+      jni$_.MethodInvocation.fromAddresses(
+        0,
+        descriptor.address,
+        args.address,
+      ),
+    );
+  }
+
+  static final jni$_.Pointer<
+          jni$_.NativeFunction<
+              jni$_.JObjectPtr Function(
+                  jni$_.Int64, jni$_.JObjectPtr, jni$_.JObjectPtr)>>
+      _$invokePointer = jni$_.Pointer.fromFunction(_$invoke);
+
+  static jni$_.Pointer<jni$_.Void> _$invokeMethod(
+    core$_.int $p,
+    jni$_.MethodInvocation $i,
+  ) {
+    try {
+      final $d = $i.methodDescriptor.toDartString(releaseOriginal: true);
+      final $a = $i.args;
+    } catch (e) {
+      return jni$_.ProtectedJniExtensions.newDartException(e);
+    }
+    return jni$_.nullptr;
+  }
+
+  static void implementIn(
+    jni$_.JImplementer implementer,
+    $RemoteViews$RemoteView $impl,
+  ) {
+    late final jni$_.RawReceivePort $p;
+    $p = jni$_.RawReceivePort(($m) {
+      if ($m == null) {
+        _$impls.remove($p.sendPort.nativePort);
+        $p.close();
+        return;
+      }
+      final $i = jni$_.MethodInvocation.fromMessage($m);
+      final $r = _$invokeMethod($p.sendPort.nativePort, $i);
+      $i.args?.release();
+      jni$_.ProtectedJniExtensions.returnResult($i.result, $r);
+    });
+    implementer.add(
+      r'android.widget.RemoteViews$RemoteView',
+      $p,
+      _$invokePointer,
+      [],
+    );
+    final $a = $p.sendPort.nativePort;
+    _$impls[$a] = $impl;
+  }
+
+  factory RemoteViews$RemoteView.implement(
+    $RemoteViews$RemoteView $impl,
+  ) {
+    final $i = jni$_.JImplementer();
+    implementIn($i, $impl);
+    return $i.implement<RemoteViews$RemoteView>();
+  }
+}
+
+abstract base mixin class $RemoteViews$RemoteView {
+  factory $RemoteViews$RemoteView() = _$RemoteViews$RemoteView;
+}
+
+final class _$RemoteViews$RemoteView with $RemoteViews$RemoteView {
+  _$RemoteViews$RemoteView();
+}
+
+final class $RemoteViews$RemoteView$Type$
+    extends jni$_.JType<RemoteViews$RemoteView> {
+  @jni$_.internal
+  const $RemoteViews$RemoteView$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/widget/RemoteViews$RemoteView;';
+}
+
+/// from: `android.widget.RemoteViews$RemoteViewOutlineProvider`
+extension type RemoteViews$RemoteViewOutlineProvider._(jni$_.JObject _$this)
+    implements ViewOutlineProvider {
+  static final _class = jni$_.JClass.forName(
+      r'android/widget/RemoteViews$RemoteViewOutlineProvider');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<RemoteViews$RemoteViewOutlineProvider> type =
+      $RemoteViews$RemoteViewOutlineProvider$Type$();
+  static final _id_new$ = _class.constructorId(
+    r'(F)V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<(jni$_.Double,)>)>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.double)>();
+
+  /// from: `public void <init>(float f)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory RemoteViews$RemoteViewOutlineProvider(
+    core$_.double f,
+  ) {
+    final _$$classRef = _class.reference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer, f)
+        .object<RemoteViews$RemoteViewOutlineProvider>();
+  }
+}
+
+extension RemoteViews$RemoteViewOutlineProvider$$Methods
+    on RemoteViews$RemoteViewOutlineProvider {
+  static final _id_getOutline =
+      RemoteViews$RemoteViewOutlineProvider._class.instanceMethodId(
+    r'getOutline',
+    r'(Landroid/view/View;Landroid/graphics/Outline;)V',
+  );
+
+  static final _getOutline = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JThrowablePtr Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void getOutline(android.view.View view, android.graphics.Outline outline)`
+  void getOutline(
+    View? view,
+    Outline? outline,
+  ) {
+    final _$$selfRef = reference;
+    final _$view = view?.reference ?? jni$_.jNullReference;
+    final _$outline = outline?.reference ?? jni$_.jNullReference;
+    _getOutline(_$$selfRef.pointer, _id_getOutline.pointer, _$view.pointer,
+            _$outline.pointer)
+        .check();
+  }
+
+  static final _id_get$radius =
+      RemoteViews$RemoteViewOutlineProvider._class.instanceMethodId(
+    r'getRadius',
+    r'()F',
+  );
+
+  static final _get$radius = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallFloatMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public float getRadius()`
+  core$_.double get radius {
+    final _$$selfRef = reference;
+    return _get$radius(_$$selfRef.pointer, _id_get$radius.pointer).float;
+  }
+}
+
+final class $RemoteViews$RemoteViewOutlineProvider$Type$
+    extends jni$_.JType<RemoteViews$RemoteViewOutlineProvider> {
+  @jni$_.internal
+  const $RemoteViews$RemoteViewOutlineProvider$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature =>
+      r'Landroid/widget/RemoteViews$RemoteViewOutlineProvider;';
+}
+
+/// from: `android.widget.RemoteViews`
+extension type RemoteViews._(jni$_.JObject _$this)
+    implements jni$_.JObject, LayoutInflater$$Filter, Parcelable {
+  static final _class = jni$_.JClass.forName(r'android/widget/RemoteViews');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<RemoteViews> type = $RemoteViews$Type$();
+  static final _id_CREATOR = _class.staticFieldId(
+    r'CREATOR',
+    r'Landroid/os/Parcelable$Creator;',
+  );
+
+  /// from: `static public final android.os.Parcelable$Creator<android.widget.RemoteViews> CREATOR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Parcelable$$Creator? get CREATOR =>
+      _id_CREATOR.getNullable(_class, Parcelable$$Creator.type)
+          as Parcelable$$Creator?;
+
+  static final _id_EXTRA_CHECKED = _class.staticFieldId(
+    r'EXTRA_CHECKED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHECKED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHECKED =>
+      _id_EXTRA_CHECKED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_SHARED_ELEMENT_BOUNDS = _class.staticFieldId(
+    r'EXTRA_SHARED_ELEMENT_BOUNDS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_SHARED_ELEMENT_BOUNDS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_SHARED_ELEMENT_BOUNDS =>
+      _id_EXTRA_SHARED_ELEMENT_BOUNDS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  /// from: `static public final int MARGIN_BOTTOM`
+  static const MARGIN_BOTTOM = 3;
+
+  /// from: `static public final int MARGIN_END`
+  static const MARGIN_END = 5;
+
+  /// from: `static public final int MARGIN_LEFT`
+  static const MARGIN_LEFT = 0;
+
+  /// from: `static public final int MARGIN_RIGHT`
+  static const MARGIN_RIGHT = 2;
+
+  /// from: `static public final int MARGIN_START`
+  static const MARGIN_START = 4;
+
+  /// from: `static public final int MARGIN_TOP`
+  static const MARGIN_TOP = 1;
+  static final _id_new$ = _class.constructorId(
+    r'(Landroid/os/Parcel;)V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(android.os.Parcel parcel)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory RemoteViews(
+    Parcel? parcel,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$parcel = parcel?.reference ?? jni$_.jNullReference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer, _$parcel.pointer)
+        .object<RemoteViews>();
+  }
+
+  static final _id_new$1 = _class.constructorId(
+    r'(Landroid/widget/RemoteViews;)V',
+  );
+
+  static final _new$1 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(android.widget.RemoteViews remoteViews)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory RemoteViews.new$1(
+    RemoteViews? remoteViews,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$remoteViews = remoteViews?.reference ?? jni$_.jNullReference;
+    return _new$1(_$$classRef.pointer, _id_new$1.pointer, _$remoteViews.pointer)
+        .object<RemoteViews>();
+  }
+
+  static final _id_new$2 = _class.constructorId(
+    r'(Landroid/widget/RemoteViews;Landroid/widget/RemoteViews;)V',
+  );
+
+  static final _new$2 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(android.widget.RemoteViews remoteViews, android.widget.RemoteViews remoteViews1)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory RemoteViews.new$2(
+    RemoteViews? remoteViews,
+    RemoteViews? remoteViews1,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$remoteViews = remoteViews?.reference ?? jni$_.jNullReference;
+    final _$remoteViews1 = remoteViews1?.reference ?? jni$_.jNullReference;
+    return _new$2(_$$classRef.pointer, _id_new$2.pointer, _$remoteViews.pointer,
+            _$remoteViews1.pointer)
+        .object<RemoteViews>();
+  }
+
+  static final _id_new$3 = _class.constructorId(
+    r'(Landroid/widget/RemoteViews$DrawInstructions;)V',
+  );
+
+  static final _new$3 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(android.widget.RemoteViews$DrawInstructions drawInstructions)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory RemoteViews.new$3(
+    RemoteViews$DrawInstructions? drawInstructions,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$drawInstructions =
+        drawInstructions?.reference ?? jni$_.jNullReference;
+    return _new$3(
+            _$$classRef.pointer, _id_new$3.pointer, _$drawInstructions.pointer)
+        .object<RemoteViews>();
+  }
+
+  static final _id_new$4 = _class.constructorId(
+    r'(Ljava/lang/String;I)V',
+  );
+
+  static final _new$4 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public void <init>(java.lang.String string, int i)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory RemoteViews.new$4(
+    jni$_.JString? string,
+    core$_.int i,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _new$4(_$$classRef.pointer, _id_new$4.pointer, _$string.pointer, i)
+        .object<RemoteViews>();
+  }
+
+  static final _id_new$5 = _class.constructorId(
+    r'(Ljava/lang/String;II)V',
+  );
+
+  static final _new$5 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Int32,
+                        jni$_.Int32
+                      )>)>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              core$_.int,
+              core$_.int)>();
+
+  /// from: `public void <init>(java.lang.String string, int i, int i1)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory RemoteViews.new$5(
+    jni$_.JString? string,
+    core$_.int i,
+    core$_.int i1,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _new$5(
+            _$$classRef.pointer, _id_new$5.pointer, _$string.pointer, i, i1)
+        .object<RemoteViews>();
+  }
+
+  static final _id_new$6 = _class.constructorId(
+    r'(Ljava/util/Map;)V',
+  );
+
+  static final _new$6 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(java.util.Map<android.util.SizeF, android.widget.RemoteViews> map)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory RemoteViews.new$6(
+    jni$_.JMap<SizeF?, RemoteViews?>? map,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$map = map?.reference ?? jni$_.jNullReference;
+    return _new$6(_$$classRef.pointer, _id_new$6.pointer, _$map.pointer)
+        .object<RemoteViews>();
+  }
+}
+
+extension RemoteViews$$Methods on RemoteViews {
+  static final _id_setOnClickPendingIntent =
+      RemoteViews._class.instanceMethodId(
+    r'setOnClickPendingIntent',
+    r'(ILandroid/app/PendingIntent;)V',
+  );
+
+  static final _setOnClickPendingIntent = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Int32, jni$_.Pointer<jni$_.Void>)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, core$_.int, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void setOnClickPendingIntent(int i, android.app.PendingIntent pendingIntent)`
+  void setOnClickPendingIntent(
+    core$_.int i,
+    PendingIntent? pendingIntent,
+  ) {
+    final _$$selfRef = reference;
+    final _$pendingIntent = pendingIntent?.reference ?? jni$_.jNullReference;
+    _setOnClickPendingIntent(_$$selfRef.pointer,
+            _id_setOnClickPendingIntent.pointer, i, _$pendingIntent.pointer)
+        .check();
+  }
+
+  static final _id_setTextViewText = RemoteViews._class.instanceMethodId(
+    r'setTextViewText',
+    r'(ILjava/lang/CharSequence;)V',
+  );
+
+  static final _setTextViewText = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Int32, jni$_.Pointer<jni$_.Void>)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, core$_.int, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void setTextViewText(int i, java.lang.CharSequence charSequence)`
+  void setTextViewText(
+    core$_.int i,
+    CharSequence? charSequence,
+  ) {
+    final _$$selfRef = reference;
+    final _$charSequence = charSequence?.reference ?? jni$_.jNullReference;
+    _setTextViewText(_$$selfRef.pointer, _id_setTextViewText.pointer, i,
+            _$charSequence.pointer)
+        .check();
+  }
+}
+
+final class $RemoteViews$Type$ extends jni$_.JType<RemoteViews> {
+  @jni$_.internal
+  const $RemoteViews$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/widget/RemoteViews;';
+}
+
+/// from: `android.content.ComponentName`
+extension type ComponentName._(jni$_.JObject _$this)
+    implements jni$_.JObject, Cloneable, Comparable, Parcelable {
+  static final _class = jni$_.JClass.forName(r'android/content/ComponentName');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<ComponentName> type = $ComponentName$Type$();
+  static final _id_CREATOR = _class.staticFieldId(
+    r'CREATOR',
+    r'Landroid/os/Parcelable$Creator;',
+  );
+
+  /// from: `static public final android.os.Parcelable$Creator<android.content.ComponentName> CREATOR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Parcelable$$Creator? get CREATOR =>
+      _id_CREATOR.getNullable(_class, Parcelable$$Creator.type)
+          as Parcelable$$Creator?;
+
+  static final _id_new$ = _class.constructorId(
+    r'(Landroid/content/Context;Ljava/lang/Class;)V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(android.content.Context context, java.lang.Class<?> class)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory ComponentName(
+    Context? context,
+    jni$_.JClass? class$,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$context = context?.reference ?? jni$_.jNullReference;
+    final _$class$ = class$?.reference ?? jni$_.jNullReference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer, _$context.pointer,
+            _$class$.pointer)
+        .object<ComponentName>();
+  }
+
+  static final _id_new$1 = _class.constructorId(
+    r'(Landroid/content/Context;Ljava/lang/String;)V',
+  );
+
+  static final _new$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(android.content.Context context, java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory ComponentName.new$1(
+    Context? context,
+    jni$_.JString? string,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$context = context?.reference ?? jni$_.jNullReference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _new$1(_$$classRef.pointer, _id_new$1.pointer, _$context.pointer,
+            _$string.pointer)
+        .object<ComponentName>();
+  }
+
+  static final _id_new$2 = _class.constructorId(
+    r'(Landroid/os/Parcel;)V',
+  );
+
+  static final _new$2 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(android.os.Parcel parcel)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory ComponentName.new$2(
+    Parcel? parcel,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$parcel = parcel?.reference ?? jni$_.jNullReference;
+    return _new$2(_$$classRef.pointer, _id_new$2.pointer, _$parcel.pointer)
+        .object<ComponentName>();
+  }
+
+  static final _id_new$3 = _class.constructorId(
+    r'(Ljava/lang/String;Ljava/lang/String;)V',
+  );
+
+  static final _new$3 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(java.lang.String string, java.lang.String string1)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory ComponentName.new$3(
+    jni$_.JString? string,
+    jni$_.JString? string1,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$string1 = string1?.reference ?? jni$_.jNullReference;
+    return _new$3(_$$classRef.pointer, _id_new$3.pointer, _$string.pointer,
+            _$string1.pointer)
+        .object<ComponentName>();
+  }
+}
+
+final class $ComponentName$Type$ extends jni$_.JType<ComponentName> {
+  @jni$_.internal
+  const $ComponentName$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/ComponentName;';
+}
+
+/// from: `android.app.PendingIntent$CanceledException`
+extension type PendingIntent$CanceledException._(jni$_.JObject _$this)
+    implements AndroidException {
+  static final _class =
+      jni$_.JClass.forName(r'android/app/PendingIntent$CanceledException');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<PendingIntent$CanceledException> type =
+      $PendingIntent$CanceledException$Type$();
+  static final _id_new$ = _class.constructorId(
+    r'()V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public void <init>()`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory PendingIntent$CanceledException() {
+    final _$$classRef = _class.reference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer)
+        .object<PendingIntent$CanceledException>();
+  }
+
+  static final _id_new$1 = _class.constructorId(
+    r'(Ljava/lang/Exception;)V',
+  );
+
+  static final _new$1 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(java.lang.Exception exception)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory PendingIntent$CanceledException.new$1(
+    Exception? exception,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$exception = exception?.reference ?? jni$_.jNullReference;
+    return _new$1(_$$classRef.pointer, _id_new$1.pointer, _$exception.pointer)
+        .object<PendingIntent$CanceledException>();
+  }
+
+  static final _id_new$2 = _class.constructorId(
+    r'(Ljava/lang/String;)V',
+  );
+
+  static final _new$2 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory PendingIntent$CanceledException.new$2(
+    jni$_.JString? string,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _new$2(_$$classRef.pointer, _id_new$2.pointer, _$string.pointer)
+        .object<PendingIntent$CanceledException>();
+  }
+}
+
+final class $PendingIntent$CanceledException$Type$
+    extends jni$_.JType<PendingIntent$CanceledException> {
+  @jni$_.internal
+  const $PendingIntent$CanceledException$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/app/PendingIntent$CanceledException;';
+}
+
+/// from: `android.app.PendingIntent$OnFinished`
+extension type PendingIntent$OnFinished._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class =
+      jni$_.JClass.forName(r'android/app/PendingIntent$OnFinished');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<PendingIntent$OnFinished> type =
+      $PendingIntent$OnFinished$Type$();
+
+  /// Maps a specific port to the implemented interface.
+  static final core$_.Map<core$_.int, $PendingIntent$OnFinished> _$impls = {};
+  static jni$_.JObjectPtr _$invoke(
+    core$_.int port,
+    jni$_.JObjectPtr descriptor,
+    jni$_.JObjectPtr args,
+  ) {
+    return _$invokeMethod(
+      port,
+      jni$_.MethodInvocation.fromAddresses(
+        0,
+        descriptor.address,
+        args.address,
+      ),
+    );
+  }
+
+  static final jni$_.Pointer<
+          jni$_.NativeFunction<
+              jni$_.JObjectPtr Function(
+                  jni$_.Int64, jni$_.JObjectPtr, jni$_.JObjectPtr)>>
+      _$invokePointer = jni$_.Pointer.fromFunction(_$invoke);
+
+  static jni$_.Pointer<jni$_.Void> _$invokeMethod(
+    core$_.int $p,
+    jni$_.MethodInvocation $i,
+  ) {
+    try {
+      final $d = $i.methodDescriptor.toDartString(releaseOriginal: true);
+      final $a = $i.args;
+      if ($d ==
+          r'onSendFinished(Landroid/app/PendingIntent;Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;)V') {
+        _$impls[$p]!.onSendFinished(
+          ($a![0] as PendingIntent?),
+          ($a![1] as Intent?),
+          ($a![2] as jni$_.JInteger).toDartInt(releaseOriginal: true),
+          ($a![3] as jni$_.JString?),
+          ($a![4] as Bundle?),
+        );
+        return jni$_.nullptr;
+      }
+    } catch (e) {
+      return jni$_.ProtectedJniExtensions.newDartException(e);
+    }
+    return jni$_.nullptr;
+  }
+
+  static void implementIn(
+    jni$_.JImplementer implementer,
+    $PendingIntent$OnFinished $impl,
+  ) {
+    late final jni$_.RawReceivePort $p;
+    $p = jni$_.RawReceivePort(($m) {
+      if ($m == null) {
+        _$impls.remove($p.sendPort.nativePort);
+        $p.close();
+        return;
+      }
+      final $i = jni$_.MethodInvocation.fromMessage($m);
+      final $r = _$invokeMethod($p.sendPort.nativePort, $i);
+      $i.args?.release();
+      jni$_.ProtectedJniExtensions.returnResult($i.result, $r);
+    });
+    implementer.add(
+      r'android.app.PendingIntent$OnFinished',
+      $p,
+      _$invokePointer,
+      [
+        if ($impl.onSendFinished$async)
+          r'onSendFinished(Landroid/app/PendingIntent;Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;)V',
+      ],
+    );
+    final $a = $p.sendPort.nativePort;
+    _$impls[$a] = $impl;
+  }
+
+  factory PendingIntent$OnFinished.implement(
+    $PendingIntent$OnFinished $impl,
+  ) {
+    final $i = jni$_.JImplementer();
+    implementIn($i, $impl);
+    return $i.implement<PendingIntent$OnFinished>();
+  }
+}
+
+extension PendingIntent$OnFinished$$Methods on PendingIntent$OnFinished {
+  static final _id_onSendFinished =
+      PendingIntent$OnFinished._class.instanceMethodId(
+    r'onSendFinished',
+    r'(Landroid/app/PendingIntent;Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;)V',
+  );
+
+  static final _onSendFinished = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JThrowablePtr Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Int32,
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>,
+              core$_.int,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public abstract void onSendFinished(android.app.PendingIntent pendingIntent, android.content.Intent intent, int i, java.lang.String string, android.os.Bundle bundle)`
+  void onSendFinished(
+    PendingIntent? pendingIntent,
+    Intent? intent,
+    core$_.int i,
+    jni$_.JString? string,
+    Bundle? bundle,
+  ) {
+    final _$$selfRef = reference;
+    final _$pendingIntent = pendingIntent?.reference ?? jni$_.jNullReference;
+    final _$intent = intent?.reference ?? jni$_.jNullReference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$bundle = bundle?.reference ?? jni$_.jNullReference;
+    _onSendFinished(
+            _$$selfRef.pointer,
+            _id_onSendFinished.pointer,
+            _$pendingIntent.pointer,
+            _$intent.pointer,
+            i,
+            _$string.pointer,
+            _$bundle.pointer)
+        .check();
+  }
+}
+
+abstract base mixin class $PendingIntent$OnFinished {
+  factory $PendingIntent$OnFinished({
+    required void Function(PendingIntent? pendingIntent, Intent? intent,
+            core$_.int i, jni$_.JString? string, Bundle? bundle)
+        onSendFinished,
+    core$_.bool onSendFinished$async,
+  }) = _$PendingIntent$OnFinished;
+
+  void onSendFinished(PendingIntent? pendingIntent, Intent? intent,
+      core$_.int i, jni$_.JString? string, Bundle? bundle);
+  core$_.bool get onSendFinished$async => false;
+}
+
+final class _$PendingIntent$OnFinished with $PendingIntent$OnFinished {
+  _$PendingIntent$OnFinished({
+    required void Function(PendingIntent? pendingIntent, Intent? intent,
+            core$_.int i, jni$_.JString? string, Bundle? bundle)
+        onSendFinished,
+    this.onSendFinished$async = false,
+  }) : _onSendFinished = onSendFinished;
+
+  final void Function(PendingIntent? pendingIntent, Intent? intent,
+      core$_.int i, jni$_.JString? string, Bundle? bundle) _onSendFinished;
+  final core$_.bool onSendFinished$async;
+
+  void onSendFinished(PendingIntent? pendingIntent, Intent? intent,
+      core$_.int i, jni$_.JString? string, Bundle? bundle) {
+    return _onSendFinished(pendingIntent, intent, i, string, bundle);
+  }
+}
+
+final class $PendingIntent$OnFinished$Type$
+    extends jni$_.JType<PendingIntent$OnFinished> {
+  @jni$_.internal
+  const $PendingIntent$OnFinished$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/app/PendingIntent$OnFinished;';
+}
+
+/// from: `android.app.PendingIntent`
+extension type PendingIntent._(jni$_.JObject _$this)
+    implements jni$_.JObject, Parcelable {
+  static final _class = jni$_.JClass.forName(r'android/app/PendingIntent');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<PendingIntent> type = $PendingIntent$Type$();
+  static final _id_CREATOR = _class.staticFieldId(
+    r'CREATOR',
+    r'Landroid/os/Parcelable$Creator;',
+  );
+
+  /// from: `static public final android.os.Parcelable$Creator<android.app.PendingIntent> CREATOR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Parcelable$$Creator? get CREATOR =>
+      _id_CREATOR.getNullable(_class, Parcelable$$Creator.type)
+          as Parcelable$$Creator?;
+
+  /// from: `static public final int FLAG_ALLOW_UNSAFE_IMPLICIT_INTENT`
+  static const FLAG_ALLOW_UNSAFE_IMPLICIT_INTENT = 16777216;
+
+  /// from: `static public final int FLAG_CANCEL_CURRENT`
+  static const FLAG_CANCEL_CURRENT = 268435456;
+
+  /// from: `static public final int FLAG_IMMUTABLE`
+  static const FLAG_IMMUTABLE = 67108864;
+
+  /// from: `static public final int FLAG_MUTABLE`
+  static const FLAG_MUTABLE = 33554432;
+
+  /// from: `static public final int FLAG_NO_CREATE`
+  static const FLAG_NO_CREATE = 536870912;
+
+  /// from: `static public final int FLAG_ONE_SHOT`
+  static const FLAG_ONE_SHOT = 1073741824;
+
+  /// from: `static public final int FLAG_UPDATE_CURRENT`
+  static const FLAG_UPDATE_CURRENT = 134217728;
+  static final _id_getActivity = _class.staticMethodId(
+    r'getActivity',
+    r'(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;',
+  );
+
+  static final _getActivity = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Int32,
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Int32
+                      )>)>>('globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              core$_.int,
+              jni$_.Pointer<jni$_.Void>,
+              core$_.int)>();
+
+  /// from: `static public android.app.PendingIntent getActivity(android.content.Context context, int i, android.content.Intent intent, int i1)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static PendingIntent? getActivity(
+    Context? context,
+    core$_.int i,
+    Intent? intent,
+    core$_.int i1,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$context = context?.reference ?? jni$_.jNullReference;
+    final _$intent = intent?.reference ?? jni$_.jNullReference;
+    return _getActivity(_$$classRef.pointer, _id_getActivity.pointer,
+            _$context.pointer, i, _$intent.pointer, i1)
+        .object<PendingIntent?>();
+  }
+
+  static final _id_getActivity$1 = _class.staticMethodId(
+    r'getActivity',
+    r'(Landroid/content/Context;ILandroid/content/Intent;ILandroid/os/Bundle;)Landroid/app/PendingIntent;',
+  );
+
+  static final _getActivity$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Int32,
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Int32,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              core$_.int,
+              jni$_.Pointer<jni$_.Void>,
+              core$_.int,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `static public android.app.PendingIntent getActivity(android.content.Context context, int i, android.content.Intent intent, int i1, android.os.Bundle bundle)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static PendingIntent? getActivity$1(
+    Context? context,
+    core$_.int i,
+    Intent? intent,
+    core$_.int i1,
+    Bundle? bundle,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$context = context?.reference ?? jni$_.jNullReference;
+    final _$intent = intent?.reference ?? jni$_.jNullReference;
+    final _$bundle = bundle?.reference ?? jni$_.jNullReference;
+    return _getActivity$1(_$$classRef.pointer, _id_getActivity$1.pointer,
+            _$context.pointer, i, _$intent.pointer, i1, _$bundle.pointer)
+        .object<PendingIntent?>();
+  }
+}
+
+final class $PendingIntent$Type$ extends jni$_.JType<PendingIntent> {
+  @jni$_.internal
+  const $PendingIntent$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/app/PendingIntent;';
+}
+
+/// from: `android.content.Intent$FilterComparison`
+extension type Intent$FilterComparison._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class =
+      jni$_.JClass.forName(r'android/content/Intent$FilterComparison');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<Intent$FilterComparison> type =
+      $Intent$FilterComparison$Type$();
+  static final _id_new$ = _class.constructorId(
+    r'(Landroid/content/Intent;)V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(android.content.Intent intent)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory Intent$FilterComparison(
+    Intent? intent,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$intent = intent?.reference ?? jni$_.jNullReference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer, _$intent.pointer)
+        .object<Intent$FilterComparison>();
+  }
+}
+
+extension Intent$FilterComparison$$Methods on Intent$FilterComparison {
+  static final _id_equals = Intent$FilterComparison._class.instanceMethodId(
+    r'equals',
+    r'(Ljava/lang/Object;)Z',
+  );
+
+  static final _equals = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public boolean equals(java.lang.Object object)`
+  core$_.bool equals(
+    jni$_.JObject? object,
+  ) {
+    final _$$selfRef = reference;
+    final _$object = object?.reference ?? jni$_.jNullReference;
+    return _equals(_$$selfRef.pointer, _id_equals.pointer, _$object.pointer)
+        .boolean;
+  }
+
+  static final _id_get$intent = Intent$FilterComparison._class.instanceMethodId(
+    r'getIntent',
+    r'()Landroid/content/Intent;',
+  );
+
+  static final _get$intent = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public android.content.Intent getIntent()`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? get intent {
+    final _$$selfRef = reference;
+    return _get$intent(_$$selfRef.pointer, _id_get$intent.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_hashCode$1 = Intent$FilterComparison._class.instanceMethodId(
+    r'hashCode',
+    r'()I',
+  );
+
+  static final _hashCode$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int hashCode()`
+  core$_.int hashCode$1() {
+    final _$$selfRef = reference;
+    return _hashCode$1(_$$selfRef.pointer, _id_hashCode$1.pointer).integer;
+  }
+}
+
+final class $Intent$FilterComparison$Type$
+    extends jni$_.JType<Intent$FilterComparison> {
+  @jni$_.internal
+  const $Intent$FilterComparison$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/Intent$FilterComparison;';
+}
+
+/// from: `android.content.Intent$ShortcutIconResource`
+extension type Intent$ShortcutIconResource._(jni$_.JObject _$this)
+    implements jni$_.JObject, Parcelable {
+  static final _class =
+      jni$_.JClass.forName(r'android/content/Intent$ShortcutIconResource');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<Intent$ShortcutIconResource> type =
+      $Intent$ShortcutIconResource$Type$();
+  static final _id_CREATOR = _class.staticFieldId(
+    r'CREATOR',
+    r'Landroid/os/Parcelable$Creator;',
+  );
+
+  /// from: `static public final android.os.Parcelable$Creator<android.content.Intent$ShortcutIconResource> CREATOR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Parcelable$$Creator? get CREATOR =>
+      _id_CREATOR.getNullable(_class, Parcelable$$Creator.type)
+          as Parcelable$$Creator?;
+
+  static final _id_new$ = _class.constructorId(
+    r'()V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public void <init>()`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory Intent$ShortcutIconResource() {
+    final _$$classRef = _class.reference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer)
+        .object<Intent$ShortcutIconResource>();
+  }
+
+  static final _id_fromContext = _class.staticMethodId(
+    r'fromContext',
+    r'(Landroid/content/Context;I)Landroid/content/Intent$ShortcutIconResource;',
+  );
+
+  static final _fromContext = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `static public android.content.Intent$ShortcutIconResource fromContext(android.content.Context context, int i)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Intent$ShortcutIconResource? fromContext(
+    Context? context,
+    core$_.int i,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$context = context?.reference ?? jni$_.jNullReference;
+    return _fromContext(
+            _$$classRef.pointer, _id_fromContext.pointer, _$context.pointer, i)
+        .object<Intent$ShortcutIconResource?>();
+  }
+}
+
+extension Intent$ShortcutIconResource$$Methods on Intent$ShortcutIconResource {
+  static final _id_packageName =
+      Intent$ShortcutIconResource._class.instanceFieldId(
+    r'packageName',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `public java.lang.String packageName`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? get packageName =>
+      _id_packageName.getNullable(this, jni$_.JString.type) as jni$_.JString?;
+
+  /// from: `public java.lang.String packageName`
+  /// The returned object must be released after use, by calling the [release] method.
+  set packageName(jni$_.JString? value) =>
+      _id_packageName.set(this, jni$_.JString.type, value);
+
+  static final _id_resourceName =
+      Intent$ShortcutIconResource._class.instanceFieldId(
+    r'resourceName',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `public java.lang.String resourceName`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? get resourceName =>
+      _id_resourceName.getNullable(this, jni$_.JString.type) as jni$_.JString?;
+
+  /// from: `public java.lang.String resourceName`
+  /// The returned object must be released after use, by calling the [release] method.
+  set resourceName(jni$_.JString? value) =>
+      _id_resourceName.set(this, jni$_.JString.type, value);
+
+  static final _id_describeContents =
+      Intent$ShortcutIconResource._class.instanceMethodId(
+    r'describeContents',
+    r'()I',
+  );
+
+  static final _describeContents = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int describeContents()`
+  core$_.int describeContents() {
+    final _$$selfRef = reference;
+    return _describeContents(_$$selfRef.pointer, _id_describeContents.pointer)
+        .integer;
+  }
+
+  static final _id_toString$1 =
+      Intent$ShortcutIconResource._class.instanceMethodId(
+    r'toString',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _toString$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String toString()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? toString$1() {
+    final _$$selfRef = reference;
+    return _toString$1(_$$selfRef.pointer, _id_toString$1.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_writeToParcel =
+      Intent$ShortcutIconResource._class.instanceMethodId(
+    r'writeToParcel',
+    r'(Landroid/os/Parcel;I)V',
+  );
+
+  static final _writeToParcel = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public void writeToParcel(android.os.Parcel parcel, int i)`
+  void writeToParcel(
+    Parcel? parcel,
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    final _$parcel = parcel?.reference ?? jni$_.jNullReference;
+    _writeToParcel(
+            _$$selfRef.pointer, _id_writeToParcel.pointer, _$parcel.pointer, i)
+        .check();
+  }
+}
+
+final class $Intent$ShortcutIconResource$Type$
+    extends jni$_.JType<Intent$ShortcutIconResource> {
+  @jni$_.internal
+  const $Intent$ShortcutIconResource$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/Intent$ShortcutIconResource;';
+}
+
+/// from: `android.content.Intent`
+extension type Intent._(jni$_.JObject _$this)
+    implements jni$_.JObject, Cloneable, Parcelable {
+  static final _class = jni$_.JClass.forName(r'android/content/Intent');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<Intent> type = $Intent$Type$();
+  static final _id_ACTION_AIRPLANE_MODE_CHANGED = _class.staticFieldId(
+    r'ACTION_AIRPLANE_MODE_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_AIRPLANE_MODE_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_AIRPLANE_MODE_CHANGED =>
+      _id_ACTION_AIRPLANE_MODE_CHANGED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_ALL_APPS = _class.staticFieldId(
+    r'ACTION_ALL_APPS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_ALL_APPS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_ALL_APPS =>
+      _id_ACTION_ALL_APPS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_ANSWER = _class.staticFieldId(
+    r'ACTION_ANSWER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_ANSWER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_ANSWER =>
+      _id_ACTION_ANSWER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_APPLICATION_LOCALE_CHANGED = _class.staticFieldId(
+    r'ACTION_APPLICATION_LOCALE_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APPLICATION_LOCALE_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APPLICATION_LOCALE_CHANGED =>
+      _id_ACTION_APPLICATION_LOCALE_CHANGED.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_APPLICATION_PREFERENCES = _class.staticFieldId(
+    r'ACTION_APPLICATION_PREFERENCES',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APPLICATION_PREFERENCES`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APPLICATION_PREFERENCES =>
+      _id_ACTION_APPLICATION_PREFERENCES.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_APPLICATION_RESTRICTIONS_CHANGED =
+      _class.staticFieldId(
+    r'ACTION_APPLICATION_RESTRICTIONS_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APPLICATION_RESTRICTIONS_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APPLICATION_RESTRICTIONS_CHANGED =>
+      _id_ACTION_APPLICATION_RESTRICTIONS_CHANGED.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_APP_ERROR = _class.staticFieldId(
+    r'ACTION_APP_ERROR',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_APP_ERROR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_APP_ERROR =>
+      _id_ACTION_APP_ERROR.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_ASSIST = _class.staticFieldId(
+    r'ACTION_ASSIST',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_ASSIST`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_ASSIST =>
+      _id_ACTION_ASSIST.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_ATTACH_DATA = _class.staticFieldId(
+    r'ACTION_ATTACH_DATA',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_ATTACH_DATA`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_ATTACH_DATA =>
+      _id_ACTION_ATTACH_DATA.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_AUTO_REVOKE_PERMISSIONS = _class.staticFieldId(
+    r'ACTION_AUTO_REVOKE_PERMISSIONS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_AUTO_REVOKE_PERMISSIONS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_AUTO_REVOKE_PERMISSIONS =>
+      _id_ACTION_AUTO_REVOKE_PERMISSIONS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_BATTERY_CHANGED = _class.staticFieldId(
+    r'ACTION_BATTERY_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_BATTERY_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_BATTERY_CHANGED =>
+      _id_ACTION_BATTERY_CHANGED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_BATTERY_LOW = _class.staticFieldId(
+    r'ACTION_BATTERY_LOW',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_BATTERY_LOW`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_BATTERY_LOW =>
+      _id_ACTION_BATTERY_LOW.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_BATTERY_OKAY = _class.staticFieldId(
+    r'ACTION_BATTERY_OKAY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_BATTERY_OKAY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_BATTERY_OKAY =>
+      _id_ACTION_BATTERY_OKAY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_BOOT_COMPLETED = _class.staticFieldId(
+    r'ACTION_BOOT_COMPLETED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_BOOT_COMPLETED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_BOOT_COMPLETED =>
+      _id_ACTION_BOOT_COMPLETED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_BUG_REPORT = _class.staticFieldId(
+    r'ACTION_BUG_REPORT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_BUG_REPORT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_BUG_REPORT =>
+      _id_ACTION_BUG_REPORT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_CALL = _class.staticFieldId(
+    r'ACTION_CALL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_CALL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_CALL =>
+      _id_ACTION_CALL.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_CALL_BUTTON = _class.staticFieldId(
+    r'ACTION_CALL_BUTTON',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_CALL_BUTTON`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_CALL_BUTTON =>
+      _id_ACTION_CALL_BUTTON.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_CAMERA_BUTTON = _class.staticFieldId(
+    r'ACTION_CAMERA_BUTTON',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_CAMERA_BUTTON`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_CAMERA_BUTTON =>
+      _id_ACTION_CAMERA_BUTTON.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_CARRIER_SETUP = _class.staticFieldId(
+    r'ACTION_CARRIER_SETUP',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_CARRIER_SETUP`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_CARRIER_SETUP =>
+      _id_ACTION_CARRIER_SETUP.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_CHOOSER = _class.staticFieldId(
+    r'ACTION_CHOOSER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_CHOOSER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_CHOOSER =>
+      _id_ACTION_CHOOSER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_CLOSE_SYSTEM_DIALOGS = _class.staticFieldId(
+    r'ACTION_CLOSE_SYSTEM_DIALOGS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_CLOSE_SYSTEM_DIALOGS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_CLOSE_SYSTEM_DIALOGS =>
+      _id_ACTION_CLOSE_SYSTEM_DIALOGS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_CONFIGURATION_CHANGED = _class.staticFieldId(
+    r'ACTION_CONFIGURATION_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_CONFIGURATION_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_CONFIGURATION_CHANGED =>
+      _id_ACTION_CONFIGURATION_CHANGED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_CREATE_DOCUMENT = _class.staticFieldId(
+    r'ACTION_CREATE_DOCUMENT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_CREATE_DOCUMENT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_CREATE_DOCUMENT =>
+      _id_ACTION_CREATE_DOCUMENT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_CREATE_NOTE = _class.staticFieldId(
+    r'ACTION_CREATE_NOTE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_CREATE_NOTE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_CREATE_NOTE =>
+      _id_ACTION_CREATE_NOTE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_CREATE_REMINDER = _class.staticFieldId(
+    r'ACTION_CREATE_REMINDER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_CREATE_REMINDER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_CREATE_REMINDER =>
+      _id_ACTION_CREATE_REMINDER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_CREATE_SHORTCUT = _class.staticFieldId(
+    r'ACTION_CREATE_SHORTCUT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_CREATE_SHORTCUT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_CREATE_SHORTCUT =>
+      _id_ACTION_CREATE_SHORTCUT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_DATE_CHANGED = _class.staticFieldId(
+    r'ACTION_DATE_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_DATE_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_DATE_CHANGED =>
+      _id_ACTION_DATE_CHANGED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_DEFAULT = _class.staticFieldId(
+    r'ACTION_DEFAULT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_DEFAULT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_DEFAULT =>
+      _id_ACTION_DEFAULT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_DEFINE = _class.staticFieldId(
+    r'ACTION_DEFINE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_DEFINE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_DEFINE =>
+      _id_ACTION_DEFINE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_DELETE = _class.staticFieldId(
+    r'ACTION_DELETE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_DELETE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_DELETE =>
+      _id_ACTION_DELETE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_DEVICE_STORAGE_LOW = _class.staticFieldId(
+    r'ACTION_DEVICE_STORAGE_LOW',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_DEVICE_STORAGE_LOW`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_DEVICE_STORAGE_LOW =>
+      _id_ACTION_DEVICE_STORAGE_LOW.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_DEVICE_STORAGE_OK = _class.staticFieldId(
+    r'ACTION_DEVICE_STORAGE_OK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_DEVICE_STORAGE_OK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_DEVICE_STORAGE_OK =>
+      _id_ACTION_DEVICE_STORAGE_OK.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_DIAL = _class.staticFieldId(
+    r'ACTION_DIAL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_DIAL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_DIAL =>
+      _id_ACTION_DIAL.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_DOCK_EVENT = _class.staticFieldId(
+    r'ACTION_DOCK_EVENT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_DOCK_EVENT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_DOCK_EVENT =>
+      _id_ACTION_DOCK_EVENT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_DREAMING_STARTED = _class.staticFieldId(
+    r'ACTION_DREAMING_STARTED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_DREAMING_STARTED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_DREAMING_STARTED =>
+      _id_ACTION_DREAMING_STARTED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_DREAMING_STOPPED = _class.staticFieldId(
+    r'ACTION_DREAMING_STOPPED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_DREAMING_STOPPED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_DREAMING_STOPPED =>
+      _id_ACTION_DREAMING_STOPPED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_EDIT = _class.staticFieldId(
+    r'ACTION_EDIT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_EDIT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_EDIT =>
+      _id_ACTION_EDIT.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_EXTERNAL_APPLICATIONS_AVAILABLE =
+      _class.staticFieldId(
+    r'ACTION_EXTERNAL_APPLICATIONS_AVAILABLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_EXTERNAL_APPLICATIONS_AVAILABLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_EXTERNAL_APPLICATIONS_AVAILABLE =>
+      _id_ACTION_EXTERNAL_APPLICATIONS_AVAILABLE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE =
+      _class.staticFieldId(
+    r'ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE =>
+      _id_ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_FACTORY_TEST = _class.staticFieldId(
+    r'ACTION_FACTORY_TEST',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_FACTORY_TEST`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_FACTORY_TEST =>
+      _id_ACTION_FACTORY_TEST.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_GET_CONTENT = _class.staticFieldId(
+    r'ACTION_GET_CONTENT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_GET_CONTENT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_GET_CONTENT =>
+      _id_ACTION_GET_CONTENT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_GET_RESTRICTION_ENTRIES = _class.staticFieldId(
+    r'ACTION_GET_RESTRICTION_ENTRIES',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_GET_RESTRICTION_ENTRIES`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_GET_RESTRICTION_ENTRIES =>
+      _id_ACTION_GET_RESTRICTION_ENTRIES.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_GTALK_SERVICE_CONNECTED = _class.staticFieldId(
+    r'ACTION_GTALK_SERVICE_CONNECTED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_GTALK_SERVICE_CONNECTED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_GTALK_SERVICE_CONNECTED =>
+      _id_ACTION_GTALK_SERVICE_CONNECTED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_GTALK_SERVICE_DISCONNECTED = _class.staticFieldId(
+    r'ACTION_GTALK_SERVICE_DISCONNECTED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_GTALK_SERVICE_DISCONNECTED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_GTALK_SERVICE_DISCONNECTED =>
+      _id_ACTION_GTALK_SERVICE_DISCONNECTED.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_HEADSET_PLUG = _class.staticFieldId(
+    r'ACTION_HEADSET_PLUG',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_HEADSET_PLUG`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_HEADSET_PLUG =>
+      _id_ACTION_HEADSET_PLUG.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_INPUT_METHOD_CHANGED = _class.staticFieldId(
+    r'ACTION_INPUT_METHOD_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_INPUT_METHOD_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_INPUT_METHOD_CHANGED =>
+      _id_ACTION_INPUT_METHOD_CHANGED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_INSERT = _class.staticFieldId(
+    r'ACTION_INSERT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_INSERT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_INSERT =>
+      _id_ACTION_INSERT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_INSERT_OR_EDIT = _class.staticFieldId(
+    r'ACTION_INSERT_OR_EDIT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_INSERT_OR_EDIT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_INSERT_OR_EDIT =>
+      _id_ACTION_INSERT_OR_EDIT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_INSTALL_FAILURE = _class.staticFieldId(
+    r'ACTION_INSTALL_FAILURE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_INSTALL_FAILURE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_INSTALL_FAILURE =>
+      _id_ACTION_INSTALL_FAILURE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_INSTALL_PACKAGE = _class.staticFieldId(
+    r'ACTION_INSTALL_PACKAGE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_INSTALL_PACKAGE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_INSTALL_PACKAGE =>
+      _id_ACTION_INSTALL_PACKAGE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_LAUNCH_CAPTURE_CONTENT_ACTIVITY_FOR_NOTE =
+      _class.staticFieldId(
+    r'ACTION_LAUNCH_CAPTURE_CONTENT_ACTIVITY_FOR_NOTE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_LAUNCH_CAPTURE_CONTENT_ACTIVITY_FOR_NOTE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_LAUNCH_CAPTURE_CONTENT_ACTIVITY_FOR_NOTE =>
+      _id_ACTION_LAUNCH_CAPTURE_CONTENT_ACTIVITY_FOR_NOTE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_LOCALE_CHANGED = _class.staticFieldId(
+    r'ACTION_LOCALE_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_LOCALE_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_LOCALE_CHANGED =>
+      _id_ACTION_LOCALE_CHANGED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_LOCKED_BOOT_COMPLETED = _class.staticFieldId(
+    r'ACTION_LOCKED_BOOT_COMPLETED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_LOCKED_BOOT_COMPLETED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_LOCKED_BOOT_COMPLETED =>
+      _id_ACTION_LOCKED_BOOT_COMPLETED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MAIN = _class.staticFieldId(
+    r'ACTION_MAIN',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MAIN`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MAIN =>
+      _id_ACTION_MAIN.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_MANAGED_PROFILE_ADDED = _class.staticFieldId(
+    r'ACTION_MANAGED_PROFILE_ADDED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MANAGED_PROFILE_ADDED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MANAGED_PROFILE_ADDED =>
+      _id_ACTION_MANAGED_PROFILE_ADDED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MANAGED_PROFILE_AVAILABLE = _class.staticFieldId(
+    r'ACTION_MANAGED_PROFILE_AVAILABLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MANAGED_PROFILE_AVAILABLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MANAGED_PROFILE_AVAILABLE =>
+      _id_ACTION_MANAGED_PROFILE_AVAILABLE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_MANAGED_PROFILE_REMOVED = _class.staticFieldId(
+    r'ACTION_MANAGED_PROFILE_REMOVED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MANAGED_PROFILE_REMOVED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MANAGED_PROFILE_REMOVED =>
+      _id_ACTION_MANAGED_PROFILE_REMOVED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MANAGED_PROFILE_UNAVAILABLE = _class.staticFieldId(
+    r'ACTION_MANAGED_PROFILE_UNAVAILABLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MANAGED_PROFILE_UNAVAILABLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MANAGED_PROFILE_UNAVAILABLE =>
+      _id_ACTION_MANAGED_PROFILE_UNAVAILABLE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_MANAGED_PROFILE_UNLOCKED = _class.staticFieldId(
+    r'ACTION_MANAGED_PROFILE_UNLOCKED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MANAGED_PROFILE_UNLOCKED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MANAGED_PROFILE_UNLOCKED =>
+      _id_ACTION_MANAGED_PROFILE_UNLOCKED.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_MANAGE_NETWORK_USAGE = _class.staticFieldId(
+    r'ACTION_MANAGE_NETWORK_USAGE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MANAGE_NETWORK_USAGE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MANAGE_NETWORK_USAGE =>
+      _id_ACTION_MANAGE_NETWORK_USAGE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MANAGE_PACKAGE_STORAGE = _class.staticFieldId(
+    r'ACTION_MANAGE_PACKAGE_STORAGE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MANAGE_PACKAGE_STORAGE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MANAGE_PACKAGE_STORAGE =>
+      _id_ACTION_MANAGE_PACKAGE_STORAGE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MANAGE_UNUSED_APPS = _class.staticFieldId(
+    r'ACTION_MANAGE_UNUSED_APPS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MANAGE_UNUSED_APPS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MANAGE_UNUSED_APPS =>
+      _id_ACTION_MANAGE_UNUSED_APPS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MEDIA_BAD_REMOVAL = _class.staticFieldId(
+    r'ACTION_MEDIA_BAD_REMOVAL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MEDIA_BAD_REMOVAL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MEDIA_BAD_REMOVAL =>
+      _id_ACTION_MEDIA_BAD_REMOVAL.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MEDIA_BUTTON = _class.staticFieldId(
+    r'ACTION_MEDIA_BUTTON',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MEDIA_BUTTON`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MEDIA_BUTTON =>
+      _id_ACTION_MEDIA_BUTTON.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MEDIA_CHECKING = _class.staticFieldId(
+    r'ACTION_MEDIA_CHECKING',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MEDIA_CHECKING`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MEDIA_CHECKING =>
+      _id_ACTION_MEDIA_CHECKING.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MEDIA_EJECT = _class.staticFieldId(
+    r'ACTION_MEDIA_EJECT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MEDIA_EJECT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MEDIA_EJECT =>
+      _id_ACTION_MEDIA_EJECT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MEDIA_MOUNTED = _class.staticFieldId(
+    r'ACTION_MEDIA_MOUNTED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MEDIA_MOUNTED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MEDIA_MOUNTED =>
+      _id_ACTION_MEDIA_MOUNTED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MEDIA_NOFS = _class.staticFieldId(
+    r'ACTION_MEDIA_NOFS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MEDIA_NOFS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MEDIA_NOFS =>
+      _id_ACTION_MEDIA_NOFS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MEDIA_REMOVED = _class.staticFieldId(
+    r'ACTION_MEDIA_REMOVED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MEDIA_REMOVED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MEDIA_REMOVED =>
+      _id_ACTION_MEDIA_REMOVED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MEDIA_SCANNER_FINISHED = _class.staticFieldId(
+    r'ACTION_MEDIA_SCANNER_FINISHED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MEDIA_SCANNER_FINISHED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MEDIA_SCANNER_FINISHED =>
+      _id_ACTION_MEDIA_SCANNER_FINISHED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MEDIA_SCANNER_SCAN_FILE = _class.staticFieldId(
+    r'ACTION_MEDIA_SCANNER_SCAN_FILE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MEDIA_SCANNER_SCAN_FILE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MEDIA_SCANNER_SCAN_FILE =>
+      _id_ACTION_MEDIA_SCANNER_SCAN_FILE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MEDIA_SCANNER_STARTED = _class.staticFieldId(
+    r'ACTION_MEDIA_SCANNER_STARTED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MEDIA_SCANNER_STARTED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MEDIA_SCANNER_STARTED =>
+      _id_ACTION_MEDIA_SCANNER_STARTED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MEDIA_SHARED = _class.staticFieldId(
+    r'ACTION_MEDIA_SHARED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MEDIA_SHARED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MEDIA_SHARED =>
+      _id_ACTION_MEDIA_SHARED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MEDIA_UNMOUNTABLE = _class.staticFieldId(
+    r'ACTION_MEDIA_UNMOUNTABLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MEDIA_UNMOUNTABLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MEDIA_UNMOUNTABLE =>
+      _id_ACTION_MEDIA_UNMOUNTABLE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MEDIA_UNMOUNTED = _class.staticFieldId(
+    r'ACTION_MEDIA_UNMOUNTED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MEDIA_UNMOUNTED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MEDIA_UNMOUNTED =>
+      _id_ACTION_MEDIA_UNMOUNTED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MY_PACKAGE_REPLACED = _class.staticFieldId(
+    r'ACTION_MY_PACKAGE_REPLACED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MY_PACKAGE_REPLACED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MY_PACKAGE_REPLACED =>
+      _id_ACTION_MY_PACKAGE_REPLACED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MY_PACKAGE_SUSPENDED = _class.staticFieldId(
+    r'ACTION_MY_PACKAGE_SUSPENDED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MY_PACKAGE_SUSPENDED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MY_PACKAGE_SUSPENDED =>
+      _id_ACTION_MY_PACKAGE_SUSPENDED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_MY_PACKAGE_UNSUSPENDED = _class.staticFieldId(
+    r'ACTION_MY_PACKAGE_UNSUSPENDED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_MY_PACKAGE_UNSUSPENDED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_MY_PACKAGE_UNSUSPENDED =>
+      _id_ACTION_MY_PACKAGE_UNSUSPENDED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_NEW_OUTGOING_CALL = _class.staticFieldId(
+    r'ACTION_NEW_OUTGOING_CALL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_NEW_OUTGOING_CALL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_NEW_OUTGOING_CALL =>
+      _id_ACTION_NEW_OUTGOING_CALL.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_OPEN_DOCUMENT = _class.staticFieldId(
+    r'ACTION_OPEN_DOCUMENT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_OPEN_DOCUMENT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_OPEN_DOCUMENT =>
+      _id_ACTION_OPEN_DOCUMENT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_OPEN_DOCUMENT_TREE = _class.staticFieldId(
+    r'ACTION_OPEN_DOCUMENT_TREE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_OPEN_DOCUMENT_TREE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_OPEN_DOCUMENT_TREE =>
+      _id_ACTION_OPEN_DOCUMENT_TREE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGES_SUSPENDED = _class.staticFieldId(
+    r'ACTION_PACKAGES_SUSPENDED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGES_SUSPENDED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGES_SUSPENDED =>
+      _id_ACTION_PACKAGES_SUSPENDED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGES_UNSUSPENDED = _class.staticFieldId(
+    r'ACTION_PACKAGES_UNSUSPENDED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGES_UNSUSPENDED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGES_UNSUSPENDED =>
+      _id_ACTION_PACKAGES_UNSUSPENDED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGE_ADDED = _class.staticFieldId(
+    r'ACTION_PACKAGE_ADDED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGE_ADDED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGE_ADDED =>
+      _id_ACTION_PACKAGE_ADDED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGE_CHANGED = _class.staticFieldId(
+    r'ACTION_PACKAGE_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGE_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGE_CHANGED =>
+      _id_ACTION_PACKAGE_CHANGED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGE_DATA_CLEARED = _class.staticFieldId(
+    r'ACTION_PACKAGE_DATA_CLEARED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGE_DATA_CLEARED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGE_DATA_CLEARED =>
+      _id_ACTION_PACKAGE_DATA_CLEARED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGE_FIRST_LAUNCH = _class.staticFieldId(
+    r'ACTION_PACKAGE_FIRST_LAUNCH',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGE_FIRST_LAUNCH`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGE_FIRST_LAUNCH =>
+      _id_ACTION_PACKAGE_FIRST_LAUNCH.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGE_FULLY_REMOVED = _class.staticFieldId(
+    r'ACTION_PACKAGE_FULLY_REMOVED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGE_FULLY_REMOVED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGE_FULLY_REMOVED =>
+      _id_ACTION_PACKAGE_FULLY_REMOVED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGE_INSTALL = _class.staticFieldId(
+    r'ACTION_PACKAGE_INSTALL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGE_INSTALL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGE_INSTALL =>
+      _id_ACTION_PACKAGE_INSTALL.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGE_NEEDS_VERIFICATION = _class.staticFieldId(
+    r'ACTION_PACKAGE_NEEDS_VERIFICATION',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGE_NEEDS_VERIFICATION`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGE_NEEDS_VERIFICATION =>
+      _id_ACTION_PACKAGE_NEEDS_VERIFICATION.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGE_REMOVED = _class.staticFieldId(
+    r'ACTION_PACKAGE_REMOVED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGE_REMOVED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGE_REMOVED =>
+      _id_ACTION_PACKAGE_REMOVED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGE_REPLACED = _class.staticFieldId(
+    r'ACTION_PACKAGE_REPLACED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGE_REPLACED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGE_REPLACED =>
+      _id_ACTION_PACKAGE_REPLACED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGE_RESTARTED = _class.staticFieldId(
+    r'ACTION_PACKAGE_RESTARTED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGE_RESTARTED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGE_RESTARTED =>
+      _id_ACTION_PACKAGE_RESTARTED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGE_UNSTOPPED = _class.staticFieldId(
+    r'ACTION_PACKAGE_UNSTOPPED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGE_UNSTOPPED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGE_UNSTOPPED =>
+      _id_ACTION_PACKAGE_UNSTOPPED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PACKAGE_VERIFIED = _class.staticFieldId(
+    r'ACTION_PACKAGE_VERIFIED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PACKAGE_VERIFIED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PACKAGE_VERIFIED =>
+      _id_ACTION_PACKAGE_VERIFIED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PASTE = _class.staticFieldId(
+    r'ACTION_PASTE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PASTE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PASTE =>
+      _id_ACTION_PASTE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PICK = _class.staticFieldId(
+    r'ACTION_PICK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PICK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PICK =>
+      _id_ACTION_PICK.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_PICK_ACTIVITY = _class.staticFieldId(
+    r'ACTION_PICK_ACTIVITY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PICK_ACTIVITY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PICK_ACTIVITY =>
+      _id_ACTION_PICK_ACTIVITY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_POWER_CONNECTED = _class.staticFieldId(
+    r'ACTION_POWER_CONNECTED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_POWER_CONNECTED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_POWER_CONNECTED =>
+      _id_ACTION_POWER_CONNECTED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_POWER_DISCONNECTED = _class.staticFieldId(
+    r'ACTION_POWER_DISCONNECTED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_POWER_DISCONNECTED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_POWER_DISCONNECTED =>
+      _id_ACTION_POWER_DISCONNECTED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_POWER_USAGE_SUMMARY = _class.staticFieldId(
+    r'ACTION_POWER_USAGE_SUMMARY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_POWER_USAGE_SUMMARY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_POWER_USAGE_SUMMARY =>
+      _id_ACTION_POWER_USAGE_SUMMARY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PROCESS_TEXT = _class.staticFieldId(
+    r'ACTION_PROCESS_TEXT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PROCESS_TEXT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PROCESS_TEXT =>
+      _id_ACTION_PROCESS_TEXT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PROFILE_ACCESSIBLE = _class.staticFieldId(
+    r'ACTION_PROFILE_ACCESSIBLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PROFILE_ACCESSIBLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PROFILE_ACCESSIBLE =>
+      _id_ACTION_PROFILE_ACCESSIBLE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PROFILE_ADDED = _class.staticFieldId(
+    r'ACTION_PROFILE_ADDED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PROFILE_ADDED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PROFILE_ADDED =>
+      _id_ACTION_PROFILE_ADDED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PROFILE_AVAILABLE = _class.staticFieldId(
+    r'ACTION_PROFILE_AVAILABLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PROFILE_AVAILABLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PROFILE_AVAILABLE =>
+      _id_ACTION_PROFILE_AVAILABLE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PROFILE_INACCESSIBLE = _class.staticFieldId(
+    r'ACTION_PROFILE_INACCESSIBLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PROFILE_INACCESSIBLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PROFILE_INACCESSIBLE =>
+      _id_ACTION_PROFILE_INACCESSIBLE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PROFILE_REMOVED = _class.staticFieldId(
+    r'ACTION_PROFILE_REMOVED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PROFILE_REMOVED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PROFILE_REMOVED =>
+      _id_ACTION_PROFILE_REMOVED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PROFILE_UNAVAILABLE = _class.staticFieldId(
+    r'ACTION_PROFILE_UNAVAILABLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PROFILE_UNAVAILABLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PROFILE_UNAVAILABLE =>
+      _id_ACTION_PROFILE_UNAVAILABLE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_PROVIDER_CHANGED = _class.staticFieldId(
+    r'ACTION_PROVIDER_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_PROVIDER_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_PROVIDER_CHANGED =>
+      _id_ACTION_PROVIDER_CHANGED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_QUICK_CLOCK = _class.staticFieldId(
+    r'ACTION_QUICK_CLOCK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_QUICK_CLOCK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_QUICK_CLOCK =>
+      _id_ACTION_QUICK_CLOCK.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_QUICK_VIEW = _class.staticFieldId(
+    r'ACTION_QUICK_VIEW',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_QUICK_VIEW`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_QUICK_VIEW =>
+      _id_ACTION_QUICK_VIEW.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_REBOOT = _class.staticFieldId(
+    r'ACTION_REBOOT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_REBOOT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_REBOOT =>
+      _id_ACTION_REBOOT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_RUN = _class.staticFieldId(
+    r'ACTION_RUN',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_RUN`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_RUN =>
+      _id_ACTION_RUN.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_SAFETY_CENTER = _class.staticFieldId(
+    r'ACTION_SAFETY_CENTER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SAFETY_CENTER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SAFETY_CENTER =>
+      _id_ACTION_SAFETY_CENTER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_SCREEN_OFF = _class.staticFieldId(
+    r'ACTION_SCREEN_OFF',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SCREEN_OFF`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SCREEN_OFF =>
+      _id_ACTION_SCREEN_OFF.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_SCREEN_ON = _class.staticFieldId(
+    r'ACTION_SCREEN_ON',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SCREEN_ON`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SCREEN_ON =>
+      _id_ACTION_SCREEN_ON.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_SEARCH = _class.staticFieldId(
+    r'ACTION_SEARCH',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SEARCH`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SEARCH =>
+      _id_ACTION_SEARCH.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_SEARCH_LONG_PRESS = _class.staticFieldId(
+    r'ACTION_SEARCH_LONG_PRESS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SEARCH_LONG_PRESS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SEARCH_LONG_PRESS =>
+      _id_ACTION_SEARCH_LONG_PRESS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_SEND = _class.staticFieldId(
+    r'ACTION_SEND',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SEND`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SEND =>
+      _id_ACTION_SEND.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_SENDTO = _class.staticFieldId(
+    r'ACTION_SENDTO',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SENDTO`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SENDTO =>
+      _id_ACTION_SENDTO.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_SEND_MULTIPLE = _class.staticFieldId(
+    r'ACTION_SEND_MULTIPLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SEND_MULTIPLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SEND_MULTIPLE =>
+      _id_ACTION_SEND_MULTIPLE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_SET_WALLPAPER = _class.staticFieldId(
+    r'ACTION_SET_WALLPAPER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SET_WALLPAPER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SET_WALLPAPER =>
+      _id_ACTION_SET_WALLPAPER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_SHOW_APP_INFO = _class.staticFieldId(
+    r'ACTION_SHOW_APP_INFO',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SHOW_APP_INFO`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SHOW_APP_INFO =>
+      _id_ACTION_SHOW_APP_INFO.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_SHOW_WORK_APPS = _class.staticFieldId(
+    r'ACTION_SHOW_WORK_APPS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SHOW_WORK_APPS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SHOW_WORK_APPS =>
+      _id_ACTION_SHOW_WORK_APPS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_SHUTDOWN = _class.staticFieldId(
+    r'ACTION_SHUTDOWN',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SHUTDOWN`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SHUTDOWN =>
+      _id_ACTION_SHUTDOWN.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_SYNC = _class.staticFieldId(
+    r'ACTION_SYNC',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SYNC`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SYNC =>
+      _id_ACTION_SYNC.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_SYSTEM_TUTORIAL = _class.staticFieldId(
+    r'ACTION_SYSTEM_TUTORIAL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_SYSTEM_TUTORIAL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_SYSTEM_TUTORIAL =>
+      _id_ACTION_SYSTEM_TUTORIAL.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_TIMEZONE_CHANGED = _class.staticFieldId(
+    r'ACTION_TIMEZONE_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_TIMEZONE_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_TIMEZONE_CHANGED =>
+      _id_ACTION_TIMEZONE_CHANGED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_TIME_CHANGED = _class.staticFieldId(
+    r'ACTION_TIME_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_TIME_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_TIME_CHANGED =>
+      _id_ACTION_TIME_CHANGED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_TIME_TICK = _class.staticFieldId(
+    r'ACTION_TIME_TICK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_TIME_TICK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_TIME_TICK =>
+      _id_ACTION_TIME_TICK.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_TRANSLATE = _class.staticFieldId(
+    r'ACTION_TRANSLATE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_TRANSLATE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_TRANSLATE =>
+      _id_ACTION_TRANSLATE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_UID_REMOVED = _class.staticFieldId(
+    r'ACTION_UID_REMOVED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_UID_REMOVED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_UID_REMOVED =>
+      _id_ACTION_UID_REMOVED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_UMS_CONNECTED = _class.staticFieldId(
+    r'ACTION_UMS_CONNECTED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_UMS_CONNECTED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_UMS_CONNECTED =>
+      _id_ACTION_UMS_CONNECTED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_UMS_DISCONNECTED = _class.staticFieldId(
+    r'ACTION_UMS_DISCONNECTED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_UMS_DISCONNECTED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_UMS_DISCONNECTED =>
+      _id_ACTION_UMS_DISCONNECTED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_UNARCHIVE_PACKAGE = _class.staticFieldId(
+    r'ACTION_UNARCHIVE_PACKAGE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_UNARCHIVE_PACKAGE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_UNARCHIVE_PACKAGE =>
+      _id_ACTION_UNARCHIVE_PACKAGE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_UNINSTALL_PACKAGE = _class.staticFieldId(
+    r'ACTION_UNINSTALL_PACKAGE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_UNINSTALL_PACKAGE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_UNINSTALL_PACKAGE =>
+      _id_ACTION_UNINSTALL_PACKAGE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_USER_BACKGROUND = _class.staticFieldId(
+    r'ACTION_USER_BACKGROUND',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_USER_BACKGROUND`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_USER_BACKGROUND =>
+      _id_ACTION_USER_BACKGROUND.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_USER_FOREGROUND = _class.staticFieldId(
+    r'ACTION_USER_FOREGROUND',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_USER_FOREGROUND`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_USER_FOREGROUND =>
+      _id_ACTION_USER_FOREGROUND.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_USER_INITIALIZE = _class.staticFieldId(
+    r'ACTION_USER_INITIALIZE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_USER_INITIALIZE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_USER_INITIALIZE =>
+      _id_ACTION_USER_INITIALIZE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_USER_PRESENT = _class.staticFieldId(
+    r'ACTION_USER_PRESENT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_USER_PRESENT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_USER_PRESENT =>
+      _id_ACTION_USER_PRESENT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_USER_UNLOCKED = _class.staticFieldId(
+    r'ACTION_USER_UNLOCKED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_USER_UNLOCKED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_USER_UNLOCKED =>
+      _id_ACTION_USER_UNLOCKED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_VIEW = _class.staticFieldId(
+    r'ACTION_VIEW',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_VIEW`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_VIEW =>
+      _id_ACTION_VIEW.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_VIEW_LOCUS = _class.staticFieldId(
+    r'ACTION_VIEW_LOCUS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_VIEW_LOCUS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_VIEW_LOCUS =>
+      _id_ACTION_VIEW_LOCUS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_VIEW_PERMISSION_USAGE = _class.staticFieldId(
+    r'ACTION_VIEW_PERMISSION_USAGE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_VIEW_PERMISSION_USAGE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_VIEW_PERMISSION_USAGE =>
+      _id_ACTION_VIEW_PERMISSION_USAGE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_VIEW_PERMISSION_USAGE_FOR_PERIOD =
+      _class.staticFieldId(
+    r'ACTION_VIEW_PERMISSION_USAGE_FOR_PERIOD',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_VIEW_PERMISSION_USAGE_FOR_PERIOD`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_VIEW_PERMISSION_USAGE_FOR_PERIOD =>
+      _id_ACTION_VIEW_PERMISSION_USAGE_FOR_PERIOD.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_ACTION_VOICE_COMMAND = _class.staticFieldId(
+    r'ACTION_VOICE_COMMAND',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_VOICE_COMMAND`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_VOICE_COMMAND =>
+      _id_ACTION_VOICE_COMMAND.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_WALLPAPER_CHANGED = _class.staticFieldId(
+    r'ACTION_WALLPAPER_CHANGED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_WALLPAPER_CHANGED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_WALLPAPER_CHANGED =>
+      _id_ACTION_WALLPAPER_CHANGED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_ACTION_WEB_SEARCH = _class.staticFieldId(
+    r'ACTION_WEB_SEARCH',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String ACTION_WEB_SEARCH`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get ACTION_WEB_SEARCH =>
+      _id_ACTION_WEB_SEARCH.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  /// from: `static public final int CAPTURE_CONTENT_FOR_NOTE_BLOCKED_BY_ADMIN`
+  static const CAPTURE_CONTENT_FOR_NOTE_BLOCKED_BY_ADMIN = 4;
+
+  /// from: `static public final int CAPTURE_CONTENT_FOR_NOTE_FAILED`
+  static const CAPTURE_CONTENT_FOR_NOTE_FAILED = 1;
+
+  /// from: `static public final int CAPTURE_CONTENT_FOR_NOTE_SUCCESS`
+  static const CAPTURE_CONTENT_FOR_NOTE_SUCCESS = 0;
+
+  /// from: `static public final int CAPTURE_CONTENT_FOR_NOTE_USER_CANCELED`
+  static const CAPTURE_CONTENT_FOR_NOTE_USER_CANCELED = 2;
+
+  /// from: `static public final int CAPTURE_CONTENT_FOR_NOTE_WINDOW_MODE_UNSUPPORTED`
+  static const CAPTURE_CONTENT_FOR_NOTE_WINDOW_MODE_UNSUPPORTED = 3;
+  static final _id_CATEGORY_ACCESSIBILITY_SHORTCUT_TARGET =
+      _class.staticFieldId(
+    r'CATEGORY_ACCESSIBILITY_SHORTCUT_TARGET',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_ACCESSIBILITY_SHORTCUT_TARGET`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_ACCESSIBILITY_SHORTCUT_TARGET =>
+      _id_CATEGORY_ACCESSIBILITY_SHORTCUT_TARGET.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_CATEGORY_ALTERNATIVE = _class.staticFieldId(
+    r'CATEGORY_ALTERNATIVE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_ALTERNATIVE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_ALTERNATIVE =>
+      _id_CATEGORY_ALTERNATIVE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_APP_BROWSER = _class.staticFieldId(
+    r'CATEGORY_APP_BROWSER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_APP_BROWSER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_APP_BROWSER =>
+      _id_CATEGORY_APP_BROWSER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_APP_CALCULATOR = _class.staticFieldId(
+    r'CATEGORY_APP_CALCULATOR',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_APP_CALCULATOR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_APP_CALCULATOR =>
+      _id_CATEGORY_APP_CALCULATOR.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_APP_CALENDAR = _class.staticFieldId(
+    r'CATEGORY_APP_CALENDAR',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_APP_CALENDAR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_APP_CALENDAR =>
+      _id_CATEGORY_APP_CALENDAR.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_APP_CONTACTS = _class.staticFieldId(
+    r'CATEGORY_APP_CONTACTS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_APP_CONTACTS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_APP_CONTACTS =>
+      _id_CATEGORY_APP_CONTACTS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_APP_EMAIL = _class.staticFieldId(
+    r'CATEGORY_APP_EMAIL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_APP_EMAIL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_APP_EMAIL =>
+      _id_CATEGORY_APP_EMAIL.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_APP_FILES = _class.staticFieldId(
+    r'CATEGORY_APP_FILES',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_APP_FILES`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_APP_FILES =>
+      _id_CATEGORY_APP_FILES.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_APP_FITNESS = _class.staticFieldId(
+    r'CATEGORY_APP_FITNESS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_APP_FITNESS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_APP_FITNESS =>
+      _id_CATEGORY_APP_FITNESS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_APP_GALLERY = _class.staticFieldId(
+    r'CATEGORY_APP_GALLERY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_APP_GALLERY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_APP_GALLERY =>
+      _id_CATEGORY_APP_GALLERY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_APP_MAPS = _class.staticFieldId(
+    r'CATEGORY_APP_MAPS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_APP_MAPS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_APP_MAPS =>
+      _id_CATEGORY_APP_MAPS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_APP_MARKET = _class.staticFieldId(
+    r'CATEGORY_APP_MARKET',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_APP_MARKET`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_APP_MARKET =>
+      _id_CATEGORY_APP_MARKET.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_APP_MESSAGING = _class.staticFieldId(
+    r'CATEGORY_APP_MESSAGING',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_APP_MESSAGING`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_APP_MESSAGING =>
+      _id_CATEGORY_APP_MESSAGING.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_APP_MUSIC = _class.staticFieldId(
+    r'CATEGORY_APP_MUSIC',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_APP_MUSIC`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_APP_MUSIC =>
+      _id_CATEGORY_APP_MUSIC.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_APP_WEATHER = _class.staticFieldId(
+    r'CATEGORY_APP_WEATHER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_APP_WEATHER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_APP_WEATHER =>
+      _id_CATEGORY_APP_WEATHER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_BROWSABLE = _class.staticFieldId(
+    r'CATEGORY_BROWSABLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_BROWSABLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_BROWSABLE =>
+      _id_CATEGORY_BROWSABLE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_CAR_DOCK = _class.staticFieldId(
+    r'CATEGORY_CAR_DOCK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_CAR_DOCK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_CAR_DOCK =>
+      _id_CATEGORY_CAR_DOCK.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_CAR_MODE = _class.staticFieldId(
+    r'CATEGORY_CAR_MODE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_CAR_MODE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_CAR_MODE =>
+      _id_CATEGORY_CAR_MODE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_DEFAULT = _class.staticFieldId(
+    r'CATEGORY_DEFAULT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_DEFAULT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_DEFAULT =>
+      _id_CATEGORY_DEFAULT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_DESK_DOCK = _class.staticFieldId(
+    r'CATEGORY_DESK_DOCK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_DESK_DOCK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_DESK_DOCK =>
+      _id_CATEGORY_DESK_DOCK.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_DEVELOPMENT_PREFERENCE = _class.staticFieldId(
+    r'CATEGORY_DEVELOPMENT_PREFERENCE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_DEVELOPMENT_PREFERENCE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_DEVELOPMENT_PREFERENCE =>
+      _id_CATEGORY_DEVELOPMENT_PREFERENCE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_CATEGORY_EMBED = _class.staticFieldId(
+    r'CATEGORY_EMBED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_EMBED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_EMBED =>
+      _id_CATEGORY_EMBED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_FRAMEWORK_INSTRUMENTATION_TEST =
+      _class.staticFieldId(
+    r'CATEGORY_FRAMEWORK_INSTRUMENTATION_TEST',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_FRAMEWORK_INSTRUMENTATION_TEST`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_FRAMEWORK_INSTRUMENTATION_TEST =>
+      _id_CATEGORY_FRAMEWORK_INSTRUMENTATION_TEST.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_CATEGORY_HE_DESK_DOCK = _class.staticFieldId(
+    r'CATEGORY_HE_DESK_DOCK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_HE_DESK_DOCK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_HE_DESK_DOCK =>
+      _id_CATEGORY_HE_DESK_DOCK.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_HOME = _class.staticFieldId(
+    r'CATEGORY_HOME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_HOME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_HOME =>
+      _id_CATEGORY_HOME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_INFO = _class.staticFieldId(
+    r'CATEGORY_INFO',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_INFO`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_INFO =>
+      _id_CATEGORY_INFO.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_LAUNCHER = _class.staticFieldId(
+    r'CATEGORY_LAUNCHER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_LAUNCHER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_LAUNCHER =>
+      _id_CATEGORY_LAUNCHER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_LEANBACK_LAUNCHER = _class.staticFieldId(
+    r'CATEGORY_LEANBACK_LAUNCHER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_LEANBACK_LAUNCHER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_LEANBACK_LAUNCHER =>
+      _id_CATEGORY_LEANBACK_LAUNCHER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_LE_DESK_DOCK = _class.staticFieldId(
+    r'CATEGORY_LE_DESK_DOCK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_LE_DESK_DOCK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_LE_DESK_DOCK =>
+      _id_CATEGORY_LE_DESK_DOCK.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_MONKEY = _class.staticFieldId(
+    r'CATEGORY_MONKEY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_MONKEY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_MONKEY =>
+      _id_CATEGORY_MONKEY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_OPENABLE = _class.staticFieldId(
+    r'CATEGORY_OPENABLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_OPENABLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_OPENABLE =>
+      _id_CATEGORY_OPENABLE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_PREFERENCE = _class.staticFieldId(
+    r'CATEGORY_PREFERENCE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_PREFERENCE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_PREFERENCE =>
+      _id_CATEGORY_PREFERENCE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_SAMPLE_CODE = _class.staticFieldId(
+    r'CATEGORY_SAMPLE_CODE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_SAMPLE_CODE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_SAMPLE_CODE =>
+      _id_CATEGORY_SAMPLE_CODE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_SECONDARY_HOME = _class.staticFieldId(
+    r'CATEGORY_SECONDARY_HOME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_SECONDARY_HOME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_SECONDARY_HOME =>
+      _id_CATEGORY_SECONDARY_HOME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_SELECTED_ALTERNATIVE = _class.staticFieldId(
+    r'CATEGORY_SELECTED_ALTERNATIVE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_SELECTED_ALTERNATIVE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_SELECTED_ALTERNATIVE =>
+      _id_CATEGORY_SELECTED_ALTERNATIVE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_TAB = _class.staticFieldId(
+    r'CATEGORY_TAB',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_TAB`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_TAB =>
+      _id_CATEGORY_TAB.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_TEST = _class.staticFieldId(
+    r'CATEGORY_TEST',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_TEST`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_TEST =>
+      _id_CATEGORY_TEST.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_TYPED_OPENABLE = _class.staticFieldId(
+    r'CATEGORY_TYPED_OPENABLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_TYPED_OPENABLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_TYPED_OPENABLE =>
+      _id_CATEGORY_TYPED_OPENABLE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_UNIT_TEST = _class.staticFieldId(
+    r'CATEGORY_UNIT_TEST',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_UNIT_TEST`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_UNIT_TEST =>
+      _id_CATEGORY_UNIT_TEST.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_VOICE = _class.staticFieldId(
+    r'CATEGORY_VOICE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_VOICE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_VOICE =>
+      _id_CATEGORY_VOICE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_CATEGORY_VR_HOME = _class.staticFieldId(
+    r'CATEGORY_VR_HOME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String CATEGORY_VR_HOME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get CATEGORY_VR_HOME =>
+      _id_CATEGORY_VR_HOME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  /// from: `static public final int CHOOSER_CONTENT_TYPE_ALBUM`
+  static const CHOOSER_CONTENT_TYPE_ALBUM = 1;
+  static final _id_CREATOR = _class.staticFieldId(
+    r'CREATOR',
+    r'Landroid/os/Parcelable$Creator;',
+  );
+
+  /// from: `static public final android.os.Parcelable$Creator<android.content.Intent> CREATOR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Parcelable$$Creator? get CREATOR =>
+      _id_CREATOR.getNullable(_class, Parcelable$$Creator.type)
+          as Parcelable$$Creator?;
+
+  static final _id_EXTRA_ALARM_COUNT = _class.staticFieldId(
+    r'EXTRA_ALARM_COUNT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_ALARM_COUNT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_ALARM_COUNT =>
+      _id_EXTRA_ALARM_COUNT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_ALLOW_MULTIPLE = _class.staticFieldId(
+    r'EXTRA_ALLOW_MULTIPLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_ALLOW_MULTIPLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_ALLOW_MULTIPLE =>
+      _id_EXTRA_ALLOW_MULTIPLE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_ALLOW_REPLACE = _class.staticFieldId(
+    r'EXTRA_ALLOW_REPLACE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_ALLOW_REPLACE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_ALLOW_REPLACE =>
+      _id_EXTRA_ALLOW_REPLACE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_ALTERNATE_INTENTS = _class.staticFieldId(
+    r'EXTRA_ALTERNATE_INTENTS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_ALTERNATE_INTENTS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_ALTERNATE_INTENTS =>
+      _id_EXTRA_ALTERNATE_INTENTS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_ARCHIVAL = _class.staticFieldId(
+    r'EXTRA_ARCHIVAL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_ARCHIVAL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_ARCHIVAL =>
+      _id_EXTRA_ARCHIVAL.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_ASSIST_CONTEXT = _class.staticFieldId(
+    r'EXTRA_ASSIST_CONTEXT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_ASSIST_CONTEXT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_ASSIST_CONTEXT =>
+      _id_EXTRA_ASSIST_CONTEXT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_ASSIST_INPUT_DEVICE_ID = _class.staticFieldId(
+    r'EXTRA_ASSIST_INPUT_DEVICE_ID',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_ASSIST_INPUT_DEVICE_ID`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_ASSIST_INPUT_DEVICE_ID =>
+      _id_EXTRA_ASSIST_INPUT_DEVICE_ID.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_ASSIST_INPUT_HINT_KEYBOARD = _class.staticFieldId(
+    r'EXTRA_ASSIST_INPUT_HINT_KEYBOARD',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_ASSIST_INPUT_HINT_KEYBOARD`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_ASSIST_INPUT_HINT_KEYBOARD =>
+      _id_EXTRA_ASSIST_INPUT_HINT_KEYBOARD.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_ASSIST_PACKAGE = _class.staticFieldId(
+    r'EXTRA_ASSIST_PACKAGE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_ASSIST_PACKAGE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_ASSIST_PACKAGE =>
+      _id_EXTRA_ASSIST_PACKAGE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_ASSIST_UID = _class.staticFieldId(
+    r'EXTRA_ASSIST_UID',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_ASSIST_UID`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_ASSIST_UID =>
+      _id_EXTRA_ASSIST_UID.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_ATTRIBUTION_TAGS = _class.staticFieldId(
+    r'EXTRA_ATTRIBUTION_TAGS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_ATTRIBUTION_TAGS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_ATTRIBUTION_TAGS =>
+      _id_EXTRA_ATTRIBUTION_TAGS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_AUTO_LAUNCH_SINGLE_CHOICE = _class.staticFieldId(
+    r'EXTRA_AUTO_LAUNCH_SINGLE_CHOICE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_AUTO_LAUNCH_SINGLE_CHOICE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_AUTO_LAUNCH_SINGLE_CHOICE =>
+      _id_EXTRA_AUTO_LAUNCH_SINGLE_CHOICE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_BCC = _class.staticFieldId(
+    r'EXTRA_BCC',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_BCC`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_BCC =>
+      _id_EXTRA_BCC.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_BUG_REPORT = _class.staticFieldId(
+    r'EXTRA_BUG_REPORT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_BUG_REPORT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_BUG_REPORT =>
+      _id_EXTRA_BUG_REPORT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_CAPTURE_CONTENT_FOR_NOTE_STATUS_CODE =
+      _class.staticFieldId(
+    r'EXTRA_CAPTURE_CONTENT_FOR_NOTE_STATUS_CODE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CAPTURE_CONTENT_FOR_NOTE_STATUS_CODE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CAPTURE_CONTENT_FOR_NOTE_STATUS_CODE =>
+      _id_EXTRA_CAPTURE_CONTENT_FOR_NOTE_STATUS_CODE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_CC = _class.staticFieldId(
+    r'EXTRA_CC',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CC`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CC =>
+      _id_EXTRA_CC.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_CHANGED_COMPONENT_NAME = _class.staticFieldId(
+    r'EXTRA_CHANGED_COMPONENT_NAME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHANGED_COMPONENT_NAME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHANGED_COMPONENT_NAME =>
+      _id_EXTRA_CHANGED_COMPONENT_NAME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_CHANGED_COMPONENT_NAME_LIST = _class.staticFieldId(
+    r'EXTRA_CHANGED_COMPONENT_NAME_LIST',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHANGED_COMPONENT_NAME_LIST`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHANGED_COMPONENT_NAME_LIST =>
+      _id_EXTRA_CHANGED_COMPONENT_NAME_LIST.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_CHANGED_PACKAGE_LIST = _class.staticFieldId(
+    r'EXTRA_CHANGED_PACKAGE_LIST',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHANGED_PACKAGE_LIST`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHANGED_PACKAGE_LIST =>
+      _id_EXTRA_CHANGED_PACKAGE_LIST.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_CHANGED_UID_LIST = _class.staticFieldId(
+    r'EXTRA_CHANGED_UID_LIST',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHANGED_UID_LIST`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHANGED_UID_LIST =>
+      _id_EXTRA_CHANGED_UID_LIST.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_CHOOSER_ADDITIONAL_CONTENT_URI = _class.staticFieldId(
+    r'EXTRA_CHOOSER_ADDITIONAL_CONTENT_URI',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHOOSER_ADDITIONAL_CONTENT_URI`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHOOSER_ADDITIONAL_CONTENT_URI =>
+      _id_EXTRA_CHOOSER_ADDITIONAL_CONTENT_URI.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_CHOOSER_CONTENT_TYPE_HINT = _class.staticFieldId(
+    r'EXTRA_CHOOSER_CONTENT_TYPE_HINT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHOOSER_CONTENT_TYPE_HINT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHOOSER_CONTENT_TYPE_HINT =>
+      _id_EXTRA_CHOOSER_CONTENT_TYPE_HINT.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_CHOOSER_CUSTOM_ACTIONS = _class.staticFieldId(
+    r'EXTRA_CHOOSER_CUSTOM_ACTIONS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHOOSER_CUSTOM_ACTIONS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHOOSER_CUSTOM_ACTIONS =>
+      _id_EXTRA_CHOOSER_CUSTOM_ACTIONS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_CHOOSER_FOCUSED_ITEM_POSITION = _class.staticFieldId(
+    r'EXTRA_CHOOSER_FOCUSED_ITEM_POSITION',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHOOSER_FOCUSED_ITEM_POSITION`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHOOSER_FOCUSED_ITEM_POSITION =>
+      _id_EXTRA_CHOOSER_FOCUSED_ITEM_POSITION.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_CHOOSER_MODIFY_SHARE_ACTION = _class.staticFieldId(
+    r'EXTRA_CHOOSER_MODIFY_SHARE_ACTION',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHOOSER_MODIFY_SHARE_ACTION`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHOOSER_MODIFY_SHARE_ACTION =>
+      _id_EXTRA_CHOOSER_MODIFY_SHARE_ACTION.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_CHOOSER_REFINEMENT_INTENT_SENDER =
+      _class.staticFieldId(
+    r'EXTRA_CHOOSER_REFINEMENT_INTENT_SENDER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHOOSER_REFINEMENT_INTENT_SENDER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHOOSER_REFINEMENT_INTENT_SENDER =>
+      _id_EXTRA_CHOOSER_REFINEMENT_INTENT_SENDER.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_CHOOSER_RESULT = _class.staticFieldId(
+    r'EXTRA_CHOOSER_RESULT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHOOSER_RESULT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHOOSER_RESULT =>
+      _id_EXTRA_CHOOSER_RESULT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_CHOOSER_RESULT_INTENT_SENDER = _class.staticFieldId(
+    r'EXTRA_CHOOSER_RESULT_INTENT_SENDER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHOOSER_RESULT_INTENT_SENDER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHOOSER_RESULT_INTENT_SENDER =>
+      _id_EXTRA_CHOOSER_RESULT_INTENT_SENDER.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_CHOOSER_TARGETS = _class.staticFieldId(
+    r'EXTRA_CHOOSER_TARGETS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHOOSER_TARGETS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHOOSER_TARGETS =>
+      _id_EXTRA_CHOOSER_TARGETS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_CHOSEN_COMPONENT = _class.staticFieldId(
+    r'EXTRA_CHOSEN_COMPONENT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHOSEN_COMPONENT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHOSEN_COMPONENT =>
+      _id_EXTRA_CHOSEN_COMPONENT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_CHOSEN_COMPONENT_INTENT_SENDER = _class.staticFieldId(
+    r'EXTRA_CHOSEN_COMPONENT_INTENT_SENDER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CHOSEN_COMPONENT_INTENT_SENDER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CHOSEN_COMPONENT_INTENT_SENDER =>
+      _id_EXTRA_CHOSEN_COMPONENT_INTENT_SENDER.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_COMPONENT_NAME = _class.staticFieldId(
+    r'EXTRA_COMPONENT_NAME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_COMPONENT_NAME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_COMPONENT_NAME =>
+      _id_EXTRA_COMPONENT_NAME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_CONTENT_ANNOTATIONS = _class.staticFieldId(
+    r'EXTRA_CONTENT_ANNOTATIONS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CONTENT_ANNOTATIONS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CONTENT_ANNOTATIONS =>
+      _id_EXTRA_CONTENT_ANNOTATIONS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_CONTENT_QUERY = _class.staticFieldId(
+    r'EXTRA_CONTENT_QUERY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_CONTENT_QUERY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_CONTENT_QUERY =>
+      _id_EXTRA_CONTENT_QUERY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_DATA_REMOVED = _class.staticFieldId(
+    r'EXTRA_DATA_REMOVED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_DATA_REMOVED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_DATA_REMOVED =>
+      _id_EXTRA_DATA_REMOVED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_DOCK_STATE = _class.staticFieldId(
+    r'EXTRA_DOCK_STATE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_DOCK_STATE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_DOCK_STATE =>
+      _id_EXTRA_DOCK_STATE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  /// from: `static public final int EXTRA_DOCK_STATE_CAR`
+  static const EXTRA_DOCK_STATE_CAR = 2;
+
+  /// from: `static public final int EXTRA_DOCK_STATE_DESK`
+  static const EXTRA_DOCK_STATE_DESK = 1;
+
+  /// from: `static public final int EXTRA_DOCK_STATE_HE_DESK`
+  static const EXTRA_DOCK_STATE_HE_DESK = 4;
+
+  /// from: `static public final int EXTRA_DOCK_STATE_LE_DESK`
+  static const EXTRA_DOCK_STATE_LE_DESK = 3;
+
+  /// from: `static public final int EXTRA_DOCK_STATE_UNDOCKED`
+  static const EXTRA_DOCK_STATE_UNDOCKED = 0;
+  static final _id_EXTRA_DONT_KILL_APP = _class.staticFieldId(
+    r'EXTRA_DONT_KILL_APP',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_DONT_KILL_APP`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_DONT_KILL_APP =>
+      _id_EXTRA_DONT_KILL_APP.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_DURATION_MILLIS = _class.staticFieldId(
+    r'EXTRA_DURATION_MILLIS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_DURATION_MILLIS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_DURATION_MILLIS =>
+      _id_EXTRA_DURATION_MILLIS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_EMAIL = _class.staticFieldId(
+    r'EXTRA_EMAIL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_EMAIL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_EMAIL =>
+      _id_EXTRA_EMAIL.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_END_TIME = _class.staticFieldId(
+    r'EXTRA_END_TIME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_END_TIME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_END_TIME =>
+      _id_EXTRA_END_TIME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_EXCLUDE_COMPONENTS = _class.staticFieldId(
+    r'EXTRA_EXCLUDE_COMPONENTS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_EXCLUDE_COMPONENTS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_EXCLUDE_COMPONENTS =>
+      _id_EXTRA_EXCLUDE_COMPONENTS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_FROM_STORAGE = _class.staticFieldId(
+    r'EXTRA_FROM_STORAGE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_FROM_STORAGE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_FROM_STORAGE =>
+      _id_EXTRA_FROM_STORAGE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_HTML_TEXT = _class.staticFieldId(
+    r'EXTRA_HTML_TEXT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_HTML_TEXT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_HTML_TEXT =>
+      _id_EXTRA_HTML_TEXT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_INDEX = _class.staticFieldId(
+    r'EXTRA_INDEX',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_INDEX`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_INDEX =>
+      _id_EXTRA_INDEX.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_INITIAL_INTENTS = _class.staticFieldId(
+    r'EXTRA_INITIAL_INTENTS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_INITIAL_INTENTS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_INITIAL_INTENTS =>
+      _id_EXTRA_INITIAL_INTENTS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_INSTALLER_PACKAGE_NAME = _class.staticFieldId(
+    r'EXTRA_INSTALLER_PACKAGE_NAME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_INSTALLER_PACKAGE_NAME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_INSTALLER_PACKAGE_NAME =>
+      _id_EXTRA_INSTALLER_PACKAGE_NAME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_INTENT = _class.staticFieldId(
+    r'EXTRA_INTENT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_INTENT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_INTENT =>
+      _id_EXTRA_INTENT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_KEY_EVENT = _class.staticFieldId(
+    r'EXTRA_KEY_EVENT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_KEY_EVENT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_KEY_EVENT =>
+      _id_EXTRA_KEY_EVENT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_LOCALE_LIST = _class.staticFieldId(
+    r'EXTRA_LOCALE_LIST',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_LOCALE_LIST`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_LOCALE_LIST =>
+      _id_EXTRA_LOCALE_LIST.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_LOCAL_ONLY = _class.staticFieldId(
+    r'EXTRA_LOCAL_ONLY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_LOCAL_ONLY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_LOCAL_ONLY =>
+      _id_EXTRA_LOCAL_ONLY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_LOCUS_ID = _class.staticFieldId(
+    r'EXTRA_LOCUS_ID',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_LOCUS_ID`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_LOCUS_ID =>
+      _id_EXTRA_LOCUS_ID.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_METADATA_TEXT = _class.staticFieldId(
+    r'EXTRA_METADATA_TEXT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_METADATA_TEXT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_METADATA_TEXT =>
+      _id_EXTRA_METADATA_TEXT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_MIME_TYPES = _class.staticFieldId(
+    r'EXTRA_MIME_TYPES',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_MIME_TYPES`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_MIME_TYPES =>
+      _id_EXTRA_MIME_TYPES.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_NOT_UNKNOWN_SOURCE = _class.staticFieldId(
+    r'EXTRA_NOT_UNKNOWN_SOURCE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_NOT_UNKNOWN_SOURCE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_NOT_UNKNOWN_SOURCE =>
+      _id_EXTRA_NOT_UNKNOWN_SOURCE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_ORIGINATING_URI = _class.staticFieldId(
+    r'EXTRA_ORIGINATING_URI',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_ORIGINATING_URI`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_ORIGINATING_URI =>
+      _id_EXTRA_ORIGINATING_URI.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_PACKAGES = _class.staticFieldId(
+    r'EXTRA_PACKAGES',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_PACKAGES`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_PACKAGES =>
+      _id_EXTRA_PACKAGES.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_PACKAGE_NAME = _class.staticFieldId(
+    r'EXTRA_PACKAGE_NAME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_PACKAGE_NAME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_PACKAGE_NAME =>
+      _id_EXTRA_PACKAGE_NAME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_PERMISSION_GROUP_NAME = _class.staticFieldId(
+    r'EXTRA_PERMISSION_GROUP_NAME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_PERMISSION_GROUP_NAME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_PERMISSION_GROUP_NAME =>
+      _id_EXTRA_PERMISSION_GROUP_NAME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_PHONE_NUMBER = _class.staticFieldId(
+    r'EXTRA_PHONE_NUMBER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_PHONE_NUMBER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_PHONE_NUMBER =>
+      _id_EXTRA_PHONE_NUMBER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_PROCESS_TEXT = _class.staticFieldId(
+    r'EXTRA_PROCESS_TEXT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_PROCESS_TEXT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_PROCESS_TEXT =>
+      _id_EXTRA_PROCESS_TEXT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_PROCESS_TEXT_READONLY = _class.staticFieldId(
+    r'EXTRA_PROCESS_TEXT_READONLY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_PROCESS_TEXT_READONLY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_PROCESS_TEXT_READONLY =>
+      _id_EXTRA_PROCESS_TEXT_READONLY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_QUICK_VIEW_FEATURES = _class.staticFieldId(
+    r'EXTRA_QUICK_VIEW_FEATURES',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_QUICK_VIEW_FEATURES`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_QUICK_VIEW_FEATURES =>
+      _id_EXTRA_QUICK_VIEW_FEATURES.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_QUIET_MODE = _class.staticFieldId(
+    r'EXTRA_QUIET_MODE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_QUIET_MODE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_QUIET_MODE =>
+      _id_EXTRA_QUIET_MODE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_REFERRER = _class.staticFieldId(
+    r'EXTRA_REFERRER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_REFERRER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_REFERRER =>
+      _id_EXTRA_REFERRER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_REFERRER_NAME = _class.staticFieldId(
+    r'EXTRA_REFERRER_NAME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_REFERRER_NAME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_REFERRER_NAME =>
+      _id_EXTRA_REFERRER_NAME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_REMOTE_INTENT_TOKEN = _class.staticFieldId(
+    r'EXTRA_REMOTE_INTENT_TOKEN',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_REMOTE_INTENT_TOKEN`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_REMOTE_INTENT_TOKEN =>
+      _id_EXTRA_REMOTE_INTENT_TOKEN.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_REPLACEMENT_EXTRAS = _class.staticFieldId(
+    r'EXTRA_REPLACEMENT_EXTRAS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_REPLACEMENT_EXTRAS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_REPLACEMENT_EXTRAS =>
+      _id_EXTRA_REPLACEMENT_EXTRAS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_REPLACING = _class.staticFieldId(
+    r'EXTRA_REPLACING',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_REPLACING`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_REPLACING =>
+      _id_EXTRA_REPLACING.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_RESTRICTIONS_BUNDLE = _class.staticFieldId(
+    r'EXTRA_RESTRICTIONS_BUNDLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_RESTRICTIONS_BUNDLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_RESTRICTIONS_BUNDLE =>
+      _id_EXTRA_RESTRICTIONS_BUNDLE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_RESTRICTIONS_INTENT = _class.staticFieldId(
+    r'EXTRA_RESTRICTIONS_INTENT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_RESTRICTIONS_INTENT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_RESTRICTIONS_INTENT =>
+      _id_EXTRA_RESTRICTIONS_INTENT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_RESTRICTIONS_LIST = _class.staticFieldId(
+    r'EXTRA_RESTRICTIONS_LIST',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_RESTRICTIONS_LIST`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_RESTRICTIONS_LIST =>
+      _id_EXTRA_RESTRICTIONS_LIST.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_RESULT_RECEIVER = _class.staticFieldId(
+    r'EXTRA_RESULT_RECEIVER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_RESULT_RECEIVER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_RESULT_RECEIVER =>
+      _id_EXTRA_RESULT_RECEIVER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_RETURN_RESULT = _class.staticFieldId(
+    r'EXTRA_RETURN_RESULT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_RETURN_RESULT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_RETURN_RESULT =>
+      _id_EXTRA_RETURN_RESULT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_SHORTCUT_ICON = _class.staticFieldId(
+    r'EXTRA_SHORTCUT_ICON',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_SHORTCUT_ICON`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_SHORTCUT_ICON =>
+      _id_EXTRA_SHORTCUT_ICON.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_SHORTCUT_ICON_RESOURCE = _class.staticFieldId(
+    r'EXTRA_SHORTCUT_ICON_RESOURCE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_SHORTCUT_ICON_RESOURCE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_SHORTCUT_ICON_RESOURCE =>
+      _id_EXTRA_SHORTCUT_ICON_RESOURCE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_SHORTCUT_ID = _class.staticFieldId(
+    r'EXTRA_SHORTCUT_ID',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_SHORTCUT_ID`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_SHORTCUT_ID =>
+      _id_EXTRA_SHORTCUT_ID.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_SHORTCUT_INTENT = _class.staticFieldId(
+    r'EXTRA_SHORTCUT_INTENT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_SHORTCUT_INTENT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_SHORTCUT_INTENT =>
+      _id_EXTRA_SHORTCUT_INTENT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_SHORTCUT_NAME = _class.staticFieldId(
+    r'EXTRA_SHORTCUT_NAME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_SHORTCUT_NAME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_SHORTCUT_NAME =>
+      _id_EXTRA_SHORTCUT_NAME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_SHUTDOWN_USERSPACE_ONLY = _class.staticFieldId(
+    r'EXTRA_SHUTDOWN_USERSPACE_ONLY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_SHUTDOWN_USERSPACE_ONLY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_SHUTDOWN_USERSPACE_ONLY =>
+      _id_EXTRA_SHUTDOWN_USERSPACE_ONLY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_SPLIT_NAME = _class.staticFieldId(
+    r'EXTRA_SPLIT_NAME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_SPLIT_NAME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_SPLIT_NAME =>
+      _id_EXTRA_SPLIT_NAME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_START_TIME = _class.staticFieldId(
+    r'EXTRA_START_TIME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_START_TIME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_START_TIME =>
+      _id_EXTRA_START_TIME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_STREAM = _class.staticFieldId(
+    r'EXTRA_STREAM',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_STREAM`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_STREAM =>
+      _id_EXTRA_STREAM.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_SUBJECT = _class.staticFieldId(
+    r'EXTRA_SUBJECT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_SUBJECT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_SUBJECT =>
+      _id_EXTRA_SUBJECT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_SUSPENDED_PACKAGE_EXTRAS = _class.staticFieldId(
+    r'EXTRA_SUSPENDED_PACKAGE_EXTRAS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_SUSPENDED_PACKAGE_EXTRAS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_SUSPENDED_PACKAGE_EXTRAS =>
+      _id_EXTRA_SUSPENDED_PACKAGE_EXTRAS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_TEMPLATE = _class.staticFieldId(
+    r'EXTRA_TEMPLATE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_TEMPLATE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_TEMPLATE =>
+      _id_EXTRA_TEMPLATE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_TEXT = _class.staticFieldId(
+    r'EXTRA_TEXT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_TEXT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_TEXT =>
+      _id_EXTRA_TEXT.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_TIME = _class.staticFieldId(
+    r'EXTRA_TIME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_TIME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_TIME =>
+      _id_EXTRA_TIME.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_TIMEZONE = _class.staticFieldId(
+    r'EXTRA_TIMEZONE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_TIMEZONE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_TIMEZONE =>
+      _id_EXTRA_TIMEZONE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_TITLE = _class.staticFieldId(
+    r'EXTRA_TITLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_TITLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_TITLE =>
+      _id_EXTRA_TITLE.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_UID = _class.staticFieldId(
+    r'EXTRA_UID',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_UID`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_UID =>
+      _id_EXTRA_UID.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_USER = _class.staticFieldId(
+    r'EXTRA_USER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_USER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_USER =>
+      _id_EXTRA_USER.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_EXTRA_USER_INITIATED = _class.staticFieldId(
+    r'EXTRA_USER_INITIATED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_USER_INITIATED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_USER_INITIATED =>
+      _id_EXTRA_USER_INITIATED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_USE_STYLUS_MODE = _class.staticFieldId(
+    r'EXTRA_USE_STYLUS_MODE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_USE_STYLUS_MODE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_USE_STYLUS_MODE =>
+      _id_EXTRA_USE_STYLUS_MODE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  /// from: `static public final int FILL_IN_ACTION`
+  static const FILL_IN_ACTION = 1;
+
+  /// from: `static public final int FILL_IN_CATEGORIES`
+  static const FILL_IN_CATEGORIES = 4;
+
+  /// from: `static public final int FILL_IN_CLIP_DATA`
+  static const FILL_IN_CLIP_DATA = 128;
+
+  /// from: `static public final int FILL_IN_COMPONENT`
+  static const FILL_IN_COMPONENT = 8;
+
+  /// from: `static public final int FILL_IN_DATA`
+  static const FILL_IN_DATA = 2;
+
+  /// from: `static public final int FILL_IN_IDENTIFIER`
+  static const FILL_IN_IDENTIFIER = 256;
+
+  /// from: `static public final int FILL_IN_PACKAGE`
+  static const FILL_IN_PACKAGE = 16;
+
+  /// from: `static public final int FILL_IN_SELECTOR`
+  static const FILL_IN_SELECTOR = 64;
+
+  /// from: `static public final int FILL_IN_SOURCE_BOUNDS`
+  static const FILL_IN_SOURCE_BOUNDS = 32;
+
+  /// from: `static public final int FLAG_ACTIVITY_BROUGHT_TO_FRONT`
+  static const FLAG_ACTIVITY_BROUGHT_TO_FRONT = 4194304;
+
+  /// from: `static public final int FLAG_ACTIVITY_CLEAR_TASK`
+  static const FLAG_ACTIVITY_CLEAR_TASK = 32768;
+
+  /// from: `static public final int FLAG_ACTIVITY_CLEAR_TOP`
+  static const FLAG_ACTIVITY_CLEAR_TOP = 67108864;
+
+  /// from: `static public final int FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET`
+  static const FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET = 524288;
+
+  /// from: `static public final int FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS`
+  static const FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS = 8388608;
+
+  /// from: `static public final int FLAG_ACTIVITY_FORWARD_RESULT`
+  static const FLAG_ACTIVITY_FORWARD_RESULT = 33554432;
+
+  /// from: `static public final int FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY`
+  static const FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY = 1048576;
+
+  /// from: `static public final int FLAG_ACTIVITY_LAUNCH_ADJACENT`
+  static const FLAG_ACTIVITY_LAUNCH_ADJACENT = 4096;
+
+  /// from: `static public final int FLAG_ACTIVITY_MATCH_EXTERNAL`
+  static const FLAG_ACTIVITY_MATCH_EXTERNAL = 2048;
+
+  /// from: `static public final int FLAG_ACTIVITY_MULTIPLE_TASK`
+  static const FLAG_ACTIVITY_MULTIPLE_TASK = 134217728;
+
+  /// from: `static public final int FLAG_ACTIVITY_NEW_DOCUMENT`
+  static const FLAG_ACTIVITY_NEW_DOCUMENT = 524288;
+
+  /// from: `static public final int FLAG_ACTIVITY_NEW_TASK`
+  static const FLAG_ACTIVITY_NEW_TASK = 268435456;
+
+  /// from: `static public final int FLAG_ACTIVITY_NO_ANIMATION`
+  static const FLAG_ACTIVITY_NO_ANIMATION = 65536;
+
+  /// from: `static public final int FLAG_ACTIVITY_NO_HISTORY`
+  static const FLAG_ACTIVITY_NO_HISTORY = 1073741824;
+
+  /// from: `static public final int FLAG_ACTIVITY_NO_USER_ACTION`
+  static const FLAG_ACTIVITY_NO_USER_ACTION = 262144;
+
+  /// from: `static public final int FLAG_ACTIVITY_PREVIOUS_IS_TOP`
+  static const FLAG_ACTIVITY_PREVIOUS_IS_TOP = 16777216;
+
+  /// from: `static public final int FLAG_ACTIVITY_REORDER_TO_FRONT`
+  static const FLAG_ACTIVITY_REORDER_TO_FRONT = 131072;
+
+  /// from: `static public final int FLAG_ACTIVITY_REQUIRE_DEFAULT`
+  static const FLAG_ACTIVITY_REQUIRE_DEFAULT = 512;
+
+  /// from: `static public final int FLAG_ACTIVITY_REQUIRE_NON_BROWSER`
+  static const FLAG_ACTIVITY_REQUIRE_NON_BROWSER = 1024;
+
+  /// from: `static public final int FLAG_ACTIVITY_RESET_TASK_IF_NEEDED`
+  static const FLAG_ACTIVITY_RESET_TASK_IF_NEEDED = 2097152;
+
+  /// from: `static public final int FLAG_ACTIVITY_RETAIN_IN_RECENTS`
+  static const FLAG_ACTIVITY_RETAIN_IN_RECENTS = 8192;
+
+  /// from: `static public final int FLAG_ACTIVITY_SINGLE_TOP`
+  static const FLAG_ACTIVITY_SINGLE_TOP = 536870912;
+
+  /// from: `static public final int FLAG_ACTIVITY_TASK_ON_HOME`
+  static const FLAG_ACTIVITY_TASK_ON_HOME = 16384;
+
+  /// from: `static public final int FLAG_DEBUG_LOG_RESOLUTION`
+  static const FLAG_DEBUG_LOG_RESOLUTION = 8;
+
+  /// from: `static public final int FLAG_DIRECT_BOOT_AUTO`
+  static const FLAG_DIRECT_BOOT_AUTO = 256;
+
+  /// from: `static public final int FLAG_EXCLUDE_STOPPED_PACKAGES`
+  static const FLAG_EXCLUDE_STOPPED_PACKAGES = 16;
+
+  /// from: `static public final int FLAG_FROM_BACKGROUND`
+  static const FLAG_FROM_BACKGROUND = 4;
+
+  /// from: `static public final int FLAG_GRANT_PERSISTABLE_URI_PERMISSION`
+  static const FLAG_GRANT_PERSISTABLE_URI_PERMISSION = 64;
+
+  /// from: `static public final int FLAG_GRANT_PREFIX_URI_PERMISSION`
+  static const FLAG_GRANT_PREFIX_URI_PERMISSION = 128;
+
+  /// from: `static public final int FLAG_GRANT_READ_URI_PERMISSION`
+  static const FLAG_GRANT_READ_URI_PERMISSION = 1;
+
+  /// from: `static public final int FLAG_GRANT_WRITE_URI_PERMISSION`
+  static const FLAG_GRANT_WRITE_URI_PERMISSION = 2;
+
+  /// from: `static public final int FLAG_INCLUDE_STOPPED_PACKAGES`
+  static const FLAG_INCLUDE_STOPPED_PACKAGES = 32;
+
+  /// from: `static public final int FLAG_RECEIVER_FOREGROUND`
+  static const FLAG_RECEIVER_FOREGROUND = 268435456;
+
+  /// from: `static public final int FLAG_RECEIVER_NO_ABORT`
+  static const FLAG_RECEIVER_NO_ABORT = 134217728;
+
+  /// from: `static public final int FLAG_RECEIVER_REGISTERED_ONLY`
+  static const FLAG_RECEIVER_REGISTERED_ONLY = 1073741824;
+
+  /// from: `static public final int FLAG_RECEIVER_REPLACE_PENDING`
+  static const FLAG_RECEIVER_REPLACE_PENDING = 536870912;
+
+  /// from: `static public final int FLAG_RECEIVER_VISIBLE_TO_INSTANT_APPS`
+  static const FLAG_RECEIVER_VISIBLE_TO_INSTANT_APPS = 2097152;
+  static final _id_METADATA_DOCK_HOME = _class.staticFieldId(
+    r'METADATA_DOCK_HOME',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String METADATA_DOCK_HOME`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get METADATA_DOCK_HOME =>
+      _id_METADATA_DOCK_HOME.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  /// from: `static public final int URI_ALLOW_UNSAFE`
+  static const URI_ALLOW_UNSAFE = 4;
+
+  /// from: `static public final int URI_ANDROID_APP_SCHEME`
+  static const URI_ANDROID_APP_SCHEME = 2;
+
+  /// from: `static public final int URI_INTENT_SCHEME`
+  static const URI_INTENT_SCHEME = 1;
+  static final _id_new$ = _class.constructorId(
+    r'()V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public void <init>()`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory Intent() {
+    final _$$classRef = _class.reference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer).object<Intent>();
+  }
+
+  static final _id_new$1 = _class.constructorId(
+    r'(Landroid/content/Context;Ljava/lang/Class;)V',
+  );
+
+  static final _new$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(android.content.Context context, java.lang.Class<?> class)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory Intent.new$1(
+    Context? context,
+    jni$_.JClass? class$,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$context = context?.reference ?? jni$_.jNullReference;
+    final _$class$ = class$?.reference ?? jni$_.jNullReference;
+    return _new$1(_$$classRef.pointer, _id_new$1.pointer, _$context.pointer,
+            _$class$.pointer)
+        .object<Intent>();
+  }
+
+  static final _id_new$2 = _class.constructorId(
+    r'(Landroid/content/Intent;)V',
+  );
+
+  static final _new$2 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(android.content.Intent intent)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory Intent.new$2(
+    Intent? intent,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$intent = intent?.reference ?? jni$_.jNullReference;
+    return _new$2(_$$classRef.pointer, _id_new$2.pointer, _$intent.pointer)
+        .object<Intent>();
+  }
+
+  static final _id_new$3 = _class.constructorId(
+    r'(Ljava/lang/String;)V',
+  );
+
+  static final _new$3 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory Intent.new$3(
+    jni$_.JString? string,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _new$3(_$$classRef.pointer, _id_new$3.pointer, _$string.pointer)
+        .object<Intent>();
+  }
+
+  static final _id_new$4 = _class.constructorId(
+    r'(Ljava/lang/String;Landroid/net/Uri;)V',
+  );
+
+  static final _new$4 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(java.lang.String string, android.net.Uri uri)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory Intent.new$4(
+    jni$_.JString? string,
+    Uri? uri,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$uri = uri?.reference ?? jni$_.jNullReference;
+    return _new$4(_$$classRef.pointer, _id_new$4.pointer, _$string.pointer,
+            _$uri.pointer)
+        .object<Intent>();
+  }
+
+  static final _id_new$5 = _class.constructorId(
+    r'(Ljava/lang/String;Landroid/net/Uri;Landroid/content/Context;Ljava/lang/Class;)V',
+  );
+
+  static final _new$5 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(java.lang.String string, android.net.Uri uri, android.content.Context context, java.lang.Class<?> class)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory Intent.new$5(
+    jni$_.JString? string,
+    Uri? uri,
+    Context? context,
+    jni$_.JClass? class$,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$uri = uri?.reference ?? jni$_.jNullReference;
+    final _$context = context?.reference ?? jni$_.jNullReference;
+    final _$class$ = class$?.reference ?? jni$_.jNullReference;
+    return _new$5(_$$classRef.pointer, _id_new$5.pointer, _$string.pointer,
+            _$uri.pointer, _$context.pointer, _$class$.pointer)
+        .object<Intent>();
+  }
+
+  static final _id_createChooser = _class.staticMethodId(
+    r'createChooser',
+    r'(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;',
+  );
+
+  static final _createChooser = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `static public android.content.Intent createChooser(android.content.Intent intent, java.lang.CharSequence charSequence)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Intent? createChooser(
+    Intent? intent,
+    CharSequence? charSequence,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$intent = intent?.reference ?? jni$_.jNullReference;
+    final _$charSequence = charSequence?.reference ?? jni$_.jNullReference;
+    return _createChooser(_$$classRef.pointer, _id_createChooser.pointer,
+            _$intent.pointer, _$charSequence.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_createChooser$1 = _class.staticMethodId(
+    r'createChooser',
+    r'(Landroid/content/Intent;Ljava/lang/CharSequence;Landroid/content/IntentSender;)Landroid/content/Intent;',
+  );
+
+  static final _createChooser$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `static public android.content.Intent createChooser(android.content.Intent intent, java.lang.CharSequence charSequence, android.content.IntentSender intentSender)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Intent? createChooser$1(
+    Intent? intent,
+    CharSequence? charSequence,
+    IntentSender? intentSender,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$intent = intent?.reference ?? jni$_.jNullReference;
+    final _$charSequence = charSequence?.reference ?? jni$_.jNullReference;
+    final _$intentSender = intentSender?.reference ?? jni$_.jNullReference;
+    return _createChooser$1(_$$classRef.pointer, _id_createChooser$1.pointer,
+            _$intent.pointer, _$charSequence.pointer, _$intentSender.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_getIntent = _class.staticMethodId(
+    r'getIntent',
+    r'(Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _getIntent = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `static public android.content.Intent getIntent(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  @core$_.Deprecated('This Java method is deprecated.')
+  static Intent? getIntent(
+    jni$_.JString? string,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getIntent(
+            _$$classRef.pointer, _id_getIntent.pointer, _$string.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_getIntentOld = _class.staticMethodId(
+    r'getIntentOld',
+    r'(Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _getIntentOld = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `static public android.content.Intent getIntentOld(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Intent? getIntentOld(
+    jni$_.JString? string,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getIntentOld(
+            _$$classRef.pointer, _id_getIntentOld.pointer, _$string.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_makeMainActivity = _class.staticMethodId(
+    r'makeMainActivity',
+    r'(Landroid/content/ComponentName;)Landroid/content/Intent;',
+  );
+
+  static final _makeMainActivity = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `static public android.content.Intent makeMainActivity(android.content.ComponentName componentName)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Intent? makeMainActivity(
+    ComponentName? componentName,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$componentName = componentName?.reference ?? jni$_.jNullReference;
+    return _makeMainActivity(_$$classRef.pointer, _id_makeMainActivity.pointer,
+            _$componentName.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_makeMainSelectorActivity = _class.staticMethodId(
+    r'makeMainSelectorActivity',
+    r'(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _makeMainSelectorActivity = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `static public android.content.Intent makeMainSelectorActivity(java.lang.String string, java.lang.String string1)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Intent? makeMainSelectorActivity(
+    jni$_.JString? string,
+    jni$_.JString? string1,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$string1 = string1?.reference ?? jni$_.jNullReference;
+    return _makeMainSelectorActivity(
+            _$$classRef.pointer,
+            _id_makeMainSelectorActivity.pointer,
+            _$string.pointer,
+            _$string1.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_makeRestartActivityTask = _class.staticMethodId(
+    r'makeRestartActivityTask',
+    r'(Landroid/content/ComponentName;)Landroid/content/Intent;',
+  );
+
+  static final _makeRestartActivityTask = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `static public android.content.Intent makeRestartActivityTask(android.content.ComponentName componentName)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Intent? makeRestartActivityTask(
+    ComponentName? componentName,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$componentName = componentName?.reference ?? jni$_.jNullReference;
+    return _makeRestartActivityTask(_$$classRef.pointer,
+            _id_makeRestartActivityTask.pointer, _$componentName.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_normalizeMimeType = _class.staticMethodId(
+    r'normalizeMimeType',
+    r'(Ljava/lang/String;)Ljava/lang/String;',
+  );
+
+  static final _normalizeMimeType = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `static public java.lang.String normalizeMimeType(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? normalizeMimeType(
+    jni$_.JString? string,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _normalizeMimeType(_$$classRef.pointer,
+            _id_normalizeMimeType.pointer, _$string.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_parseIntent = _class.staticMethodId(
+    r'parseIntent',
+    r'(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)Landroid/content/Intent;',
+  );
+
+  static final _parseIntent = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `static public android.content.Intent parseIntent(android.content.res.Resources resources, org.xmlpull.v1.XmlPullParser xmlPullParser, android.util.AttributeSet attributeSet)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Intent? parseIntent(
+    Resources? resources,
+    XmlPullParser? xmlPullParser,
+    AttributeSet? attributeSet,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$resources = resources?.reference ?? jni$_.jNullReference;
+    final _$xmlPullParser = xmlPullParser?.reference ?? jni$_.jNullReference;
+    final _$attributeSet = attributeSet?.reference ?? jni$_.jNullReference;
+    return _parseIntent(
+            _$$classRef.pointer,
+            _id_parseIntent.pointer,
+            _$resources.pointer,
+            _$xmlPullParser.pointer,
+            _$attributeSet.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_parseUri = _class.staticMethodId(
+    r'parseUri',
+    r'(Ljava/lang/String;I)Landroid/content/Intent;',
+  );
+
+  static final _parseUri = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `static public android.content.Intent parseUri(java.lang.String string, int i)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Intent? parseUri(
+    jni$_.JString? string,
+    core$_.int i,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _parseUri(
+            _$$classRef.pointer, _id_parseUri.pointer, _$string.pointer, i)
+        .object<Intent?>();
+  }
+}
+
+extension Intent$$Methods on Intent {
+  static final _id_addCategory = Intent._class.instanceMethodId(
+    r'addCategory',
+    r'(Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _addCategory = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent addCategory(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? addCategory(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _addCategory(
+            _$$selfRef.pointer, _id_addCategory.pointer, _$string.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_addFlags = Intent._class.instanceMethodId(
+    r'addFlags',
+    r'(I)Landroid/content/Intent;',
+  );
+
+  static final _addFlags = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<(jni$_.Int32,)>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.int)>();
+
+  /// from: `public android.content.Intent addFlags(int i)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? addFlags(
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    return _addFlags(_$$selfRef.pointer, _id_addFlags.pointer, i)
+        .object<Intent?>();
+  }
+
+  static final _id_clone = Intent._class.instanceMethodId(
+    r'clone',
+    r'()Ljava/lang/Object;',
+  );
+
+  static final _clone = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.Object clone()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JObject? clone() {
+    final _$$selfRef = reference;
+    return _clone(_$$selfRef.pointer, _id_clone.pointer)
+        .object<jni$_.JObject?>();
+  }
+
+  static final _id_cloneFilter = Intent._class.instanceMethodId(
+    r'cloneFilter',
+    r'()Landroid/content/Intent;',
+  );
+
+  static final _cloneFilter = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public android.content.Intent cloneFilter()`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? cloneFilter() {
+    final _$$selfRef = reference;
+    return _cloneFilter(_$$selfRef.pointer, _id_cloneFilter.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_describeContents = Intent._class.instanceMethodId(
+    r'describeContents',
+    r'()I',
+  );
+
+  static final _describeContents = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int describeContents()`
+  core$_.int describeContents() {
+    final _$$selfRef = reference;
+    return _describeContents(_$$selfRef.pointer, _id_describeContents.pointer)
+        .integer;
+  }
+
+  static final _id_fillIn = Intent._class.instanceMethodId(
+    r'fillIn',
+    r'(Landroid/content/Intent;I)I',
+  );
+
+  static final _fillIn = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public int fillIn(android.content.Intent intent, int i)`
+  core$_.int fillIn(
+    Intent? intent,
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    final _$intent = intent?.reference ?? jni$_.jNullReference;
+    return _fillIn(_$$selfRef.pointer, _id_fillIn.pointer, _$intent.pointer, i)
+        .integer;
+  }
+
+  static final _id_filterEquals = Intent._class.instanceMethodId(
+    r'filterEquals',
+    r'(Landroid/content/Intent;)Z',
+  );
+
+  static final _filterEquals = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public boolean filterEquals(android.content.Intent intent)`
+  core$_.bool filterEquals(
+    Intent? intent,
+  ) {
+    final _$$selfRef = reference;
+    final _$intent = intent?.reference ?? jni$_.jNullReference;
+    return _filterEquals(
+            _$$selfRef.pointer, _id_filterEquals.pointer, _$intent.pointer)
+        .boolean;
+  }
+
+  static final _id_filterHashCode = Intent._class.instanceMethodId(
+    r'filterHashCode',
+    r'()I',
+  );
+
+  static final _filterHashCode = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int filterHashCode()`
+  core$_.int filterHashCode() {
+    final _$$selfRef = reference;
+    return _filterHashCode(_$$selfRef.pointer, _id_filterHashCode.pointer)
+        .integer;
+  }
+
+  static final _id_get$action = Intent._class.instanceMethodId(
+    r'getAction',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _get$action = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String getAction()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? get action {
+    final _$$selfRef = reference;
+    return _get$action(_$$selfRef.pointer, _id_get$action.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_getBooleanArrayExtra = Intent._class.instanceMethodId(
+    r'getBooleanArrayExtra',
+    r'(Ljava/lang/String;)[Z',
+  );
+
+  static final _getBooleanArrayExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public boolean[] getBooleanArrayExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JBooleanArray? getBooleanArrayExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getBooleanArrayExtra(_$$selfRef.pointer,
+            _id_getBooleanArrayExtra.pointer, _$string.pointer)
+        .object<jni$_.JBooleanArray?>();
+  }
+
+  static final _id_getBooleanExtra = Intent._class.instanceMethodId(
+    r'getBooleanExtra',
+    r'(Ljava/lang/String;Z)Z',
+  );
+
+  static final _getBooleanExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public boolean getBooleanExtra(java.lang.String string, boolean z)`
+  core$_.bool getBooleanExtra(
+    jni$_.JString? string,
+    core$_.bool z,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getBooleanExtra(_$$selfRef.pointer, _id_getBooleanExtra.pointer,
+            _$string.pointer, z ? 1 : 0)
+        .boolean;
+  }
+
+  static final _id_getBundleExtra = Intent._class.instanceMethodId(
+    r'getBundleExtra',
+    r'(Ljava/lang/String;)Landroid/os/Bundle;',
+  );
+
+  static final _getBundleExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.os.Bundle getBundleExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Bundle? getBundleExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getBundleExtra(
+            _$$selfRef.pointer, _id_getBundleExtra.pointer, _$string.pointer)
+        .object<Bundle?>();
+  }
+
+  static final _id_getByteArrayExtra = Intent._class.instanceMethodId(
+    r'getByteArrayExtra',
+    r'(Ljava/lang/String;)[B',
+  );
+
+  static final _getByteArrayExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public byte[] getByteArrayExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JByteArray? getByteArrayExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getByteArrayExtra(
+            _$$selfRef.pointer, _id_getByteArrayExtra.pointer, _$string.pointer)
+        .object<jni$_.JByteArray?>();
+  }
+
+  static final _id_getByteExtra = Intent._class.instanceMethodId(
+    r'getByteExtra',
+    r'(Ljava/lang/String;B)B',
+  );
+
+  static final _getByteExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallByteMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public byte getByteExtra(java.lang.String string, byte b)`
+  core$_.int getByteExtra(
+    jni$_.JString? string,
+    core$_.int b,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getByteExtra(
+            _$$selfRef.pointer, _id_getByteExtra.pointer, _$string.pointer, b)
+        .byte;
+  }
+
+  static final _id_get$categories = Intent._class.instanceMethodId(
+    r'getCategories',
+    r'()Ljava/util/Set;',
+  );
+
+  static final _get$categories = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.util.Set<java.lang.String> getCategories()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JSet<jni$_.JString?>? get categories {
+    final _$$selfRef = reference;
+    return _get$categories(_$$selfRef.pointer, _id_get$categories.pointer)
+        .object<jni$_.JSet<jni$_.JString?>?>();
+  }
+
+  static final _id_getCharArrayExtra = Intent._class.instanceMethodId(
+    r'getCharArrayExtra',
+    r'(Ljava/lang/String;)[C',
+  );
+
+  static final _getCharArrayExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public char[] getCharArrayExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JCharArray? getCharArrayExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getCharArrayExtra(
+            _$$selfRef.pointer, _id_getCharArrayExtra.pointer, _$string.pointer)
+        .object<jni$_.JCharArray?>();
+  }
+
+  static final _id_getCharExtra = Intent._class.instanceMethodId(
+    r'getCharExtra',
+    r'(Ljava/lang/String;C)C',
+  );
+
+  static final _getCharExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallCharMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public char getCharExtra(java.lang.String string, char c)`
+  core$_.int getCharExtra(
+    jni$_.JString? string,
+    core$_.int c,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getCharExtra(
+            _$$selfRef.pointer, _id_getCharExtra.pointer, _$string.pointer, c)
+        .char;
+  }
+
+  static final _id_getCharSequenceArrayExtra = Intent._class.instanceMethodId(
+    r'getCharSequenceArrayExtra',
+    r'(Ljava/lang/String;)[Ljava/lang/CharSequence;',
+  );
+
+  static final _getCharSequenceArrayExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public java.lang.CharSequence[] getCharSequenceArrayExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JArray<CharSequence?>? getCharSequenceArrayExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getCharSequenceArrayExtra(_$$selfRef.pointer,
+            _id_getCharSequenceArrayExtra.pointer, _$string.pointer)
+        .object<jni$_.JArray<CharSequence?>?>();
+  }
+
+  static final _id_getCharSequenceArrayListExtra =
+      Intent._class.instanceMethodId(
+    r'getCharSequenceArrayListExtra',
+    r'(Ljava/lang/String;)Ljava/util/ArrayList;',
+  );
+
+  static final _getCharSequenceArrayListExtra =
+      jni$_.ProtectedJniExtensions.lookup<
+                  jni$_.NativeFunction<
+                      jni$_.JniResult Function(
+                          jni$_.Pointer<jni$_.Void>,
+                          jni$_.JMethodIDPtr,
+                          jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+              'globalEnv_CallObjectMethod')
+          .asFunction<
+              jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public java.util.ArrayList<java.lang.CharSequence> getCharSequenceArrayListExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JArrayList<CharSequence?>? getCharSequenceArrayListExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getCharSequenceArrayListExtra(_$$selfRef.pointer,
+            _id_getCharSequenceArrayListExtra.pointer, _$string.pointer)
+        .object<jni$_.JArrayList<CharSequence?>?>();
+  }
+
+  static final _id_getCharSequenceExtra = Intent._class.instanceMethodId(
+    r'getCharSequenceExtra',
+    r'(Ljava/lang/String;)Ljava/lang/CharSequence;',
+  );
+
+  static final _getCharSequenceExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public java.lang.CharSequence getCharSequenceExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  CharSequence? getCharSequenceExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getCharSequenceExtra(_$$selfRef.pointer,
+            _id_getCharSequenceExtra.pointer, _$string.pointer)
+        .object<CharSequence?>();
+  }
+
+  static final _id_get$clipData = Intent._class.instanceMethodId(
+    r'getClipData',
+    r'()Landroid/content/ClipData;',
+  );
+
+  static final _get$clipData = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public android.content.ClipData getClipData()`
+  /// The returned object must be released after use, by calling the [release] method.
+  ClipData? get clipData {
+    final _$$selfRef = reference;
+    return _get$clipData(_$$selfRef.pointer, _id_get$clipData.pointer)
+        .object<ClipData?>();
+  }
+
+  static final _id_get$component = Intent._class.instanceMethodId(
+    r'getComponent',
+    r'()Landroid/content/ComponentName;',
+  );
+
+  static final _get$component = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public android.content.ComponentName getComponent()`
+  /// The returned object must be released after use, by calling the [release] method.
+  ComponentName? get component {
+    final _$$selfRef = reference;
+    return _get$component(_$$selfRef.pointer, _id_get$component.pointer)
+        .object<ComponentName?>();
+  }
+
+  static final _id_get$data = Intent._class.instanceMethodId(
+    r'getData',
+    r'()Landroid/net/Uri;',
+  );
+
+  static final _get$data = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public android.net.Uri getData()`
+  /// The returned object must be released after use, by calling the [release] method.
+  Uri? get data {
+    final _$$selfRef = reference;
+    return _get$data(_$$selfRef.pointer, _id_get$data.pointer).object<Uri?>();
+  }
+
+  static final _id_get$dataString = Intent._class.instanceMethodId(
+    r'getDataString',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _get$dataString = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String getDataString()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? get dataString {
+    final _$$selfRef = reference;
+    return _get$dataString(_$$selfRef.pointer, _id_get$dataString.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_getDoubleArrayExtra = Intent._class.instanceMethodId(
+    r'getDoubleArrayExtra',
+    r'(Ljava/lang/String;)[D',
+  );
+
+  static final _getDoubleArrayExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public double[] getDoubleArrayExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JDoubleArray? getDoubleArrayExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getDoubleArrayExtra(_$$selfRef.pointer,
+            _id_getDoubleArrayExtra.pointer, _$string.pointer)
+        .object<jni$_.JDoubleArray?>();
+  }
+
+  static final _id_getDoubleExtra = Intent._class.instanceMethodId(
+    r'getDoubleExtra',
+    r'(Ljava/lang/String;D)D',
+  );
+
+  static final _getDoubleExtra = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Double
+                      )>)>>('globalEnv_CallDoubleMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.double)>();
+
+  /// from: `public double getDoubleExtra(java.lang.String string, double d)`
+  core$_.double getDoubleExtra(
+    jni$_.JString? string,
+    core$_.double d,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getDoubleExtra(
+            _$$selfRef.pointer, _id_getDoubleExtra.pointer, _$string.pointer, d)
+        .doubleFloat;
+  }
+
+  static final _id_get$extras = Intent._class.instanceMethodId(
+    r'getExtras',
+    r'()Landroid/os/Bundle;',
+  );
+
+  static final _get$extras = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public android.os.Bundle getExtras()`
+  /// The returned object must be released after use, by calling the [release] method.
+  Bundle? get extras {
+    final _$$selfRef = reference;
+    return _get$extras(_$$selfRef.pointer, _id_get$extras.pointer)
+        .object<Bundle?>();
+  }
+
+  static final _id_get$flags = Intent._class.instanceMethodId(
+    r'getFlags',
+    r'()I',
+  );
+
+  static final _get$flags = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int getFlags()`
+  core$_.int get flags {
+    final _$$selfRef = reference;
+    return _get$flags(_$$selfRef.pointer, _id_get$flags.pointer).integer;
+  }
+
+  static final _id_getFloatArrayExtra = Intent._class.instanceMethodId(
+    r'getFloatArrayExtra',
+    r'(Ljava/lang/String;)[F',
+  );
+
+  static final _getFloatArrayExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public float[] getFloatArrayExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JFloatArray? getFloatArrayExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getFloatArrayExtra(_$$selfRef.pointer,
+            _id_getFloatArrayExtra.pointer, _$string.pointer)
+        .object<jni$_.JFloatArray?>();
+  }
+
+  static final _id_getFloatExtra = Intent._class.instanceMethodId(
+    r'getFloatExtra',
+    r'(Ljava/lang/String;F)F',
+  );
+
+  static final _getFloatExtra = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Double
+                      )>)>>('globalEnv_CallFloatMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.double)>();
+
+  /// from: `public float getFloatExtra(java.lang.String string, float f)`
+  core$_.double getFloatExtra(
+    jni$_.JString? string,
+    core$_.double f,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getFloatExtra(
+            _$$selfRef.pointer, _id_getFloatExtra.pointer, _$string.pointer, f)
+        .float;
+  }
+
+  static final _id_get$identifier = Intent._class.instanceMethodId(
+    r'getIdentifier',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _get$identifier = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String getIdentifier()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? get identifier {
+    final _$$selfRef = reference;
+    return _get$identifier(_$$selfRef.pointer, _id_get$identifier.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_getIntArrayExtra = Intent._class.instanceMethodId(
+    r'getIntArrayExtra',
+    r'(Ljava/lang/String;)[I',
+  );
+
+  static final _getIntArrayExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public int[] getIntArrayExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JIntArray? getIntArrayExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getIntArrayExtra(
+            _$$selfRef.pointer, _id_getIntArrayExtra.pointer, _$string.pointer)
+        .object<jni$_.JIntArray?>();
+  }
+
+  static final _id_getIntExtra = Intent._class.instanceMethodId(
+    r'getIntExtra',
+    r'(Ljava/lang/String;I)I',
+  );
+
+  static final _getIntExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public int getIntExtra(java.lang.String string, int i)`
+  core$_.int getIntExtra(
+    jni$_.JString? string,
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getIntExtra(
+            _$$selfRef.pointer, _id_getIntExtra.pointer, _$string.pointer, i)
+        .integer;
+  }
+
+  static final _id_getIntegerArrayListExtra = Intent._class.instanceMethodId(
+    r'getIntegerArrayListExtra',
+    r'(Ljava/lang/String;)Ljava/util/ArrayList;',
+  );
+
+  static final _getIntegerArrayListExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public java.util.ArrayList<java.lang.Integer> getIntegerArrayListExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JArrayList<jni$_.JInteger?>? getIntegerArrayListExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getIntegerArrayListExtra(_$$selfRef.pointer,
+            _id_getIntegerArrayListExtra.pointer, _$string.pointer)
+        .object<jni$_.JArrayList<jni$_.JInteger?>?>();
+  }
+
+  static final _id_getLongArrayExtra = Intent._class.instanceMethodId(
+    r'getLongArrayExtra',
+    r'(Ljava/lang/String;)[J',
+  );
+
+  static final _getLongArrayExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public long[] getLongArrayExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JLongArray? getLongArrayExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getLongArrayExtra(
+            _$$selfRef.pointer, _id_getLongArrayExtra.pointer, _$string.pointer)
+        .object<jni$_.JLongArray?>();
+  }
+
+  static final _id_getLongExtra = Intent._class.instanceMethodId(
+    r'getLongExtra',
+    r'(Ljava/lang/String;J)J',
+  );
+
+  static final _getLongExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int64)>)>>(
+          'globalEnv_CallLongMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public long getLongExtra(java.lang.String string, long j)`
+  core$_.int getLongExtra(
+    jni$_.JString? string,
+    core$_.int j,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getLongExtra(
+            _$$selfRef.pointer, _id_getLongExtra.pointer, _$string.pointer, j)
+        .long;
+  }
+
+  static final _id_get$package = Intent._class.instanceMethodId(
+    r'getPackage',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _get$package = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String getPackage()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? get package {
+    final _$$selfRef = reference;
+    return _get$package(_$$selfRef.pointer, _id_get$package.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_getParcelableArrayExtra = Intent._class.instanceMethodId(
+    r'getParcelableArrayExtra',
+    r'(Ljava/lang/String;)[Landroid/os/Parcelable;',
+  );
+
+  static final _getParcelableArrayExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.os.Parcelable[] getParcelableArrayExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  @core$_.Deprecated('This Java method is deprecated.')
+  jni$_.JArray<Parcelable?>? getParcelableArrayExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getParcelableArrayExtra(_$$selfRef.pointer,
+            _id_getParcelableArrayExtra.pointer, _$string.pointer)
+        .object<jni$_.JArray<Parcelable?>?>();
+  }
+
+  static final _id_getParcelableArrayExtra$1 = Intent._class.instanceMethodId(
+    r'getParcelableArrayExtra',
+    r'(Ljava/lang/String;Ljava/lang/Class;)[Ljava/lang/Object;',
+  );
+
+  static final _getParcelableArrayExtra$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public T[] getParcelableArrayExtra(java.lang.String string, java.lang.Class<T> class)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JArray<$T?>? getParcelableArrayExtra$1<$T extends jni$_.JObject?>(
+    jni$_.JString? string,
+    jni$_.JClass? class$,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$class$ = class$?.reference ?? jni$_.jNullReference;
+    return _getParcelableArrayExtra$1(
+            _$$selfRef.pointer,
+            _id_getParcelableArrayExtra$1.pointer,
+            _$string.pointer,
+            _$class$.pointer)
+        .object<jni$_.JArray<$T?>?>();
+  }
+
+  static final _id_getParcelableArrayListExtra = Intent._class.instanceMethodId(
+    r'getParcelableArrayListExtra',
+    r'(Ljava/lang/String;)Ljava/util/ArrayList;',
+  );
+
+  static final _getParcelableArrayListExtra =
+      jni$_.ProtectedJniExtensions.lookup<
+                  jni$_.NativeFunction<
+                      jni$_.JniResult Function(
+                          jni$_.Pointer<jni$_.Void>,
+                          jni$_.JMethodIDPtr,
+                          jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+              'globalEnv_CallObjectMethod')
+          .asFunction<
+              jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public java.util.ArrayList<T> getParcelableArrayListExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  @core$_.Deprecated('This Java method is deprecated.')
+  jni$_.JArrayList<$T?>? getParcelableArrayListExtra<$T extends jni$_.JObject?>(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getParcelableArrayListExtra(_$$selfRef.pointer,
+            _id_getParcelableArrayListExtra.pointer, _$string.pointer)
+        .object<jni$_.JArrayList<$T?>?>();
+  }
+
+  static final _id_getParcelableArrayListExtra$1 =
+      Intent._class.instanceMethodId(
+    r'getParcelableArrayListExtra',
+    r'(Ljava/lang/String;Ljava/lang/Class;)Ljava/util/ArrayList;',
+  );
+
+  static final _getParcelableArrayListExtra$1 =
+      jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<
+                          (
+                            jni$_.Pointer<jni$_.Void>,
+                            jni$_.Pointer<jni$_.Void>
+                          )>)>>('globalEnv_CallObjectMethod')
+          .asFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public java.util.ArrayList<T> getParcelableArrayListExtra(java.lang.String string, java.lang.Class<? extends T> class)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JArrayList<$T?>?
+      getParcelableArrayListExtra$1<$T extends jni$_.JObject?>(
+    jni$_.JString? string,
+    jni$_.JClass? class$,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$class$ = class$?.reference ?? jni$_.jNullReference;
+    return _getParcelableArrayListExtra$1(
+            _$$selfRef.pointer,
+            _id_getParcelableArrayListExtra$1.pointer,
+            _$string.pointer,
+            _$class$.pointer)
+        .object<jni$_.JArrayList<$T?>?>();
+  }
+
+  static final _id_getParcelableExtra = Intent._class.instanceMethodId(
+    r'getParcelableExtra',
+    r'(Ljava/lang/String;)Landroid/os/Parcelable;',
+  );
+
+  static final _getParcelableExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public T getParcelableExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  @core$_.Deprecated('This Java method is deprecated.')
+  $T? getParcelableExtra<$T extends jni$_.JObject?>(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getParcelableExtra(_$$selfRef.pointer,
+            _id_getParcelableExtra.pointer, _$string.pointer)
+        .object<$T?>();
+  }
+
+  static final _id_getParcelableExtra$1 = Intent._class.instanceMethodId(
+    r'getParcelableExtra',
+    r'(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;',
+  );
+
+  static final _getParcelableExtra$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public T getParcelableExtra(java.lang.String string, java.lang.Class<T> class)`
+  /// The returned object must be released after use, by calling the [release] method.
+  $T? getParcelableExtra$1<$T extends jni$_.JObject?>(
+    jni$_.JString? string,
+    jni$_.JClass? class$,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$class$ = class$?.reference ?? jni$_.jNullReference;
+    return _getParcelableExtra$1(
+            _$$selfRef.pointer,
+            _id_getParcelableExtra$1.pointer,
+            _$string.pointer,
+            _$class$.pointer)
+        .object<$T?>();
+  }
+
+  static final _id_get$scheme = Intent._class.instanceMethodId(
+    r'getScheme',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _get$scheme = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String getScheme()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? get scheme {
+    final _$$selfRef = reference;
+    return _get$scheme(_$$selfRef.pointer, _id_get$scheme.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_get$selector = Intent._class.instanceMethodId(
+    r'getSelector',
+    r'()Landroid/content/Intent;',
+  );
+
+  static final _get$selector = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public android.content.Intent getSelector()`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? get selector {
+    final _$$selfRef = reference;
+    return _get$selector(_$$selfRef.pointer, _id_get$selector.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_getSerializableExtra = Intent._class.instanceMethodId(
+    r'getSerializableExtra',
+    r'(Ljava/lang/String;)Ljava/io/Serializable;',
+  );
+
+  static final _getSerializableExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public java.io.Serializable getSerializableExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  @core$_.Deprecated('This Java method is deprecated.')
+  Serializable? getSerializableExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getSerializableExtra(_$$selfRef.pointer,
+            _id_getSerializableExtra.pointer, _$string.pointer)
+        .object<Serializable?>();
+  }
+
+  static final _id_getSerializableExtra$1 = Intent._class.instanceMethodId(
+    r'getSerializableExtra',
+    r'(Ljava/lang/String;Ljava/lang/Class;)Ljava/io/Serializable;',
+  );
+
+  static final _getSerializableExtra$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public T getSerializableExtra(java.lang.String string, java.lang.Class<T> class)`
+  /// The returned object must be released after use, by calling the [release] method.
+  $T? getSerializableExtra$1<$T extends jni$_.JObject?>(
+    jni$_.JString? string,
+    jni$_.JClass? class$,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$class$ = class$?.reference ?? jni$_.jNullReference;
+    return _getSerializableExtra$1(
+            _$$selfRef.pointer,
+            _id_getSerializableExtra$1.pointer,
+            _$string.pointer,
+            _$class$.pointer)
+        .object<$T?>();
+  }
+
+  static final _id_getShortArrayExtra = Intent._class.instanceMethodId(
+    r'getShortArrayExtra',
+    r'(Ljava/lang/String;)[S',
+  );
+
+  static final _getShortArrayExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public short[] getShortArrayExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JShortArray? getShortArrayExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getShortArrayExtra(_$$selfRef.pointer,
+            _id_getShortArrayExtra.pointer, _$string.pointer)
+        .object<jni$_.JShortArray?>();
+  }
+
+  static final _id_getShortExtra = Intent._class.instanceMethodId(
+    r'getShortExtra',
+    r'(Ljava/lang/String;S)S',
+  );
+
+  static final _getShortExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallShortMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public short getShortExtra(java.lang.String string, short s)`
+  core$_.int getShortExtra(
+    jni$_.JString? string,
+    core$_.int s,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getShortExtra(
+            _$$selfRef.pointer, _id_getShortExtra.pointer, _$string.pointer, s)
+        .short;
+  }
+
+  static final _id_get$sourceBounds = Intent._class.instanceMethodId(
+    r'getSourceBounds',
+    r'()Landroid/graphics/Rect;',
+  );
+
+  static final _get$sourceBounds = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public android.graphics.Rect getSourceBounds()`
+  /// The returned object must be released after use, by calling the [release] method.
+  Rect? get sourceBounds {
+    final _$$selfRef = reference;
+    return _get$sourceBounds(_$$selfRef.pointer, _id_get$sourceBounds.pointer)
+        .object<Rect?>();
+  }
+
+  static final _id_getStringArrayExtra = Intent._class.instanceMethodId(
+    r'getStringArrayExtra',
+    r'(Ljava/lang/String;)[Ljava/lang/String;',
+  );
+
+  static final _getStringArrayExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public java.lang.String[] getStringArrayExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JArray<jni$_.JString?>? getStringArrayExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getStringArrayExtra(_$$selfRef.pointer,
+            _id_getStringArrayExtra.pointer, _$string.pointer)
+        .object<jni$_.JArray<jni$_.JString?>?>();
+  }
+
+  static final _id_getStringArrayListExtra = Intent._class.instanceMethodId(
+    r'getStringArrayListExtra',
+    r'(Ljava/lang/String;)Ljava/util/ArrayList;',
+  );
+
+  static final _getStringArrayListExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public java.util.ArrayList<java.lang.String> getStringArrayListExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JArrayList<jni$_.JString?>? getStringArrayListExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getStringArrayListExtra(_$$selfRef.pointer,
+            _id_getStringArrayListExtra.pointer, _$string.pointer)
+        .object<jni$_.JArrayList<jni$_.JString?>?>();
+  }
+
+  static final _id_getStringExtra = Intent._class.instanceMethodId(
+    r'getStringExtra',
+    r'(Ljava/lang/String;)Ljava/lang/String;',
+  );
+
+  static final _getStringExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public java.lang.String getStringExtra(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? getStringExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getStringExtra(
+            _$$selfRef.pointer, _id_getStringExtra.pointer, _$string.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_get$type$1 = Intent._class.instanceMethodId(
+    r'getType',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _get$type$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String getType()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? get type$1 {
+    final _$$selfRef = reference;
+    return _get$type$1(_$$selfRef.pointer, _id_get$type$1.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_hasCategory = Intent._class.instanceMethodId(
+    r'hasCategory',
+    r'(Ljava/lang/String;)Z',
+  );
+
+  static final _hasCategory = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public boolean hasCategory(java.lang.String string)`
+  core$_.bool hasCategory(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _hasCategory(
+            _$$selfRef.pointer, _id_hasCategory.pointer, _$string.pointer)
+        .boolean;
+  }
+
+  static final _id_hasExtra = Intent._class.instanceMethodId(
+    r'hasExtra',
+    r'(Ljava/lang/String;)Z',
+  );
+
+  static final _hasExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public boolean hasExtra(java.lang.String string)`
+  core$_.bool hasExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _hasExtra(_$$selfRef.pointer, _id_hasExtra.pointer, _$string.pointer)
+        .boolean;
+  }
+
+  static final _id_hasFileDescriptors = Intent._class.instanceMethodId(
+    r'hasFileDescriptors',
+    r'()Z',
+  );
+
+  static final _hasFileDescriptors = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public boolean hasFileDescriptors()`
+  core$_.bool hasFileDescriptors() {
+    final _$$selfRef = reference;
+    return _hasFileDescriptors(
+            _$$selfRef.pointer, _id_hasFileDescriptors.pointer)
+        .boolean;
+  }
+
+  static final _id_get$isMismatchingFilter = Intent._class.instanceMethodId(
+    r'isMismatchingFilter',
+    r'()Z',
+  );
+
+  static final _get$isMismatchingFilter = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public boolean isMismatchingFilter()`
+  core$_.bool get isMismatchingFilter {
+    final _$$selfRef = reference;
+    return _get$isMismatchingFilter(
+            _$$selfRef.pointer, _id_get$isMismatchingFilter.pointer)
+        .boolean;
+  }
+
+  static final _id_putCharSequenceArrayListExtra =
+      Intent._class.instanceMethodId(
+    r'putCharSequenceArrayListExtra',
+    r'(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;',
+  );
+
+  static final _putCharSequenceArrayListExtra =
+      jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<
+                          (
+                            jni$_.Pointer<jni$_.Void>,
+                            jni$_.Pointer<jni$_.Void>
+                          )>)>>('globalEnv_CallObjectMethod')
+          .asFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putCharSequenceArrayListExtra(java.lang.String string, java.util.ArrayList<java.lang.CharSequence> arrayList)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putCharSequenceArrayListExtra(
+    jni$_.JString? string,
+    jni$_.JArrayList<CharSequence?>? arrayList,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$arrayList = arrayList?.reference ?? jni$_.jNullReference;
+    return _putCharSequenceArrayListExtra(
+            _$$selfRef.pointer,
+            _id_putCharSequenceArrayListExtra.pointer,
+            _$string.pointer,
+            _$arrayList.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;',
+  );
+
+  static final _putExtra = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, android.os.Bundle bundle)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra(
+    jni$_.JString? string,
+    Bundle? bundle,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$bundle = bundle?.reference ?? jni$_.jNullReference;
+    return _putExtra(_$$selfRef.pointer, _id_putExtra.pointer, _$string.pointer,
+            _$bundle.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$1 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, android.os.Parcelable parcelable)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$1(
+    jni$_.JString? string,
+    Parcelable? parcelable,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$parcelable = parcelable?.reference ?? jni$_.jNullReference;
+    return _putExtra$1(_$$selfRef.pointer, _id_putExtra$1.pointer,
+            _$string.pointer, _$parcelable.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$2 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;[Landroid/os/Parcelable;)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$2 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, android.os.Parcelable[] parcelables)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$2(
+    jni$_.JString? string,
+    jni$_.JArray<Parcelable?>? parcelables,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$parcelables = parcelables?.reference ?? jni$_.jNullReference;
+    return _putExtra$2(_$$selfRef.pointer, _id_putExtra$2.pointer,
+            _$string.pointer, _$parcelables.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$3 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;Z)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$3 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, boolean z)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$3(
+    jni$_.JString? string,
+    core$_.bool z,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _putExtra$3(_$$selfRef.pointer, _id_putExtra$3.pointer,
+            _$string.pointer, z ? 1 : 0)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$4 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;[Z)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$4 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, boolean[] zs)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$4(
+    jni$_.JString? string,
+    jni$_.JBooleanArray? zs,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$zs = zs?.reference ?? jni$_.jNullReference;
+    return _putExtra$4(_$$selfRef.pointer, _id_putExtra$4.pointer,
+            _$string.pointer, _$zs.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$5 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;B)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$5 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, byte b)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$5(
+    jni$_.JString? string,
+    core$_.int b,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _putExtra$5(
+            _$$selfRef.pointer, _id_putExtra$5.pointer, _$string.pointer, b)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$6 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;[B)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$6 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, byte[] bs)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$6(
+    jni$_.JString? string,
+    jni$_.JByteArray? bs,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$bs = bs?.reference ?? jni$_.jNullReference;
+    return _putExtra$6(_$$selfRef.pointer, _id_putExtra$6.pointer,
+            _$string.pointer, _$bs.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$7 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;C)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$7 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, char c)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$7(
+    jni$_.JString? string,
+    core$_.int c,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _putExtra$7(
+            _$$selfRef.pointer, _id_putExtra$7.pointer, _$string.pointer, c)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$8 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;[C)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$8 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, char[] cs)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$8(
+    jni$_.JString? string,
+    jni$_.JCharArray? cs,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$cs = cs?.reference ?? jni$_.jNullReference;
+    return _putExtra$8(_$$selfRef.pointer, _id_putExtra$8.pointer,
+            _$string.pointer, _$cs.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$9 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;D)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$9 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Double
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.double)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, double d)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$9(
+    jni$_.JString? string,
+    core$_.double d,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _putExtra$9(
+            _$$selfRef.pointer, _id_putExtra$9.pointer, _$string.pointer, d)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$10 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;[D)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$10 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, double[] ds)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$10(
+    jni$_.JString? string,
+    jni$_.JDoubleArray? ds,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$ds = ds?.reference ?? jni$_.jNullReference;
+    return _putExtra$10(_$$selfRef.pointer, _id_putExtra$10.pointer,
+            _$string.pointer, _$ds.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$11 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;F)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$11 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Double
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.double)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, float f)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$11(
+    jni$_.JString? string,
+    core$_.double f,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _putExtra$11(
+            _$$selfRef.pointer, _id_putExtra$11.pointer, _$string.pointer, f)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$12 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;[F)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$12 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, float[] fs)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$12(
+    jni$_.JString? string,
+    jni$_.JFloatArray? fs,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$fs = fs?.reference ?? jni$_.jNullReference;
+    return _putExtra$12(_$$selfRef.pointer, _id_putExtra$12.pointer,
+            _$string.pointer, _$fs.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$13 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;I)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$13 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, int i)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$13(
+    jni$_.JString? string,
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _putExtra$13(
+            _$$selfRef.pointer, _id_putExtra$13.pointer, _$string.pointer, i)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$14 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;[I)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$14 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, int[] is)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$14(
+    jni$_.JString? string,
+    jni$_.JIntArray? is$,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$is$ = is$?.reference ?? jni$_.jNullReference;
+    return _putExtra$14(_$$selfRef.pointer, _id_putExtra$14.pointer,
+            _$string.pointer, _$is$.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$15 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$15 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, java.io.Serializable serializable)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$15(
+    jni$_.JString? string,
+    Serializable? serializable,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$serializable = serializable?.reference ?? jni$_.jNullReference;
+    return _putExtra$15(_$$selfRef.pointer, _id_putExtra$15.pointer,
+            _$string.pointer, _$serializable.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$16 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$16 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, java.lang.CharSequence charSequence)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$16(
+    jni$_.JString? string,
+    CharSequence? charSequence,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$charSequence = charSequence?.reference ?? jni$_.jNullReference;
+    return _putExtra$16(_$$selfRef.pointer, _id_putExtra$16.pointer,
+            _$string.pointer, _$charSequence.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$17 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;[Ljava/lang/CharSequence;)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$17 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, java.lang.CharSequence[] charSequences)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$17(
+    jni$_.JString? string,
+    jni$_.JArray<CharSequence?>? charSequences,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$charSequences = charSequences?.reference ?? jni$_.jNullReference;
+    return _putExtra$17(_$$selfRef.pointer, _id_putExtra$17.pointer,
+            _$string.pointer, _$charSequences.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$18 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$18 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, java.lang.String string1)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$18(
+    jni$_.JString? string,
+    jni$_.JString? string1,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$string1 = string1?.reference ?? jni$_.jNullReference;
+    return _putExtra$18(_$$selfRef.pointer, _id_putExtra$18.pointer,
+            _$string.pointer, _$string1.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$19 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$19 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, java.lang.String[] strings)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$19(
+    jni$_.JString? string,
+    jni$_.JArray<jni$_.JString?>? strings,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$strings = strings?.reference ?? jni$_.jNullReference;
+    return _putExtra$19(_$$selfRef.pointer, _id_putExtra$19.pointer,
+            _$string.pointer, _$strings.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$20 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;J)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$20 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int64)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, long j)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$20(
+    jni$_.JString? string,
+    core$_.int j,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _putExtra$20(
+            _$$selfRef.pointer, _id_putExtra$20.pointer, _$string.pointer, j)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$21 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;[J)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$21 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, long[] js)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$21(
+    jni$_.JString? string,
+    jni$_.JLongArray? js,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$js = js?.reference ?? jni$_.jNullReference;
+    return _putExtra$21(_$$selfRef.pointer, _id_putExtra$21.pointer,
+            _$string.pointer, _$js.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$22 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;S)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$22 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, short s)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$22(
+    jni$_.JString? string,
+    core$_.int s,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _putExtra$22(
+            _$$selfRef.pointer, _id_putExtra$22.pointer, _$string.pointer, s)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtra$23 = Intent._class.instanceMethodId(
+    r'putExtra',
+    r'(Ljava/lang/String;[S)Landroid/content/Intent;',
+  );
+
+  static final _putExtra$23 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtra(java.lang.String string, short[] ss)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtra$23(
+    jni$_.JString? string,
+    jni$_.JShortArray? ss,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$ss = ss?.reference ?? jni$_.jNullReference;
+    return _putExtra$23(_$$selfRef.pointer, _id_putExtra$23.pointer,
+            _$string.pointer, _$ss.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtras = Intent._class.instanceMethodId(
+    r'putExtras',
+    r'(Landroid/content/Intent;)Landroid/content/Intent;',
+  );
+
+  static final _putExtras = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtras(android.content.Intent intent)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtras(
+    Intent? intent,
+  ) {
+    final _$$selfRef = reference;
+    final _$intent = intent?.reference ?? jni$_.jNullReference;
+    return _putExtras(
+            _$$selfRef.pointer, _id_putExtras.pointer, _$intent.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putExtras$1 = Intent._class.instanceMethodId(
+    r'putExtras',
+    r'(Landroid/os/Bundle;)Landroid/content/Intent;',
+  );
+
+  static final _putExtras$1 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putExtras(android.os.Bundle bundle)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putExtras$1(
+    Bundle? bundle,
+  ) {
+    final _$$selfRef = reference;
+    final _$bundle = bundle?.reference ?? jni$_.jNullReference;
+    return _putExtras$1(
+            _$$selfRef.pointer, _id_putExtras$1.pointer, _$bundle.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putIntegerArrayListExtra = Intent._class.instanceMethodId(
+    r'putIntegerArrayListExtra',
+    r'(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;',
+  );
+
+  static final _putIntegerArrayListExtra = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putIntegerArrayListExtra(java.lang.String string, java.util.ArrayList<java.lang.Integer> arrayList)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putIntegerArrayListExtra(
+    jni$_.JString? string,
+    jni$_.JArrayList<jni$_.JInteger?>? arrayList,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$arrayList = arrayList?.reference ?? jni$_.jNullReference;
+    return _putIntegerArrayListExtra(
+            _$$selfRef.pointer,
+            _id_putIntegerArrayListExtra.pointer,
+            _$string.pointer,
+            _$arrayList.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putParcelableArrayListExtra = Intent._class.instanceMethodId(
+    r'putParcelableArrayListExtra',
+    r'(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;',
+  );
+
+  static final _putParcelableArrayListExtra =
+      jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<
+                          (
+                            jni$_.Pointer<jni$_.Void>,
+                            jni$_.Pointer<jni$_.Void>
+                          )>)>>('globalEnv_CallObjectMethod')
+          .asFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putParcelableArrayListExtra(java.lang.String string, java.util.ArrayList<? extends android.os.Parcelable> arrayList)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putParcelableArrayListExtra(
+    jni$_.JString? string,
+    jni$_.JArrayList<Parcelable?>? arrayList,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$arrayList = arrayList?.reference ?? jni$_.jNullReference;
+    return _putParcelableArrayListExtra(
+            _$$selfRef.pointer,
+            _id_putParcelableArrayListExtra.pointer,
+            _$string.pointer,
+            _$arrayList.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_putStringArrayListExtra = Intent._class.instanceMethodId(
+    r'putStringArrayListExtra',
+    r'(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;',
+  );
+
+  static final _putStringArrayListExtra = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent putStringArrayListExtra(java.lang.String string, java.util.ArrayList<java.lang.String> arrayList)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? putStringArrayListExtra(
+    jni$_.JString? string,
+    jni$_.JArrayList<jni$_.JString?>? arrayList,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$arrayList = arrayList?.reference ?? jni$_.jNullReference;
+    return _putStringArrayListExtra(
+            _$$selfRef.pointer,
+            _id_putStringArrayListExtra.pointer,
+            _$string.pointer,
+            _$arrayList.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_readFromParcel = Intent._class.instanceMethodId(
+    r'readFromParcel',
+    r'(Landroid/os/Parcel;)V',
+  );
+
+  static final _readFromParcel = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void readFromParcel(android.os.Parcel parcel)`
+  void readFromParcel(
+    Parcel? parcel,
+  ) {
+    final _$$selfRef = reference;
+    final _$parcel = parcel?.reference ?? jni$_.jNullReference;
+    _readFromParcel(
+            _$$selfRef.pointer, _id_readFromParcel.pointer, _$parcel.pointer)
+        .check();
+  }
+
+  static final _id_removeCategory = Intent._class.instanceMethodId(
+    r'removeCategory',
+    r'(Ljava/lang/String;)V',
+  );
+
+  static final _removeCategory = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void removeCategory(java.lang.String string)`
+  void removeCategory(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    _removeCategory(
+            _$$selfRef.pointer, _id_removeCategory.pointer, _$string.pointer)
+        .check();
+  }
+
+  static final _id_removeExtra = Intent._class.instanceMethodId(
+    r'removeExtra',
+    r'(Ljava/lang/String;)V',
+  );
+
+  static final _removeExtra = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void removeExtra(java.lang.String string)`
+  void removeExtra(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    _removeExtra(_$$selfRef.pointer, _id_removeExtra.pointer, _$string.pointer)
+        .check();
+  }
+
+  static final _id_removeFlags = Intent._class.instanceMethodId(
+    r'removeFlags',
+    r'(I)V',
+  );
+
+  static final _removeFlags = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JThrowablePtr Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<(jni$_.Int32,)>)>>('globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.int)>();
+
+  /// from: `public void removeFlags(int i)`
+  void removeFlags(
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    _removeFlags(_$$selfRef.pointer, _id_removeFlags.pointer, i).check();
+  }
+
+  static final _id_removeLaunchSecurityProtection =
+      Intent._class.instanceMethodId(
+    r'removeLaunchSecurityProtection',
+    r'()V',
+  );
+
+  static final _removeLaunchSecurityProtection =
+      jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                    jni$_.Pointer<jni$_.Void>,
+                    jni$_.JMethodIDPtr,
+                  )>>('globalEnv_CallVoidMethod')
+          .asFunction<
+              jni$_.JThrowablePtr Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>();
+
+  /// from: `public void removeLaunchSecurityProtection()`
+  void removeLaunchSecurityProtection() {
+    final _$$selfRef = reference;
+    _removeLaunchSecurityProtection(
+            _$$selfRef.pointer, _id_removeLaunchSecurityProtection.pointer)
+        .check();
+  }
+
+  static final _id_replaceExtras = Intent._class.instanceMethodId(
+    r'replaceExtras',
+    r'(Landroid/content/Intent;)Landroid/content/Intent;',
+  );
+
+  static final _replaceExtras = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent replaceExtras(android.content.Intent intent)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? replaceExtras(
+    Intent? intent,
+  ) {
+    final _$$selfRef = reference;
+    final _$intent = intent?.reference ?? jni$_.jNullReference;
+    return _replaceExtras(
+            _$$selfRef.pointer, _id_replaceExtras.pointer, _$intent.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_replaceExtras$1 = Intent._class.instanceMethodId(
+    r'replaceExtras',
+    r'(Landroid/os/Bundle;)Landroid/content/Intent;',
+  );
+
+  static final _replaceExtras$1 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent replaceExtras(android.os.Bundle bundle)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? replaceExtras$1(
+    Bundle? bundle,
+  ) {
+    final _$$selfRef = reference;
+    final _$bundle = bundle?.reference ?? jni$_.jNullReference;
+    return _replaceExtras$1(
+            _$$selfRef.pointer, _id_replaceExtras$1.pointer, _$bundle.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_resolveActivity = Intent._class.instanceMethodId(
+    r'resolveActivity',
+    r'(Landroid/content/pm/PackageManager;)Landroid/content/ComponentName;',
+  );
+
+  static final _resolveActivity = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.ComponentName resolveActivity(android.content.pm.PackageManager packageManager)`
+  /// The returned object must be released after use, by calling the [release] method.
+  ComponentName? resolveActivity(
+    PackageManager? packageManager,
+  ) {
+    final _$$selfRef = reference;
+    final _$packageManager = packageManager?.reference ?? jni$_.jNullReference;
+    return _resolveActivity(_$$selfRef.pointer, _id_resolveActivity.pointer,
+            _$packageManager.pointer)
+        .object<ComponentName?>();
+  }
+
+  static final _id_resolveActivityInfo = Intent._class.instanceMethodId(
+    r'resolveActivityInfo',
+    r'(Landroid/content/pm/PackageManager;I)Landroid/content/pm/ActivityInfo;',
+  );
+
+  static final _resolveActivityInfo = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public android.content.pm.ActivityInfo resolveActivityInfo(android.content.pm.PackageManager packageManager, int i)`
+  /// The returned object must be released after use, by calling the [release] method.
+  ActivityInfo? resolveActivityInfo(
+    PackageManager? packageManager,
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    final _$packageManager = packageManager?.reference ?? jni$_.jNullReference;
+    return _resolveActivityInfo(_$$selfRef.pointer,
+            _id_resolveActivityInfo.pointer, _$packageManager.pointer, i)
+        .object<ActivityInfo?>();
+  }
+
+  static final _id_resolveType = Intent._class.instanceMethodId(
+    r'resolveType',
+    r'(Landroid/content/ContentResolver;)Ljava/lang/String;',
+  );
+
+  static final _resolveType = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public java.lang.String resolveType(android.content.ContentResolver contentResolver)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? resolveType(
+    ContentResolver? contentResolver,
+  ) {
+    final _$$selfRef = reference;
+    final _$contentResolver =
+        contentResolver?.reference ?? jni$_.jNullReference;
+    return _resolveType(_$$selfRef.pointer, _id_resolveType.pointer,
+            _$contentResolver.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_resolveType$1 = Intent._class.instanceMethodId(
+    r'resolveType',
+    r'(Landroid/content/Context;)Ljava/lang/String;',
+  );
+
+  static final _resolveType$1 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public java.lang.String resolveType(android.content.Context context)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? resolveType$1(
+    Context? context,
+  ) {
+    final _$$selfRef = reference;
+    final _$context = context?.reference ?? jni$_.jNullReference;
+    return _resolveType$1(
+            _$$selfRef.pointer, _id_resolveType$1.pointer, _$context.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_resolveTypeIfNeeded = Intent._class.instanceMethodId(
+    r'resolveTypeIfNeeded',
+    r'(Landroid/content/ContentResolver;)Ljava/lang/String;',
+  );
+
+  static final _resolveTypeIfNeeded = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public java.lang.String resolveTypeIfNeeded(android.content.ContentResolver contentResolver)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? resolveTypeIfNeeded(
+    ContentResolver? contentResolver,
+  ) {
+    final _$$selfRef = reference;
+    final _$contentResolver =
+        contentResolver?.reference ?? jni$_.jNullReference;
+    return _resolveTypeIfNeeded(_$$selfRef.pointer,
+            _id_resolveTypeIfNeeded.pointer, _$contentResolver.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_setAction = Intent._class.instanceMethodId(
+    r'setAction',
+    r'(Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _setAction = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent setAction(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setAction(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _setAction(
+            _$$selfRef.pointer, _id_setAction.pointer, _$string.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_setClass = Intent._class.instanceMethodId(
+    r'setClass',
+    r'(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;',
+  );
+
+  static final _setClass = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent setClass(android.content.Context context, java.lang.Class<?> class)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setClass(
+    Context? context,
+    jni$_.JClass? class$,
+  ) {
+    final _$$selfRef = reference;
+    final _$context = context?.reference ?? jni$_.jNullReference;
+    final _$class$ = class$?.reference ?? jni$_.jNullReference;
+    return _setClass(_$$selfRef.pointer, _id_setClass.pointer,
+            _$context.pointer, _$class$.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_setClassName = Intent._class.instanceMethodId(
+    r'setClassName',
+    r'(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _setClassName = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent setClassName(android.content.Context context, java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setClassName(
+    Context? context,
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$context = context?.reference ?? jni$_.jNullReference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _setClassName(_$$selfRef.pointer, _id_setClassName.pointer,
+            _$context.pointer, _$string.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_setClassName$1 = Intent._class.instanceMethodId(
+    r'setClassName',
+    r'(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _setClassName$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent setClassName(java.lang.String string, java.lang.String string1)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setClassName$1(
+    jni$_.JString? string,
+    jni$_.JString? string1,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$string1 = string1?.reference ?? jni$_.jNullReference;
+    return _setClassName$1(_$$selfRef.pointer, _id_setClassName$1.pointer,
+            _$string.pointer, _$string1.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_set$clipData = Intent._class.instanceMethodId(
+    r'setClipData',
+    r'(Landroid/content/ClipData;)V',
+  );
+
+  static final _set$clipData = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void setClipData(android.content.ClipData clipData)`
+  set clipData(ClipData? clipData) {
+    final _$$selfRef = reference;
+    final _$clipData = clipData?.reference ?? jni$_.jNullReference;
+    _set$clipData(
+            _$$selfRef.pointer, _id_set$clipData.pointer, _$clipData.pointer)
+        .check();
+  }
+
+  static final _id_setComponent = Intent._class.instanceMethodId(
+    r'setComponent',
+    r'(Landroid/content/ComponentName;)Landroid/content/Intent;',
+  );
+
+  static final _setComponent = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent setComponent(android.content.ComponentName componentName)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setComponent(
+    ComponentName? componentName,
+  ) {
+    final _$$selfRef = reference;
+    final _$componentName = componentName?.reference ?? jni$_.jNullReference;
+    return _setComponent(_$$selfRef.pointer, _id_setComponent.pointer,
+            _$componentName.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_setData = Intent._class.instanceMethodId(
+    r'setData',
+    r'(Landroid/net/Uri;)Landroid/content/Intent;',
+  );
+
+  static final _setData = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent setData(android.net.Uri uri)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setData(
+    Uri? uri,
+  ) {
+    final _$$selfRef = reference;
+    final _$uri = uri?.reference ?? jni$_.jNullReference;
+    return _setData(_$$selfRef.pointer, _id_setData.pointer, _$uri.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_setDataAndNormalize = Intent._class.instanceMethodId(
+    r'setDataAndNormalize',
+    r'(Landroid/net/Uri;)Landroid/content/Intent;',
+  );
+
+  static final _setDataAndNormalize = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent setDataAndNormalize(android.net.Uri uri)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setDataAndNormalize(
+    Uri? uri,
+  ) {
+    final _$$selfRef = reference;
+    final _$uri = uri?.reference ?? jni$_.jNullReference;
+    return _setDataAndNormalize(
+            _$$selfRef.pointer, _id_setDataAndNormalize.pointer, _$uri.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_setDataAndType = Intent._class.instanceMethodId(
+    r'setDataAndType',
+    r'(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _setDataAndType = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent setDataAndType(android.net.Uri uri, java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setDataAndType(
+    Uri? uri,
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$uri = uri?.reference ?? jni$_.jNullReference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _setDataAndType(_$$selfRef.pointer, _id_setDataAndType.pointer,
+            _$uri.pointer, _$string.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_setDataAndTypeAndNormalize = Intent._class.instanceMethodId(
+    r'setDataAndTypeAndNormalize',
+    r'(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _setDataAndTypeAndNormalize =
+      jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<
+                          (
+                            jni$_.Pointer<jni$_.Void>,
+                            jni$_.Pointer<jni$_.Void>
+                          )>)>>('globalEnv_CallObjectMethod')
+          .asFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent setDataAndTypeAndNormalize(android.net.Uri uri, java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setDataAndTypeAndNormalize(
+    Uri? uri,
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$uri = uri?.reference ?? jni$_.jNullReference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _setDataAndTypeAndNormalize(
+            _$$selfRef.pointer,
+            _id_setDataAndTypeAndNormalize.pointer,
+            _$uri.pointer,
+            _$string.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_set$extrasClassLoader = Intent._class.instanceMethodId(
+    r'setExtrasClassLoader',
+    r'(Ljava/lang/ClassLoader;)V',
+  );
+
+  static final _set$extrasClassLoader = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void setExtrasClassLoader(java.lang.ClassLoader classLoader)`
+  set extrasClassLoader(ClassLoader? classLoader) {
+    final _$$selfRef = reference;
+    final _$classLoader = classLoader?.reference ?? jni$_.jNullReference;
+    _set$extrasClassLoader(_$$selfRef.pointer,
+            _id_set$extrasClassLoader.pointer, _$classLoader.pointer)
+        .check();
+  }
+
+  static final _id_setFlags = Intent._class.instanceMethodId(
+    r'setFlags',
+    r'(I)Landroid/content/Intent;',
+  );
+
+  static final _setFlags = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<(jni$_.Int32,)>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.int)>();
+
+  /// from: `public android.content.Intent setFlags(int i)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setFlags(
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    return _setFlags(_$$selfRef.pointer, _id_setFlags.pointer, i)
+        .object<Intent?>();
+  }
+
+  static final _id_setIdentifier = Intent._class.instanceMethodId(
+    r'setIdentifier',
+    r'(Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _setIdentifier = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent setIdentifier(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setIdentifier(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _setIdentifier(
+            _$$selfRef.pointer, _id_setIdentifier.pointer, _$string.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_setPackage = Intent._class.instanceMethodId(
+    r'setPackage',
+    r'(Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _setPackage = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent setPackage(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setPackage(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _setPackage(
+            _$$selfRef.pointer, _id_setPackage.pointer, _$string.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_set$selector = Intent._class.instanceMethodId(
+    r'setSelector',
+    r'(Landroid/content/Intent;)V',
+  );
+
+  static final _set$selector = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void setSelector(android.content.Intent intent)`
+  set selector(Intent? intent) {
+    final _$$selfRef = reference;
+    final _$intent = intent?.reference ?? jni$_.jNullReference;
+    _set$selector(
+            _$$selfRef.pointer, _id_set$selector.pointer, _$intent.pointer)
+        .check();
+  }
+
+  static final _id_set$sourceBounds = Intent._class.instanceMethodId(
+    r'setSourceBounds',
+    r'(Landroid/graphics/Rect;)V',
+  );
+
+  static final _set$sourceBounds = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void setSourceBounds(android.graphics.Rect rect)`
+  set sourceBounds(Rect? rect) {
+    final _$$selfRef = reference;
+    final _$rect = rect?.reference ?? jni$_.jNullReference;
+    _set$sourceBounds(
+            _$$selfRef.pointer, _id_set$sourceBounds.pointer, _$rect.pointer)
+        .check();
+  }
+
+  static final _id_setType = Intent._class.instanceMethodId(
+    r'setType',
+    r'(Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _setType = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent setType(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setType(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _setType(_$$selfRef.pointer, _id_setType.pointer, _$string.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_setTypeAndNormalize = Intent._class.instanceMethodId(
+    r'setTypeAndNormalize',
+    r'(Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _setTypeAndNormalize = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.Intent setTypeAndNormalize(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? setTypeAndNormalize(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _setTypeAndNormalize(_$$selfRef.pointer,
+            _id_setTypeAndNormalize.pointer, _$string.pointer)
+        .object<Intent?>();
+  }
+
+  static final _id_toString$1 = Intent._class.instanceMethodId(
+    r'toString',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _toString$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String toString()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? toString$1() {
+    final _$$selfRef = reference;
+    return _toString$1(_$$selfRef.pointer, _id_toString$1.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_toURI = Intent._class.instanceMethodId(
+    r'toURI',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _toURI = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String toURI()`
+  /// The returned object must be released after use, by calling the [release] method.
+  @core$_.Deprecated('This Java method is deprecated.')
+  jni$_.JString? toURI() {
+    final _$$selfRef = reference;
+    return _toURI(_$$selfRef.pointer, _id_toURI.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_toUri = Intent._class.instanceMethodId(
+    r'toUri',
+    r'(I)Ljava/lang/String;',
+  );
+
+  static final _toUri = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<(jni$_.Int32,)>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.int)>();
+
+  /// from: `public java.lang.String toUri(int i)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? toUri(
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    return _toUri(_$$selfRef.pointer, _id_toUri.pointer, i)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_writeToParcel = Intent._class.instanceMethodId(
+    r'writeToParcel',
+    r'(Landroid/os/Parcel;I)V',
+  );
+
+  static final _writeToParcel = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public void writeToParcel(android.os.Parcel parcel, int i)`
+  void writeToParcel(
+    Parcel? parcel,
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    final _$parcel = parcel?.reference ?? jni$_.jNullReference;
+    _writeToParcel(
+            _$$selfRef.pointer, _id_writeToParcel.pointer, _$parcel.pointer, i)
+        .check();
+  }
+}
+
+final class $Intent$Type$ extends jni$_.JType<Intent> {
+  @jni$_.internal
+  const $Intent$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/Intent;';
+}
+
+/// from: `android.content.SharedPreferences$Editor`
+extension type SharedPreferences$Editor._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class =
+      jni$_.JClass.forName(r'android/content/SharedPreferences$Editor');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<SharedPreferences$Editor> type =
+      $SharedPreferences$Editor$Type$();
+
+  /// Maps a specific port to the implemented interface.
+  static final core$_.Map<core$_.int, $SharedPreferences$Editor> _$impls = {};
+  static jni$_.JObjectPtr _$invoke(
+    core$_.int port,
+    jni$_.JObjectPtr descriptor,
+    jni$_.JObjectPtr args,
+  ) {
+    return _$invokeMethod(
+      port,
+      jni$_.MethodInvocation.fromAddresses(
+        0,
+        descriptor.address,
+        args.address,
+      ),
+    );
+  }
+
+  static final jni$_.Pointer<
+          jni$_.NativeFunction<
+              jni$_.JObjectPtr Function(
+                  jni$_.Int64, jni$_.JObjectPtr, jni$_.JObjectPtr)>>
+      _$invokePointer = jni$_.Pointer.fromFunction(_$invoke);
+
+  static jni$_.Pointer<jni$_.Void> _$invokeMethod(
+    core$_.int $p,
+    jni$_.MethodInvocation $i,
+  ) {
+    try {
+      final $d = $i.methodDescriptor.toDartString(releaseOriginal: true);
+      final $a = $i.args;
+      if ($d == r'apply()V') {
+        _$impls[$p]!.apply();
+        return jni$_.nullptr;
+      }
+      if ($d ==
+          r'putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;') {
+        final $r = _$impls[$p]!.putString(
+          ($a![0] as jni$_.JString?),
+          ($a![1] as jni$_.JString?),
+        );
+        return ($r as jni$_.JObject?)
+                ?.as(const jni$_.$JObject$Type$())
+                .reference
+                .toPointer() ??
+            jni$_.nullptr;
+      }
+    } catch (e) {
+      return jni$_.ProtectedJniExtensions.newDartException(e);
+    }
+    return jni$_.nullptr;
+  }
+
+  static void implementIn(
+    jni$_.JImplementer implementer,
+    $SharedPreferences$Editor $impl,
+  ) {
+    late final jni$_.RawReceivePort $p;
+    $p = jni$_.RawReceivePort(($m) {
+      if ($m == null) {
+        _$impls.remove($p.sendPort.nativePort);
+        $p.close();
+        return;
+      }
+      final $i = jni$_.MethodInvocation.fromMessage($m);
+      final $r = _$invokeMethod($p.sendPort.nativePort, $i);
+      $i.args?.release();
+      jni$_.ProtectedJniExtensions.returnResult($i.result, $r);
+    });
+    implementer.add(
+      r'android.content.SharedPreferences$Editor',
+      $p,
+      _$invokePointer,
+      [
+        if ($impl.apply$async) r'apply()V',
+      ],
+    );
+    final $a = $p.sendPort.nativePort;
+    _$impls[$a] = $impl;
+  }
+
+  factory SharedPreferences$Editor.implement(
+    $SharedPreferences$Editor $impl,
+  ) {
+    final $i = jni$_.JImplementer();
+    implementIn($i, $impl);
+    return $i.implement<SharedPreferences$Editor>();
+  }
+}
+
+extension SharedPreferences$Editor$$Methods on SharedPreferences$Editor {
+  static final _id_apply = SharedPreferences$Editor._class.instanceMethodId(
+    r'apply',
+    r'()V',
+  );
+
+  static final _apply = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JThrowablePtr Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public abstract void apply()`
+  void apply() {
+    final _$$selfRef = reference;
+    _apply(_$$selfRef.pointer, _id_apply.pointer).check();
+  }
+
+  static final _id_putString = SharedPreferences$Editor._class.instanceMethodId(
+    r'putString',
+    r'(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;',
+  );
+
+  static final _putString = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public abstract android.content.SharedPreferences$Editor putString(java.lang.String string, java.lang.String string1)`
+  /// The returned object must be released after use, by calling the [release] method.
+  SharedPreferences$Editor? putString(
+    jni$_.JString? string,
+    jni$_.JString? string1,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$string1 = string1?.reference ?? jni$_.jNullReference;
+    return _putString(_$$selfRef.pointer, _id_putString.pointer,
+            _$string.pointer, _$string1.pointer)
+        .object<SharedPreferences$Editor?>();
+  }
+}
+
+abstract base mixin class $SharedPreferences$Editor {
+  factory $SharedPreferences$Editor({
+    required void Function() apply,
+    core$_.bool apply$async,
+    required SharedPreferences$Editor? Function(
+            jni$_.JString? string, jni$_.JString? string1)
+        putString,
+  }) = _$SharedPreferences$Editor;
+
+  void apply();
+  core$_.bool get apply$async => false;
+  SharedPreferences$Editor? putString(
+      jni$_.JString? string, jni$_.JString? string1);
+}
+
+final class _$SharedPreferences$Editor with $SharedPreferences$Editor {
+  _$SharedPreferences$Editor({
+    required void Function() apply,
+    this.apply$async = false,
+    required SharedPreferences$Editor? Function(
+            jni$_.JString? string, jni$_.JString? string1)
+        putString,
+  })  : _apply = apply,
+        _putString = putString;
+
+  final void Function() _apply;
+  final core$_.bool apply$async;
+  final SharedPreferences$Editor? Function(
+      jni$_.JString? string, jni$_.JString? string1) _putString;
+
+  void apply() {
+    return _apply();
+  }
+
+  SharedPreferences$Editor? putString(
+      jni$_.JString? string, jni$_.JString? string1) {
+    return _putString(string, string1);
+  }
+}
+
+final class $SharedPreferences$Editor$Type$
+    extends jni$_.JType<SharedPreferences$Editor> {
+  @jni$_.internal
+  const $SharedPreferences$Editor$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/SharedPreferences$Editor;';
+}
+
+/// from: `android.content.SharedPreferences`
+extension type SharedPreferences._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class =
+      jni$_.JClass.forName(r'android/content/SharedPreferences');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<SharedPreferences> type = $SharedPreferences$Type$();
+
+  /// Maps a specific port to the implemented interface.
+  static final core$_.Map<core$_.int, $SharedPreferences> _$impls = {};
+  static jni$_.JObjectPtr _$invoke(
+    core$_.int port,
+    jni$_.JObjectPtr descriptor,
+    jni$_.JObjectPtr args,
+  ) {
+    return _$invokeMethod(
+      port,
+      jni$_.MethodInvocation.fromAddresses(
+        0,
+        descriptor.address,
+        args.address,
+      ),
+    );
+  }
+
+  static final jni$_.Pointer<
+          jni$_.NativeFunction<
+              jni$_.JObjectPtr Function(
+                  jni$_.Int64, jni$_.JObjectPtr, jni$_.JObjectPtr)>>
+      _$invokePointer = jni$_.Pointer.fromFunction(_$invoke);
+
+  static jni$_.Pointer<jni$_.Void> _$invokeMethod(
+    core$_.int $p,
+    jni$_.MethodInvocation $i,
+  ) {
+    try {
+      final $d = $i.methodDescriptor.toDartString(releaseOriginal: true);
+      final $a = $i.args;
+      if ($d == r'edit()Landroid/content/SharedPreferences$Editor;') {
+        final $r = _$impls[$p]!.edit();
+        return ($r as jni$_.JObject?)
+                ?.as(const jni$_.$JObject$Type$())
+                .reference
+                .toPointer() ??
+            jni$_.nullptr;
+      }
+      if ($d ==
+          r'getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;') {
+        final $r = _$impls[$p]!.getString(
+          ($a![0] as jni$_.JString?),
+          ($a![1] as jni$_.JString?),
+        );
+        return ($r as jni$_.JObject?)
+                ?.as(const jni$_.$JObject$Type$())
+                .reference
+                .toPointer() ??
+            jni$_.nullptr;
+      }
+    } catch (e) {
+      return jni$_.ProtectedJniExtensions.newDartException(e);
+    }
+    return jni$_.nullptr;
+  }
+
+  static void implementIn(
+    jni$_.JImplementer implementer,
+    $SharedPreferences $impl,
+  ) {
+    late final jni$_.RawReceivePort $p;
+    $p = jni$_.RawReceivePort(($m) {
+      if ($m == null) {
+        _$impls.remove($p.sendPort.nativePort);
+        $p.close();
+        return;
+      }
+      final $i = jni$_.MethodInvocation.fromMessage($m);
+      final $r = _$invokeMethod($p.sendPort.nativePort, $i);
+      $i.args?.release();
+      jni$_.ProtectedJniExtensions.returnResult($i.result, $r);
+    });
+    implementer.add(
+      r'android.content.SharedPreferences',
+      $p,
+      _$invokePointer,
+      [],
+    );
+    final $a = $p.sendPort.nativePort;
+    _$impls[$a] = $impl;
+  }
+
+  factory SharedPreferences.implement(
+    $SharedPreferences $impl,
+  ) {
+    final $i = jni$_.JImplementer();
+    implementIn($i, $impl);
+    return $i.implement<SharedPreferences>();
+  }
+}
+
+extension SharedPreferences$$Methods on SharedPreferences {
+  static final _id_edit = SharedPreferences._class.instanceMethodId(
+    r'edit',
+    r'()Landroid/content/SharedPreferences$Editor;',
+  );
+
+  static final _edit = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public abstract android.content.SharedPreferences$Editor edit()`
+  /// The returned object must be released after use, by calling the [release] method.
+  SharedPreferences$Editor? edit() {
+    final _$$selfRef = reference;
+    return _edit(_$$selfRef.pointer, _id_edit.pointer)
+        .object<SharedPreferences$Editor?>();
+  }
+
+  static final _id_getString = SharedPreferences._class.instanceMethodId(
+    r'getString',
+    r'(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;',
+  );
+
+  static final _getString = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public abstract java.lang.String getString(java.lang.String string, java.lang.String string1)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? getString(
+    jni$_.JString? string,
+    jni$_.JString? string1,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$string1 = string1?.reference ?? jni$_.jNullReference;
+    return _getString(_$$selfRef.pointer, _id_getString.pointer,
+            _$string.pointer, _$string1.pointer)
+        .object<jni$_.JString?>();
+  }
+}
+
+abstract base mixin class $SharedPreferences {
+  factory $SharedPreferences({
+    required SharedPreferences$Editor? Function() edit,
+    required jni$_.JString? Function(
+            jni$_.JString? string, jni$_.JString? string1)
+        getString,
+  }) = _$SharedPreferences;
+
+  SharedPreferences$Editor? edit();
+  jni$_.JString? getString(jni$_.JString? string, jni$_.JString? string1);
+}
+
+final class _$SharedPreferences with $SharedPreferences {
+  _$SharedPreferences({
+    required SharedPreferences$Editor? Function() edit,
+    required jni$_.JString? Function(
+            jni$_.JString? string, jni$_.JString? string1)
+        getString,
+  })  : _edit = edit,
+        _getString = getString;
+
+  final SharedPreferences$Editor? Function() _edit;
+  final jni$_.JString? Function(jni$_.JString? string, jni$_.JString? string1)
+      _getString;
+
+  SharedPreferences$Editor? edit() {
+    return _edit();
+  }
+
+  jni$_.JString? getString(jni$_.JString? string, jni$_.JString? string1) {
+    return _getString(string, string1);
+  }
+}
+
+final class $SharedPreferences$Type$ extends jni$_.JType<SharedPreferences> {
+  @jni$_.internal
+  const $SharedPreferences$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/SharedPreferences;';
+}
+
+/// from: `android.content.pm.PackageManager$ApplicationInfoFlags`
+extension type PackageManager$ApplicationInfoFlags._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class = jni$_.JClass.forName(
+      r'android/content/pm/PackageManager$ApplicationInfoFlags');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<PackageManager$ApplicationInfoFlags> type =
+      $PackageManager$ApplicationInfoFlags$Type$();
+  static final _id_of = _class.staticMethodId(
+    r'of',
+    r'(J)Landroid/content/pm/PackageManager$ApplicationInfoFlags;',
+  );
+
+  static final _of = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr, jni$_.VarArgs<(jni$_.Int64,)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.int)>();
+
+  /// from: `static public android.content.pm.PackageManager$ApplicationInfoFlags of(long j)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static PackageManager$ApplicationInfoFlags? of(
+    core$_.int j,
+  ) {
+    final _$$classRef = _class.reference;
+    return _of(_$$classRef.pointer, _id_of.pointer, j)
+        .object<PackageManager$ApplicationInfoFlags?>();
+  }
+}
+
+extension PackageManager$ApplicationInfoFlags$$Methods
+    on PackageManager$ApplicationInfoFlags {
+  static final _id_get$value =
+      PackageManager$ApplicationInfoFlags._class.instanceMethodId(
+    r'getValue',
+    r'()J',
+  );
+
+  static final _get$value = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallLongMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public long getValue()`
+  core$_.int get value {
+    final _$$selfRef = reference;
+    return _get$value(_$$selfRef.pointer, _id_get$value.pointer).long;
+  }
+}
+
+final class $PackageManager$ApplicationInfoFlags$Type$
+    extends jni$_.JType<PackageManager$ApplicationInfoFlags> {
+  @jni$_.internal
+  const $PackageManager$ApplicationInfoFlags$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature =>
+      r'Landroid/content/pm/PackageManager$ApplicationInfoFlags;';
+}
+
+/// from: `android.content.pm.PackageManager$ComponentEnabledSetting`
+extension type PackageManager$ComponentEnabledSetting._(jni$_.JObject _$this)
+    implements jni$_.JObject, Parcelable {
+  static final _class = jni$_.JClass.forName(
+      r'android/content/pm/PackageManager$ComponentEnabledSetting');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<PackageManager$ComponentEnabledSetting> type =
+      $PackageManager$ComponentEnabledSetting$Type$();
+  static final _id_CREATOR = _class.staticFieldId(
+    r'CREATOR',
+    r'Landroid/os/Parcelable$Creator;',
+  );
+
+  /// from: `static public final android.os.Parcelable$Creator<android.content.pm.PackageManager$ComponentEnabledSetting> CREATOR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Parcelable$$Creator? get CREATOR =>
+      _id_CREATOR.getNullable(_class, Parcelable$$Creator.type)
+          as Parcelable$$Creator?;
+
+  static final _id_new$ = _class.constructorId(
+    r'(Landroid/content/ComponentName;II)V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Int32,
+                        jni$_.Int32
+                      )>)>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              core$_.int,
+              core$_.int)>();
+
+  /// from: `public void <init>(android.content.ComponentName componentName, int i, int i1)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory PackageManager$ComponentEnabledSetting(
+    ComponentName? componentName,
+    core$_.int i,
+    core$_.int i1,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$componentName = componentName?.reference ?? jni$_.jNullReference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer, _$componentName.pointer,
+            i, i1)
+        .object<PackageManager$ComponentEnabledSetting>();
+  }
+}
+
+extension PackageManager$ComponentEnabledSetting$$Methods
+    on PackageManager$ComponentEnabledSetting {
+  static final _id_describeContents =
+      PackageManager$ComponentEnabledSetting._class.instanceMethodId(
+    r'describeContents',
+    r'()I',
+  );
+
+  static final _describeContents = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int describeContents()`
+  core$_.int describeContents() {
+    final _$$selfRef = reference;
+    return _describeContents(_$$selfRef.pointer, _id_describeContents.pointer)
+        .integer;
+  }
+
+  static final _id_get$componentName =
+      PackageManager$ComponentEnabledSetting._class.instanceMethodId(
+    r'getComponentName',
+    r'()Landroid/content/ComponentName;',
+  );
+
+  static final _get$componentName = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public android.content.ComponentName getComponentName()`
+  /// The returned object must be released after use, by calling the [release] method.
+  ComponentName? get componentName {
+    final _$$selfRef = reference;
+    return _get$componentName(_$$selfRef.pointer, _id_get$componentName.pointer)
+        .object<ComponentName?>();
+  }
+
+  static final _id_get$enabledFlags =
+      PackageManager$ComponentEnabledSetting._class.instanceMethodId(
+    r'getEnabledFlags',
+    r'()I',
+  );
+
+  static final _get$enabledFlags = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int getEnabledFlags()`
+  core$_.int get enabledFlags {
+    final _$$selfRef = reference;
+    return _get$enabledFlags(_$$selfRef.pointer, _id_get$enabledFlags.pointer)
+        .integer;
+  }
+
+  static final _id_get$enabledState =
+      PackageManager$ComponentEnabledSetting._class.instanceMethodId(
+    r'getEnabledState',
+    r'()I',
+  );
+
+  static final _get$enabledState = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int getEnabledState()`
+  core$_.int get enabledState {
+    final _$$selfRef = reference;
+    return _get$enabledState(_$$selfRef.pointer, _id_get$enabledState.pointer)
+        .integer;
+  }
+
+  static final _id_writeToParcel =
+      PackageManager$ComponentEnabledSetting._class.instanceMethodId(
+    r'writeToParcel',
+    r'(Landroid/os/Parcel;I)V',
+  );
+
+  static final _writeToParcel = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public void writeToParcel(android.os.Parcel parcel, int i)`
+  void writeToParcel(
+    Parcel? parcel,
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    final _$parcel = parcel?.reference ?? jni$_.jNullReference;
+    _writeToParcel(
+            _$$selfRef.pointer, _id_writeToParcel.pointer, _$parcel.pointer, i)
+        .check();
+  }
+}
+
+final class $PackageManager$ComponentEnabledSetting$Type$
+    extends jni$_.JType<PackageManager$ComponentEnabledSetting> {
+  @jni$_.internal
+  const $PackageManager$ComponentEnabledSetting$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature =>
+      r'Landroid/content/pm/PackageManager$ComponentEnabledSetting;';
+}
+
+/// from: `android.content.pm.PackageManager$ComponentInfoFlags`
+extension type PackageManager$ComponentInfoFlags._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class = jni$_.JClass.forName(
+      r'android/content/pm/PackageManager$ComponentInfoFlags');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<PackageManager$ComponentInfoFlags> type =
+      $PackageManager$ComponentInfoFlags$Type$();
+  static final _id_of = _class.staticMethodId(
+    r'of',
+    r'(J)Landroid/content/pm/PackageManager$ComponentInfoFlags;',
+  );
+
+  static final _of = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr, jni$_.VarArgs<(jni$_.Int64,)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.int)>();
+
+  /// from: `static public android.content.pm.PackageManager$ComponentInfoFlags of(long j)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static PackageManager$ComponentInfoFlags? of(
+    core$_.int j,
+  ) {
+    final _$$classRef = _class.reference;
+    return _of(_$$classRef.pointer, _id_of.pointer, j)
+        .object<PackageManager$ComponentInfoFlags?>();
+  }
+}
+
+extension PackageManager$ComponentInfoFlags$$Methods
+    on PackageManager$ComponentInfoFlags {
+  static final _id_get$value =
+      PackageManager$ComponentInfoFlags._class.instanceMethodId(
+    r'getValue',
+    r'()J',
+  );
+
+  static final _get$value = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallLongMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public long getValue()`
+  core$_.int get value {
+    final _$$selfRef = reference;
+    return _get$value(_$$selfRef.pointer, _id_get$value.pointer).long;
+  }
+}
+
+final class $PackageManager$ComponentInfoFlags$Type$
+    extends jni$_.JType<PackageManager$ComponentInfoFlags> {
+  @jni$_.internal
+  const $PackageManager$ComponentInfoFlags$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature =>
+      r'Landroid/content/pm/PackageManager$ComponentInfoFlags;';
+}
+
+/// from: `android.content.pm.PackageManager$NameNotFoundException`
+extension type PackageManager$NameNotFoundException._(jni$_.JObject _$this)
+    implements AndroidException {
+  static final _class = jni$_.JClass.forName(
+      r'android/content/pm/PackageManager$NameNotFoundException');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<PackageManager$NameNotFoundException> type =
+      $PackageManager$NameNotFoundException$Type$();
+  static final _id_new$ = _class.constructorId(
+    r'()V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public void <init>()`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory PackageManager$NameNotFoundException() {
+    final _$$classRef = _class.reference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer)
+        .object<PackageManager$NameNotFoundException>();
+  }
+
+  static final _id_new$1 = _class.constructorId(
+    r'(Ljava/lang/String;)V',
+  );
+
+  static final _new$1 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory PackageManager$NameNotFoundException.new$1(
+    jni$_.JString? string,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _new$1(_$$classRef.pointer, _id_new$1.pointer, _$string.pointer)
+        .object<PackageManager$NameNotFoundException>();
+  }
+}
+
+final class $PackageManager$NameNotFoundException$Type$
+    extends jni$_.JType<PackageManager$NameNotFoundException> {
+  @jni$_.internal
+  const $PackageManager$NameNotFoundException$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature =>
+      r'Landroid/content/pm/PackageManager$NameNotFoundException;';
+}
+
+/// from: `android.content.pm.PackageManager$OnChecksumsReadyListener`
+extension type PackageManager$OnChecksumsReadyListener._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class = jni$_.JClass.forName(
+      r'android/content/pm/PackageManager$OnChecksumsReadyListener');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<PackageManager$OnChecksumsReadyListener> type =
+      $PackageManager$OnChecksumsReadyListener$Type$();
+
+  /// Maps a specific port to the implemented interface.
+  static final core$_.Map<core$_.int, $PackageManager$OnChecksumsReadyListener>
+      _$impls = {};
+  static jni$_.JObjectPtr _$invoke(
+    core$_.int port,
+    jni$_.JObjectPtr descriptor,
+    jni$_.JObjectPtr args,
+  ) {
+    return _$invokeMethod(
+      port,
+      jni$_.MethodInvocation.fromAddresses(
+        0,
+        descriptor.address,
+        args.address,
+      ),
+    );
+  }
+
+  static final jni$_.Pointer<
+          jni$_.NativeFunction<
+              jni$_.JObjectPtr Function(
+                  jni$_.Int64, jni$_.JObjectPtr, jni$_.JObjectPtr)>>
+      _$invokePointer = jni$_.Pointer.fromFunction(_$invoke);
+
+  static jni$_.Pointer<jni$_.Void> _$invokeMethod(
+    core$_.int $p,
+    jni$_.MethodInvocation $i,
+  ) {
+    try {
+      final $d = $i.methodDescriptor.toDartString(releaseOriginal: true);
+      final $a = $i.args;
+      if ($d == r'onChecksumsReady(Ljava/util/List;)V') {
+        _$impls[$p]!.onChecksumsReady(
+          ($a![0] as jni$_.JList<ApkChecksum?>?),
+        );
+        return jni$_.nullptr;
+      }
+    } catch (e) {
+      return jni$_.ProtectedJniExtensions.newDartException(e);
+    }
+    return jni$_.nullptr;
+  }
+
+  static void implementIn(
+    jni$_.JImplementer implementer,
+    $PackageManager$OnChecksumsReadyListener $impl,
+  ) {
+    late final jni$_.RawReceivePort $p;
+    $p = jni$_.RawReceivePort(($m) {
+      if ($m == null) {
+        _$impls.remove($p.sendPort.nativePort);
+        $p.close();
+        return;
+      }
+      final $i = jni$_.MethodInvocation.fromMessage($m);
+      final $r = _$invokeMethod($p.sendPort.nativePort, $i);
+      $i.args?.release();
+      jni$_.ProtectedJniExtensions.returnResult($i.result, $r);
+    });
+    implementer.add(
+      r'android.content.pm.PackageManager$OnChecksumsReadyListener',
+      $p,
+      _$invokePointer,
+      [
+        if ($impl.onChecksumsReady$async)
+          r'onChecksumsReady(Ljava/util/List;)V',
+      ],
+    );
+    final $a = $p.sendPort.nativePort;
+    _$impls[$a] = $impl;
+  }
+
+  factory PackageManager$OnChecksumsReadyListener.implement(
+    $PackageManager$OnChecksumsReadyListener $impl,
+  ) {
+    final $i = jni$_.JImplementer();
+    implementIn($i, $impl);
+    return $i.implement<PackageManager$OnChecksumsReadyListener>();
+  }
+}
+
+extension PackageManager$OnChecksumsReadyListener$$Methods
+    on PackageManager$OnChecksumsReadyListener {
+  static final _id_onChecksumsReady =
+      PackageManager$OnChecksumsReadyListener._class.instanceMethodId(
+    r'onChecksumsReady',
+    r'(Ljava/util/List;)V',
+  );
+
+  static final _onChecksumsReady = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public abstract void onChecksumsReady(java.util.List<android.content.pm.ApkChecksum> list)`
+  void onChecksumsReady(
+    jni$_.JList<ApkChecksum?>? list,
+  ) {
+    final _$$selfRef = reference;
+    final _$list = list?.reference ?? jni$_.jNullReference;
+    _onChecksumsReady(
+            _$$selfRef.pointer, _id_onChecksumsReady.pointer, _$list.pointer)
+        .check();
+  }
+}
+
+abstract base mixin class $PackageManager$OnChecksumsReadyListener {
+  factory $PackageManager$OnChecksumsReadyListener({
+    required void Function(jni$_.JList<ApkChecksum?>? list) onChecksumsReady,
+    core$_.bool onChecksumsReady$async,
+  }) = _$PackageManager$OnChecksumsReadyListener;
+
+  void onChecksumsReady(jni$_.JList<ApkChecksum?>? list);
+  core$_.bool get onChecksumsReady$async => false;
+}
+
+final class _$PackageManager$OnChecksumsReadyListener
+    with $PackageManager$OnChecksumsReadyListener {
+  _$PackageManager$OnChecksumsReadyListener({
+    required void Function(jni$_.JList<ApkChecksum?>? list) onChecksumsReady,
+    this.onChecksumsReady$async = false,
+  }) : _onChecksumsReady = onChecksumsReady;
+
+  final void Function(jni$_.JList<ApkChecksum?>? list) _onChecksumsReady;
+  final core$_.bool onChecksumsReady$async;
+
+  void onChecksumsReady(jni$_.JList<ApkChecksum?>? list) {
+    return _onChecksumsReady(list);
+  }
+}
+
+final class $PackageManager$OnChecksumsReadyListener$Type$
+    extends jni$_.JType<PackageManager$OnChecksumsReadyListener> {
+  @jni$_.internal
+  const $PackageManager$OnChecksumsReadyListener$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature =>
+      r'Landroid/content/pm/PackageManager$OnChecksumsReadyListener;';
+}
+
+/// from: `android.content.pm.PackageManager$PackageInfoFlags`
+extension type PackageManager$PackageInfoFlags._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class = jni$_.JClass.forName(
+      r'android/content/pm/PackageManager$PackageInfoFlags');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<PackageManager$PackageInfoFlags> type =
+      $PackageManager$PackageInfoFlags$Type$();
+  static final _id_of = _class.staticMethodId(
+    r'of',
+    r'(J)Landroid/content/pm/PackageManager$PackageInfoFlags;',
+  );
+
+  static final _of = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr, jni$_.VarArgs<(jni$_.Int64,)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.int)>();
+
+  /// from: `static public android.content.pm.PackageManager$PackageInfoFlags of(long j)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static PackageManager$PackageInfoFlags? of(
+    core$_.int j,
+  ) {
+    final _$$classRef = _class.reference;
+    return _of(_$$classRef.pointer, _id_of.pointer, j)
+        .object<PackageManager$PackageInfoFlags?>();
+  }
+}
+
+extension PackageManager$PackageInfoFlags$$Methods
+    on PackageManager$PackageInfoFlags {
+  static final _id_get$value =
+      PackageManager$PackageInfoFlags._class.instanceMethodId(
+    r'getValue',
+    r'()J',
+  );
+
+  static final _get$value = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallLongMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public long getValue()`
+  core$_.int get value {
+    final _$$selfRef = reference;
+    return _get$value(_$$selfRef.pointer, _id_get$value.pointer).long;
+  }
+}
+
+final class $PackageManager$PackageInfoFlags$Type$
+    extends jni$_.JType<PackageManager$PackageInfoFlags> {
+  @jni$_.internal
+  const $PackageManager$PackageInfoFlags$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature =>
+      r'Landroid/content/pm/PackageManager$PackageInfoFlags;';
+}
+
+/// from: `android.content.pm.PackageManager$Property`
+extension type PackageManager$Property._(jni$_.JObject _$this)
+    implements jni$_.JObject, Parcelable {
+  static final _class =
+      jni$_.JClass.forName(r'android/content/pm/PackageManager$Property');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<PackageManager$Property> type =
+      $PackageManager$Property$Type$();
+  static final _id_CREATOR = _class.staticFieldId(
+    r'CREATOR',
+    r'Landroid/os/Parcelable$Creator;',
+  );
+
+  /// from: `static public final android.os.Parcelable$Creator<android.content.pm.PackageManager$Property> CREATOR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static Parcelable$$Creator? get CREATOR =>
+      _id_CREATOR.getNullable(_class, Parcelable$$Creator.type)
+          as Parcelable$$Creator?;
+}
+
+extension PackageManager$Property$$Methods on PackageManager$Property {
+  static final _id_describeContents =
+      PackageManager$Property._class.instanceMethodId(
+    r'describeContents',
+    r'()I',
+  );
+
+  static final _describeContents = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int describeContents()`
+  core$_.int describeContents() {
+    final _$$selfRef = reference;
+    return _describeContents(_$$selfRef.pointer, _id_describeContents.pointer)
+        .integer;
+  }
+
+  static final _id_equals = PackageManager$Property._class.instanceMethodId(
+    r'equals',
+    r'(Ljava/lang/Object;)Z',
+  );
+
+  static final _equals = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public boolean equals(java.lang.Object object)`
+  core$_.bool equals(
+    jni$_.JObject? object,
+  ) {
+    final _$$selfRef = reference;
+    final _$object = object?.reference ?? jni$_.jNullReference;
+    return _equals(_$$selfRef.pointer, _id_equals.pointer, _$object.pointer)
+        .boolean;
+  }
+
+  static final _id_get$boolean =
+      PackageManager$Property._class.instanceMethodId(
+    r'getBoolean',
+    r'()Z',
+  );
+
+  static final _get$boolean = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public boolean getBoolean()`
+  core$_.bool get boolean {
+    final _$$selfRef = reference;
+    return _get$boolean(_$$selfRef.pointer, _id_get$boolean.pointer).boolean;
+  }
+
+  static final _id_get$className =
+      PackageManager$Property._class.instanceMethodId(
+    r'getClassName',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _get$className = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String getClassName()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? get className {
+    final _$$selfRef = reference;
+    return _get$className(_$$selfRef.pointer, _id_get$className.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_get$float = PackageManager$Property._class.instanceMethodId(
+    r'getFloat',
+    r'()F',
+  );
+
+  static final _get$float = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallFloatMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public float getFloat()`
+  core$_.double get float {
+    final _$$selfRef = reference;
+    return _get$float(_$$selfRef.pointer, _id_get$float.pointer).float;
+  }
+
+  static final _id_get$integer =
+      PackageManager$Property._class.instanceMethodId(
+    r'getInteger',
+    r'()I',
+  );
+
+  static final _get$integer = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int getInteger()`
+  core$_.int get integer {
+    final _$$selfRef = reference;
+    return _get$integer(_$$selfRef.pointer, _id_get$integer.pointer).integer;
+  }
+
+  static final _id_get$name = PackageManager$Property._class.instanceMethodId(
+    r'getName',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _get$name = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String getName()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? get name {
+    final _$$selfRef = reference;
+    return _get$name(_$$selfRef.pointer, _id_get$name.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_get$packageName =
+      PackageManager$Property._class.instanceMethodId(
+    r'getPackageName',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _get$packageName = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String getPackageName()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? get packageName {
+    final _$$selfRef = reference;
+    return _get$packageName(_$$selfRef.pointer, _id_get$packageName.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_get$resourceId =
+      PackageManager$Property._class.instanceMethodId(
+    r'getResourceId',
+    r'()I',
+  );
+
+  static final _get$resourceId = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int getResourceId()`
+  core$_.int get resourceId {
+    final _$$selfRef = reference;
+    return _get$resourceId(_$$selfRef.pointer, _id_get$resourceId.pointer)
+        .integer;
+  }
+
+  static final _id_get$string = PackageManager$Property._class.instanceMethodId(
+    r'getString',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _get$string = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String getString()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? get string {
+    final _$$selfRef = reference;
+    return _get$string(_$$selfRef.pointer, _id_get$string.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_hashCode$1 = PackageManager$Property._class.instanceMethodId(
+    r'hashCode',
+    r'()I',
+  );
+
+  static final _hashCode$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int hashCode()`
+  core$_.int hashCode$1() {
+    final _$$selfRef = reference;
+    return _hashCode$1(_$$selfRef.pointer, _id_hashCode$1.pointer).integer;
+  }
+
+  static final _id_get$isBoolean =
+      PackageManager$Property._class.instanceMethodId(
+    r'isBoolean',
+    r'()Z',
+  );
+
+  static final _get$isBoolean = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public boolean isBoolean()`
+  core$_.bool get isBoolean {
+    final _$$selfRef = reference;
+    return _get$isBoolean(_$$selfRef.pointer, _id_get$isBoolean.pointer)
+        .boolean;
+  }
+
+  static final _id_get$isFloat =
+      PackageManager$Property._class.instanceMethodId(
+    r'isFloat',
+    r'()Z',
+  );
+
+  static final _get$isFloat = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public boolean isFloat()`
+  core$_.bool get isFloat {
+    final _$$selfRef = reference;
+    return _get$isFloat(_$$selfRef.pointer, _id_get$isFloat.pointer).boolean;
+  }
+
+  static final _id_get$isInteger =
+      PackageManager$Property._class.instanceMethodId(
+    r'isInteger',
+    r'()Z',
+  );
+
+  static final _get$isInteger = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public boolean isInteger()`
+  core$_.bool get isInteger {
+    final _$$selfRef = reference;
+    return _get$isInteger(_$$selfRef.pointer, _id_get$isInteger.pointer)
+        .boolean;
+  }
+
+  static final _id_get$isResourceId =
+      PackageManager$Property._class.instanceMethodId(
+    r'isResourceId',
+    r'()Z',
+  );
+
+  static final _get$isResourceId = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public boolean isResourceId()`
+  core$_.bool get isResourceId {
+    final _$$selfRef = reference;
+    return _get$isResourceId(_$$selfRef.pointer, _id_get$isResourceId.pointer)
+        .boolean;
+  }
+
+  static final _id_get$isString =
+      PackageManager$Property._class.instanceMethodId(
+    r'isString',
+    r'()Z',
+  );
+
+  static final _get$isString = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public boolean isString()`
+  core$_.bool get isString {
+    final _$$selfRef = reference;
+    return _get$isString(_$$selfRef.pointer, _id_get$isString.pointer).boolean;
+  }
+
+  static final _id_writeToParcel =
+      PackageManager$Property._class.instanceMethodId(
+    r'writeToParcel',
+    r'(Landroid/os/Parcel;I)V',
+  );
+
+  static final _writeToParcel = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public void writeToParcel(android.os.Parcel parcel, int i)`
+  void writeToParcel(
+    Parcel? parcel,
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    final _$parcel = parcel?.reference ?? jni$_.jNullReference;
+    _writeToParcel(
+            _$$selfRef.pointer, _id_writeToParcel.pointer, _$parcel.pointer, i)
+        .check();
+  }
+}
+
+final class $PackageManager$Property$Type$
+    extends jni$_.JType<PackageManager$Property> {
+  @jni$_.internal
+  const $PackageManager$Property$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/pm/PackageManager$Property;';
+}
+
+/// from: `android.content.pm.PackageManager$ResolveInfoFlags`
+extension type PackageManager$ResolveInfoFlags._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class = jni$_.JClass.forName(
+      r'android/content/pm/PackageManager$ResolveInfoFlags');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<PackageManager$ResolveInfoFlags> type =
+      $PackageManager$ResolveInfoFlags$Type$();
+  static final _id_of = _class.staticMethodId(
+    r'of',
+    r'(J)Landroid/content/pm/PackageManager$ResolveInfoFlags;',
+  );
+
+  static final _of = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr, jni$_.VarArgs<(jni$_.Int64,)>)>>(
+          'globalEnv_CallStaticObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.int)>();
+
+  /// from: `static public android.content.pm.PackageManager$ResolveInfoFlags of(long j)`
+  /// The returned object must be released after use, by calling the [release] method.
+  static PackageManager$ResolveInfoFlags? of(
+    core$_.int j,
+  ) {
+    final _$$classRef = _class.reference;
+    return _of(_$$classRef.pointer, _id_of.pointer, j)
+        .object<PackageManager$ResolveInfoFlags?>();
+  }
+}
+
+extension PackageManager$ResolveInfoFlags$$Methods
+    on PackageManager$ResolveInfoFlags {
+  static final _id_get$value =
+      PackageManager$ResolveInfoFlags._class.instanceMethodId(
+    r'getValue',
+    r'()J',
+  );
+
+  static final _get$value = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallLongMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public long getValue()`
+  core$_.int get value {
+    final _$$selfRef = reference;
+    return _get$value(_$$selfRef.pointer, _id_get$value.pointer).long;
+  }
+}
+
+final class $PackageManager$ResolveInfoFlags$Type$
+    extends jni$_.JType<PackageManager$ResolveInfoFlags> {
+  @jni$_.internal
+  const $PackageManager$ResolveInfoFlags$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature =>
+      r'Landroid/content/pm/PackageManager$ResolveInfoFlags;';
+}
+
+/// from: `android.content.pm.PackageManager`
+extension type PackageManager._(jni$_.JObject _$this) implements jni$_.JObject {
+  static final _class =
+      jni$_.JClass.forName(r'android/content/pm/PackageManager');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<PackageManager> type = $PackageManager$Type$();
+
+  /// from: `static public final int CERT_INPUT_RAW_X509`
+  static const CERT_INPUT_RAW_X509 = 0;
+
+  /// from: `static public final int CERT_INPUT_SHA256`
+  static const CERT_INPUT_SHA256 = 1;
+
+  /// from: `static public final int COMPONENT_ENABLED_STATE_DEFAULT`
+  static const COMPONENT_ENABLED_STATE_DEFAULT = 0;
+
+  /// from: `static public final int COMPONENT_ENABLED_STATE_DISABLED`
+  static const COMPONENT_ENABLED_STATE_DISABLED = 2;
+
+  /// from: `static public final int COMPONENT_ENABLED_STATE_DISABLED_UNTIL_USED`
+  static const COMPONENT_ENABLED_STATE_DISABLED_UNTIL_USED = 4;
+
+  /// from: `static public final int COMPONENT_ENABLED_STATE_DISABLED_USER`
+  static const COMPONENT_ENABLED_STATE_DISABLED_USER = 3;
+
+  /// from: `static public final int COMPONENT_ENABLED_STATE_ENABLED`
+  static const COMPONENT_ENABLED_STATE_ENABLED = 1;
+
+  /// from: `static public final int DELETE_ARCHIVE`
+  static const DELETE_ARCHIVE = 16;
+
+  /// from: `static public final int DONT_KILL_APP`
+  static const DONT_KILL_APP = 1;
+  static final _id_EXTRA_VERIFICATION_ID = _class.staticFieldId(
+    r'EXTRA_VERIFICATION_ID',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_VERIFICATION_ID`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_VERIFICATION_ID =>
+      _id_EXTRA_VERIFICATION_ID.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_EXTRA_VERIFICATION_RESULT = _class.staticFieldId(
+    r'EXTRA_VERIFICATION_RESULT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String EXTRA_VERIFICATION_RESULT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get EXTRA_VERIFICATION_RESULT =>
+      _id_EXTRA_VERIFICATION_RESULT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_ACTIVITIES_ON_SECONDARY_DISPLAYS =
+      _class.staticFieldId(
+    r'FEATURE_ACTIVITIES_ON_SECONDARY_DISPLAYS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_ACTIVITIES_ON_SECONDARY_DISPLAYS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_ACTIVITIES_ON_SECONDARY_DISPLAYS =>
+      _id_FEATURE_ACTIVITIES_ON_SECONDARY_DISPLAYS.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_APP_WIDGETS = _class.staticFieldId(
+    r'FEATURE_APP_WIDGETS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_APP_WIDGETS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_APP_WIDGETS =>
+      _id_FEATURE_APP_WIDGETS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_AUDIO_LOW_LATENCY = _class.staticFieldId(
+    r'FEATURE_AUDIO_LOW_LATENCY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_AUDIO_LOW_LATENCY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_AUDIO_LOW_LATENCY =>
+      _id_FEATURE_AUDIO_LOW_LATENCY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_AUDIO_OUTPUT = _class.staticFieldId(
+    r'FEATURE_AUDIO_OUTPUT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_AUDIO_OUTPUT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_AUDIO_OUTPUT =>
+      _id_FEATURE_AUDIO_OUTPUT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_AUDIO_PRO = _class.staticFieldId(
+    r'FEATURE_AUDIO_PRO',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_AUDIO_PRO`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_AUDIO_PRO =>
+      _id_FEATURE_AUDIO_PRO.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_AUDIO_SPATIAL_HEADTRACKING_LOW_LATENCY =
+      _class.staticFieldId(
+    r'FEATURE_AUDIO_SPATIAL_HEADTRACKING_LOW_LATENCY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_AUDIO_SPATIAL_HEADTRACKING_LOW_LATENCY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_AUDIO_SPATIAL_HEADTRACKING_LOW_LATENCY =>
+      _id_FEATURE_AUDIO_SPATIAL_HEADTRACKING_LOW_LATENCY.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_AUTOFILL = _class.staticFieldId(
+    r'FEATURE_AUTOFILL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_AUTOFILL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_AUTOFILL =>
+      _id_FEATURE_AUTOFILL.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_AUTOMOTIVE = _class.staticFieldId(
+    r'FEATURE_AUTOMOTIVE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_AUTOMOTIVE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_AUTOMOTIVE =>
+      _id_FEATURE_AUTOMOTIVE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_BACKUP = _class.staticFieldId(
+    r'FEATURE_BACKUP',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_BACKUP`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_BACKUP =>
+      _id_FEATURE_BACKUP.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_BLUETOOTH = _class.staticFieldId(
+    r'FEATURE_BLUETOOTH',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_BLUETOOTH`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_BLUETOOTH =>
+      _id_FEATURE_BLUETOOTH.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_BLUETOOTH_LE = _class.staticFieldId(
+    r'FEATURE_BLUETOOTH_LE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_BLUETOOTH_LE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_BLUETOOTH_LE =>
+      _id_FEATURE_BLUETOOTH_LE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_BLUETOOTH_LE_CHANNEL_SOUNDING = _class.staticFieldId(
+    r'FEATURE_BLUETOOTH_LE_CHANNEL_SOUNDING',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_BLUETOOTH_LE_CHANNEL_SOUNDING`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_BLUETOOTH_LE_CHANNEL_SOUNDING =>
+      _id_FEATURE_BLUETOOTH_LE_CHANNEL_SOUNDING.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_CAMERA = _class.staticFieldId(
+    r'FEATURE_CAMERA',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CAMERA`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CAMERA =>
+      _id_FEATURE_CAMERA.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CAMERA_ANY = _class.staticFieldId(
+    r'FEATURE_CAMERA_ANY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CAMERA_ANY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CAMERA_ANY =>
+      _id_FEATURE_CAMERA_ANY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CAMERA_AR = _class.staticFieldId(
+    r'FEATURE_CAMERA_AR',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CAMERA_AR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CAMERA_AR =>
+      _id_FEATURE_CAMERA_AR.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CAMERA_AUTOFOCUS = _class.staticFieldId(
+    r'FEATURE_CAMERA_AUTOFOCUS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CAMERA_AUTOFOCUS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CAMERA_AUTOFOCUS =>
+      _id_FEATURE_CAMERA_AUTOFOCUS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CAMERA_CAPABILITY_MANUAL_POST_PROCESSING =
+      _class.staticFieldId(
+    r'FEATURE_CAMERA_CAPABILITY_MANUAL_POST_PROCESSING',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CAMERA_CAPABILITY_MANUAL_POST_PROCESSING`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CAMERA_CAPABILITY_MANUAL_POST_PROCESSING =>
+      _id_FEATURE_CAMERA_CAPABILITY_MANUAL_POST_PROCESSING.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_CAMERA_CAPABILITY_MANUAL_SENSOR =
+      _class.staticFieldId(
+    r'FEATURE_CAMERA_CAPABILITY_MANUAL_SENSOR',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CAMERA_CAPABILITY_MANUAL_SENSOR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CAMERA_CAPABILITY_MANUAL_SENSOR =>
+      _id_FEATURE_CAMERA_CAPABILITY_MANUAL_SENSOR.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_CAMERA_CAPABILITY_RAW = _class.staticFieldId(
+    r'FEATURE_CAMERA_CAPABILITY_RAW',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CAMERA_CAPABILITY_RAW`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CAMERA_CAPABILITY_RAW =>
+      _id_FEATURE_CAMERA_CAPABILITY_RAW.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CAMERA_CONCURRENT = _class.staticFieldId(
+    r'FEATURE_CAMERA_CONCURRENT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CAMERA_CONCURRENT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CAMERA_CONCURRENT =>
+      _id_FEATURE_CAMERA_CONCURRENT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CAMERA_EXTERNAL = _class.staticFieldId(
+    r'FEATURE_CAMERA_EXTERNAL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CAMERA_EXTERNAL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CAMERA_EXTERNAL =>
+      _id_FEATURE_CAMERA_EXTERNAL.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CAMERA_FLASH = _class.staticFieldId(
+    r'FEATURE_CAMERA_FLASH',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CAMERA_FLASH`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CAMERA_FLASH =>
+      _id_FEATURE_CAMERA_FLASH.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CAMERA_FRONT = _class.staticFieldId(
+    r'FEATURE_CAMERA_FRONT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CAMERA_FRONT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CAMERA_FRONT =>
+      _id_FEATURE_CAMERA_FRONT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CAMERA_LEVEL_FULL = _class.staticFieldId(
+    r'FEATURE_CAMERA_LEVEL_FULL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CAMERA_LEVEL_FULL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CAMERA_LEVEL_FULL =>
+      _id_FEATURE_CAMERA_LEVEL_FULL.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CANT_SAVE_STATE = _class.staticFieldId(
+    r'FEATURE_CANT_SAVE_STATE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CANT_SAVE_STATE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CANT_SAVE_STATE =>
+      _id_FEATURE_CANT_SAVE_STATE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_COMPANION_DEVICE_SETUP = _class.staticFieldId(
+    r'FEATURE_COMPANION_DEVICE_SETUP',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_COMPANION_DEVICE_SETUP`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_COMPANION_DEVICE_SETUP =>
+      _id_FEATURE_COMPANION_DEVICE_SETUP.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CONNECTION_SERVICE = _class.staticFieldId(
+    r'FEATURE_CONNECTION_SERVICE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CONNECTION_SERVICE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CONNECTION_SERVICE =>
+      _id_FEATURE_CONNECTION_SERVICE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CONSUMER_IR = _class.staticFieldId(
+    r'FEATURE_CONSUMER_IR',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CONSUMER_IR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CONSUMER_IR =>
+      _id_FEATURE_CONSUMER_IR.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CONTROLS = _class.staticFieldId(
+    r'FEATURE_CONTROLS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CONTROLS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CONTROLS =>
+      _id_FEATURE_CONTROLS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_CREDENTIALS = _class.staticFieldId(
+    r'FEATURE_CREDENTIALS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_CREDENTIALS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_CREDENTIALS =>
+      _id_FEATURE_CREDENTIALS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_DEVICE_ADMIN = _class.staticFieldId(
+    r'FEATURE_DEVICE_ADMIN',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_DEVICE_ADMIN`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_DEVICE_ADMIN =>
+      _id_FEATURE_DEVICE_ADMIN.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_DEVICE_LOCK = _class.staticFieldId(
+    r'FEATURE_DEVICE_LOCK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_DEVICE_LOCK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_DEVICE_LOCK =>
+      _id_FEATURE_DEVICE_LOCK.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_EMBEDDED = _class.staticFieldId(
+    r'FEATURE_EMBEDDED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_EMBEDDED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_EMBEDDED =>
+      _id_FEATURE_EMBEDDED.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_ETHERNET = _class.staticFieldId(
+    r'FEATURE_ETHERNET',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_ETHERNET`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_ETHERNET =>
+      _id_FEATURE_ETHERNET.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_EXPANDED_PICTURE_IN_PICTURE = _class.staticFieldId(
+    r'FEATURE_EXPANDED_PICTURE_IN_PICTURE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_EXPANDED_PICTURE_IN_PICTURE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_EXPANDED_PICTURE_IN_PICTURE =>
+      _id_FEATURE_EXPANDED_PICTURE_IN_PICTURE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_FACE = _class.staticFieldId(
+    r'FEATURE_FACE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_FACE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_FACE =>
+      _id_FEATURE_FACE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_FAKETOUCH = _class.staticFieldId(
+    r'FEATURE_FAKETOUCH',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_FAKETOUCH`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_FAKETOUCH =>
+      _id_FEATURE_FAKETOUCH.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_FAKETOUCH_MULTITOUCH_DISTINCT = _class.staticFieldId(
+    r'FEATURE_FAKETOUCH_MULTITOUCH_DISTINCT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_FAKETOUCH_MULTITOUCH_DISTINCT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_FAKETOUCH_MULTITOUCH_DISTINCT =>
+      _id_FEATURE_FAKETOUCH_MULTITOUCH_DISTINCT.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_FAKETOUCH_MULTITOUCH_JAZZHAND = _class.staticFieldId(
+    r'FEATURE_FAKETOUCH_MULTITOUCH_JAZZHAND',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_FAKETOUCH_MULTITOUCH_JAZZHAND`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_FAKETOUCH_MULTITOUCH_JAZZHAND =>
+      _id_FEATURE_FAKETOUCH_MULTITOUCH_JAZZHAND.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_FINGERPRINT = _class.staticFieldId(
+    r'FEATURE_FINGERPRINT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_FINGERPRINT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_FINGERPRINT =>
+      _id_FEATURE_FINGERPRINT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_FREEFORM_WINDOW_MANAGEMENT = _class.staticFieldId(
+    r'FEATURE_FREEFORM_WINDOW_MANAGEMENT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_FREEFORM_WINDOW_MANAGEMENT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_FREEFORM_WINDOW_MANAGEMENT =>
+      _id_FEATURE_FREEFORM_WINDOW_MANAGEMENT.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_GAMEPAD = _class.staticFieldId(
+    r'FEATURE_GAMEPAD',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_GAMEPAD`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_GAMEPAD =>
+      _id_FEATURE_GAMEPAD.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_HARDWARE_KEYSTORE = _class.staticFieldId(
+    r'FEATURE_HARDWARE_KEYSTORE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_HARDWARE_KEYSTORE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_HARDWARE_KEYSTORE =>
+      _id_FEATURE_HARDWARE_KEYSTORE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_HIFI_SENSORS = _class.staticFieldId(
+    r'FEATURE_HIFI_SENSORS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_HIFI_SENSORS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_HIFI_SENSORS =>
+      _id_FEATURE_HIFI_SENSORS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_HOME_SCREEN = _class.staticFieldId(
+    r'FEATURE_HOME_SCREEN',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_HOME_SCREEN`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_HOME_SCREEN =>
+      _id_FEATURE_HOME_SCREEN.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_IDENTITY_CREDENTIAL_HARDWARE = _class.staticFieldId(
+    r'FEATURE_IDENTITY_CREDENTIAL_HARDWARE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_IDENTITY_CREDENTIAL_HARDWARE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_IDENTITY_CREDENTIAL_HARDWARE =>
+      _id_FEATURE_IDENTITY_CREDENTIAL_HARDWARE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_IDENTITY_CREDENTIAL_HARDWARE_DIRECT_ACCESS =
+      _class.staticFieldId(
+    r'FEATURE_IDENTITY_CREDENTIAL_HARDWARE_DIRECT_ACCESS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_IDENTITY_CREDENTIAL_HARDWARE_DIRECT_ACCESS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString?
+      get FEATURE_IDENTITY_CREDENTIAL_HARDWARE_DIRECT_ACCESS =>
+          _id_FEATURE_IDENTITY_CREDENTIAL_HARDWARE_DIRECT_ACCESS.getNullable(
+              _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_INPUT_METHODS = _class.staticFieldId(
+    r'FEATURE_INPUT_METHODS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_INPUT_METHODS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_INPUT_METHODS =>
+      _id_FEATURE_INPUT_METHODS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_IPSEC_TUNNELS = _class.staticFieldId(
+    r'FEATURE_IPSEC_TUNNELS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_IPSEC_TUNNELS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_IPSEC_TUNNELS =>
+      _id_FEATURE_IPSEC_TUNNELS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_IPSEC_TUNNEL_MIGRATION = _class.staticFieldId(
+    r'FEATURE_IPSEC_TUNNEL_MIGRATION',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_IPSEC_TUNNEL_MIGRATION`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_IPSEC_TUNNEL_MIGRATION =>
+      _id_FEATURE_IPSEC_TUNNEL_MIGRATION.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_IRIS = _class.staticFieldId(
+    r'FEATURE_IRIS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_IRIS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_IRIS =>
+      _id_FEATURE_IRIS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_KEYSTORE_APP_ATTEST_KEY = _class.staticFieldId(
+    r'FEATURE_KEYSTORE_APP_ATTEST_KEY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_KEYSTORE_APP_ATTEST_KEY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_KEYSTORE_APP_ATTEST_KEY =>
+      _id_FEATURE_KEYSTORE_APP_ATTEST_KEY.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_KEYSTORE_LIMITED_USE_KEY = _class.staticFieldId(
+    r'FEATURE_KEYSTORE_LIMITED_USE_KEY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_KEYSTORE_LIMITED_USE_KEY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_KEYSTORE_LIMITED_USE_KEY =>
+      _id_FEATURE_KEYSTORE_LIMITED_USE_KEY.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_KEYSTORE_SINGLE_USE_KEY = _class.staticFieldId(
+    r'FEATURE_KEYSTORE_SINGLE_USE_KEY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_KEYSTORE_SINGLE_USE_KEY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_KEYSTORE_SINGLE_USE_KEY =>
+      _id_FEATURE_KEYSTORE_SINGLE_USE_KEY.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_LEANBACK = _class.staticFieldId(
+    r'FEATURE_LEANBACK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_LEANBACK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_LEANBACK =>
+      _id_FEATURE_LEANBACK.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_LEANBACK_ONLY = _class.staticFieldId(
+    r'FEATURE_LEANBACK_ONLY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_LEANBACK_ONLY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_LEANBACK_ONLY =>
+      _id_FEATURE_LEANBACK_ONLY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_LIVE_TV = _class.staticFieldId(
+    r'FEATURE_LIVE_TV',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_LIVE_TV`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_LIVE_TV =>
+      _id_FEATURE_LIVE_TV.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_LIVE_WALLPAPER = _class.staticFieldId(
+    r'FEATURE_LIVE_WALLPAPER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_LIVE_WALLPAPER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_LIVE_WALLPAPER =>
+      _id_FEATURE_LIVE_WALLPAPER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_LOCATION = _class.staticFieldId(
+    r'FEATURE_LOCATION',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_LOCATION`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_LOCATION =>
+      _id_FEATURE_LOCATION.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_LOCATION_GPS = _class.staticFieldId(
+    r'FEATURE_LOCATION_GPS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_LOCATION_GPS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_LOCATION_GPS =>
+      _id_FEATURE_LOCATION_GPS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_LOCATION_NETWORK = _class.staticFieldId(
+    r'FEATURE_LOCATION_NETWORK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_LOCATION_NETWORK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_LOCATION_NETWORK =>
+      _id_FEATURE_LOCATION_NETWORK.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_MANAGED_USERS = _class.staticFieldId(
+    r'FEATURE_MANAGED_USERS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_MANAGED_USERS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_MANAGED_USERS =>
+      _id_FEATURE_MANAGED_USERS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_MICROPHONE = _class.staticFieldId(
+    r'FEATURE_MICROPHONE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_MICROPHONE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_MICROPHONE =>
+      _id_FEATURE_MICROPHONE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_MIDI = _class.staticFieldId(
+    r'FEATURE_MIDI',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_MIDI`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_MIDI =>
+      _id_FEATURE_MIDI.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_NFC = _class.staticFieldId(
+    r'FEATURE_NFC',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_NFC`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_NFC =>
+      _id_FEATURE_NFC.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_NFC_BEAM = _class.staticFieldId(
+    r'FEATURE_NFC_BEAM',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_NFC_BEAM`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_NFC_BEAM =>
+      _id_FEATURE_NFC_BEAM.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_NFC_HOST_CARD_EMULATION = _class.staticFieldId(
+    r'FEATURE_NFC_HOST_CARD_EMULATION',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_NFC_HOST_CARD_EMULATION`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_NFC_HOST_CARD_EMULATION =>
+      _id_FEATURE_NFC_HOST_CARD_EMULATION.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_NFC_HOST_CARD_EMULATION_NFCF = _class.staticFieldId(
+    r'FEATURE_NFC_HOST_CARD_EMULATION_NFCF',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_NFC_HOST_CARD_EMULATION_NFCF`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_NFC_HOST_CARD_EMULATION_NFCF =>
+      _id_FEATURE_NFC_HOST_CARD_EMULATION_NFCF.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_NFC_OFF_HOST_CARD_EMULATION_ESE =
+      _class.staticFieldId(
+    r'FEATURE_NFC_OFF_HOST_CARD_EMULATION_ESE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_NFC_OFF_HOST_CARD_EMULATION_ESE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_NFC_OFF_HOST_CARD_EMULATION_ESE =>
+      _id_FEATURE_NFC_OFF_HOST_CARD_EMULATION_ESE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_NFC_OFF_HOST_CARD_EMULATION_UICC =
+      _class.staticFieldId(
+    r'FEATURE_NFC_OFF_HOST_CARD_EMULATION_UICC',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_NFC_OFF_HOST_CARD_EMULATION_UICC`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_NFC_OFF_HOST_CARD_EMULATION_UICC =>
+      _id_FEATURE_NFC_OFF_HOST_CARD_EMULATION_UICC.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_OPENGLES_DEQP_LEVEL = _class.staticFieldId(
+    r'FEATURE_OPENGLES_DEQP_LEVEL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_OPENGLES_DEQP_LEVEL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_OPENGLES_DEQP_LEVEL =>
+      _id_FEATURE_OPENGLES_DEQP_LEVEL.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_OPENGLES_EXTENSION_PACK = _class.staticFieldId(
+    r'FEATURE_OPENGLES_EXTENSION_PACK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_OPENGLES_EXTENSION_PACK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_OPENGLES_EXTENSION_PACK =>
+      _id_FEATURE_OPENGLES_EXTENSION_PACK.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_PC = _class.staticFieldId(
+    r'FEATURE_PC',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_PC`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_PC =>
+      _id_FEATURE_PC.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_PICTURE_IN_PICTURE = _class.staticFieldId(
+    r'FEATURE_PICTURE_IN_PICTURE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_PICTURE_IN_PICTURE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_PICTURE_IN_PICTURE =>
+      _id_FEATURE_PICTURE_IN_PICTURE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_PRINTING = _class.staticFieldId(
+    r'FEATURE_PRINTING',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_PRINTING`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_PRINTING =>
+      _id_FEATURE_PRINTING.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_RAM_LOW = _class.staticFieldId(
+    r'FEATURE_RAM_LOW',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_RAM_LOW`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_RAM_LOW =>
+      _id_FEATURE_RAM_LOW.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_RAM_NORMAL = _class.staticFieldId(
+    r'FEATURE_RAM_NORMAL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_RAM_NORMAL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_RAM_NORMAL =>
+      _id_FEATURE_RAM_NORMAL.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SCREEN_LANDSCAPE = _class.staticFieldId(
+    r'FEATURE_SCREEN_LANDSCAPE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SCREEN_LANDSCAPE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SCREEN_LANDSCAPE =>
+      _id_FEATURE_SCREEN_LANDSCAPE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SCREEN_PORTRAIT = _class.staticFieldId(
+    r'FEATURE_SCREEN_PORTRAIT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SCREEN_PORTRAIT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SCREEN_PORTRAIT =>
+      _id_FEATURE_SCREEN_PORTRAIT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SECURELY_REMOVES_USERS = _class.staticFieldId(
+    r'FEATURE_SECURELY_REMOVES_USERS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SECURELY_REMOVES_USERS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SECURELY_REMOVES_USERS =>
+      _id_FEATURE_SECURELY_REMOVES_USERS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SECURE_LOCK_SCREEN = _class.staticFieldId(
+    r'FEATURE_SECURE_LOCK_SCREEN',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SECURE_LOCK_SCREEN`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SECURE_LOCK_SCREEN =>
+      _id_FEATURE_SECURE_LOCK_SCREEN.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SECURITY_MODEL_COMPATIBLE = _class.staticFieldId(
+    r'FEATURE_SECURITY_MODEL_COMPATIBLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SECURITY_MODEL_COMPATIBLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SECURITY_MODEL_COMPATIBLE =>
+      _id_FEATURE_SECURITY_MODEL_COMPATIBLE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_ACCELEROMETER = _class.staticFieldId(
+    r'FEATURE_SENSOR_ACCELEROMETER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_ACCELEROMETER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_ACCELEROMETER =>
+      _id_FEATURE_SENSOR_ACCELEROMETER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_ACCELEROMETER_LIMITED_AXES =
+      _class.staticFieldId(
+    r'FEATURE_SENSOR_ACCELEROMETER_LIMITED_AXES',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_ACCELEROMETER_LIMITED_AXES`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_ACCELEROMETER_LIMITED_AXES =>
+      _id_FEATURE_SENSOR_ACCELEROMETER_LIMITED_AXES.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_ACCELEROMETER_LIMITED_AXES_UNCALIBRATED =
+      _class.staticFieldId(
+    r'FEATURE_SENSOR_ACCELEROMETER_LIMITED_AXES_UNCALIBRATED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_ACCELEROMETER_LIMITED_AXES_UNCALIBRATED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString?
+      get FEATURE_SENSOR_ACCELEROMETER_LIMITED_AXES_UNCALIBRATED =>
+          _id_FEATURE_SENSOR_ACCELEROMETER_LIMITED_AXES_UNCALIBRATED
+              .getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_AMBIENT_TEMPERATURE = _class.staticFieldId(
+    r'FEATURE_SENSOR_AMBIENT_TEMPERATURE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_AMBIENT_TEMPERATURE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_AMBIENT_TEMPERATURE =>
+      _id_FEATURE_SENSOR_AMBIENT_TEMPERATURE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_BAROMETER = _class.staticFieldId(
+    r'FEATURE_SENSOR_BAROMETER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_BAROMETER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_BAROMETER =>
+      _id_FEATURE_SENSOR_BAROMETER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_COMPASS = _class.staticFieldId(
+    r'FEATURE_SENSOR_COMPASS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_COMPASS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_COMPASS =>
+      _id_FEATURE_SENSOR_COMPASS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_DYNAMIC_HEAD_TRACKER = _class.staticFieldId(
+    r'FEATURE_SENSOR_DYNAMIC_HEAD_TRACKER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_DYNAMIC_HEAD_TRACKER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_DYNAMIC_HEAD_TRACKER =>
+      _id_FEATURE_SENSOR_DYNAMIC_HEAD_TRACKER.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_GYROSCOPE = _class.staticFieldId(
+    r'FEATURE_SENSOR_GYROSCOPE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_GYROSCOPE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_GYROSCOPE =>
+      _id_FEATURE_SENSOR_GYROSCOPE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_GYROSCOPE_LIMITED_AXES = _class.staticFieldId(
+    r'FEATURE_SENSOR_GYROSCOPE_LIMITED_AXES',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_GYROSCOPE_LIMITED_AXES`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_GYROSCOPE_LIMITED_AXES =>
+      _id_FEATURE_SENSOR_GYROSCOPE_LIMITED_AXES.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_GYROSCOPE_LIMITED_AXES_UNCALIBRATED =
+      _class.staticFieldId(
+    r'FEATURE_SENSOR_GYROSCOPE_LIMITED_AXES_UNCALIBRATED',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_GYROSCOPE_LIMITED_AXES_UNCALIBRATED`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString?
+      get FEATURE_SENSOR_GYROSCOPE_LIMITED_AXES_UNCALIBRATED =>
+          _id_FEATURE_SENSOR_GYROSCOPE_LIMITED_AXES_UNCALIBRATED.getNullable(
+              _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_HEADING = _class.staticFieldId(
+    r'FEATURE_SENSOR_HEADING',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_HEADING`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_HEADING =>
+      _id_FEATURE_SENSOR_HEADING.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_HEART_RATE = _class.staticFieldId(
+    r'FEATURE_SENSOR_HEART_RATE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_HEART_RATE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_HEART_RATE =>
+      _id_FEATURE_SENSOR_HEART_RATE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_HEART_RATE_ECG = _class.staticFieldId(
+    r'FEATURE_SENSOR_HEART_RATE_ECG',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_HEART_RATE_ECG`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_HEART_RATE_ECG =>
+      _id_FEATURE_SENSOR_HEART_RATE_ECG.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_HINGE_ANGLE = _class.staticFieldId(
+    r'FEATURE_SENSOR_HINGE_ANGLE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_HINGE_ANGLE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_HINGE_ANGLE =>
+      _id_FEATURE_SENSOR_HINGE_ANGLE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_LIGHT = _class.staticFieldId(
+    r'FEATURE_SENSOR_LIGHT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_LIGHT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_LIGHT =>
+      _id_FEATURE_SENSOR_LIGHT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_PROXIMITY = _class.staticFieldId(
+    r'FEATURE_SENSOR_PROXIMITY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_PROXIMITY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_PROXIMITY =>
+      _id_FEATURE_SENSOR_PROXIMITY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_RELATIVE_HUMIDITY = _class.staticFieldId(
+    r'FEATURE_SENSOR_RELATIVE_HUMIDITY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_RELATIVE_HUMIDITY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_RELATIVE_HUMIDITY =>
+      _id_FEATURE_SENSOR_RELATIVE_HUMIDITY.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_STEP_COUNTER = _class.staticFieldId(
+    r'FEATURE_SENSOR_STEP_COUNTER',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_STEP_COUNTER`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_STEP_COUNTER =>
+      _id_FEATURE_SENSOR_STEP_COUNTER.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SENSOR_STEP_DETECTOR = _class.staticFieldId(
+    r'FEATURE_SENSOR_STEP_DETECTOR',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SENSOR_STEP_DETECTOR`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SENSOR_STEP_DETECTOR =>
+      _id_FEATURE_SENSOR_STEP_DETECTOR.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SE_OMAPI_ESE = _class.staticFieldId(
+    r'FEATURE_SE_OMAPI_ESE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SE_OMAPI_ESE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SE_OMAPI_ESE =>
+      _id_FEATURE_SE_OMAPI_ESE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SE_OMAPI_SD = _class.staticFieldId(
+    r'FEATURE_SE_OMAPI_SD',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SE_OMAPI_SD`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SE_OMAPI_SD =>
+      _id_FEATURE_SE_OMAPI_SD.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SE_OMAPI_UICC = _class.staticFieldId(
+    r'FEATURE_SE_OMAPI_UICC',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SE_OMAPI_UICC`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SE_OMAPI_UICC =>
+      _id_FEATURE_SE_OMAPI_UICC.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_SIP = _class.staticFieldId(
+    r'FEATURE_SIP',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SIP`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SIP =>
+      _id_FEATURE_SIP.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_SIP_VOIP = _class.staticFieldId(
+    r'FEATURE_SIP_VOIP',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_SIP_VOIP`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_SIP_VOIP =>
+      _id_FEATURE_SIP_VOIP.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_STRONGBOX_KEYSTORE = _class.staticFieldId(
+    r'FEATURE_STRONGBOX_KEYSTORE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_STRONGBOX_KEYSTORE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_STRONGBOX_KEYSTORE =>
+      _id_FEATURE_STRONGBOX_KEYSTORE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELECOM = _class.staticFieldId(
+    r'FEATURE_TELECOM',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELECOM`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELECOM =>
+      _id_FEATURE_TELECOM.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELEPHONY = _class.staticFieldId(
+    r'FEATURE_TELEPHONY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELEPHONY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELEPHONY =>
+      _id_FEATURE_TELEPHONY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELEPHONY_CALLING = _class.staticFieldId(
+    r'FEATURE_TELEPHONY_CALLING',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELEPHONY_CALLING`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELEPHONY_CALLING =>
+      _id_FEATURE_TELEPHONY_CALLING.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELEPHONY_CDMA = _class.staticFieldId(
+    r'FEATURE_TELEPHONY_CDMA',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELEPHONY_CDMA`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELEPHONY_CDMA =>
+      _id_FEATURE_TELEPHONY_CDMA.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELEPHONY_DATA = _class.staticFieldId(
+    r'FEATURE_TELEPHONY_DATA',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELEPHONY_DATA`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELEPHONY_DATA =>
+      _id_FEATURE_TELEPHONY_DATA.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELEPHONY_EUICC = _class.staticFieldId(
+    r'FEATURE_TELEPHONY_EUICC',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELEPHONY_EUICC`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELEPHONY_EUICC =>
+      _id_FEATURE_TELEPHONY_EUICC.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELEPHONY_EUICC_MEP = _class.staticFieldId(
+    r'FEATURE_TELEPHONY_EUICC_MEP',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELEPHONY_EUICC_MEP`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELEPHONY_EUICC_MEP =>
+      _id_FEATURE_TELEPHONY_EUICC_MEP.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELEPHONY_GSM = _class.staticFieldId(
+    r'FEATURE_TELEPHONY_GSM',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELEPHONY_GSM`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELEPHONY_GSM =>
+      _id_FEATURE_TELEPHONY_GSM.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELEPHONY_IMS = _class.staticFieldId(
+    r'FEATURE_TELEPHONY_IMS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELEPHONY_IMS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELEPHONY_IMS =>
+      _id_FEATURE_TELEPHONY_IMS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELEPHONY_MBMS = _class.staticFieldId(
+    r'FEATURE_TELEPHONY_MBMS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELEPHONY_MBMS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELEPHONY_MBMS =>
+      _id_FEATURE_TELEPHONY_MBMS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELEPHONY_MESSAGING = _class.staticFieldId(
+    r'FEATURE_TELEPHONY_MESSAGING',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELEPHONY_MESSAGING`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELEPHONY_MESSAGING =>
+      _id_FEATURE_TELEPHONY_MESSAGING.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELEPHONY_RADIO_ACCESS = _class.staticFieldId(
+    r'FEATURE_TELEPHONY_RADIO_ACCESS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELEPHONY_RADIO_ACCESS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELEPHONY_RADIO_ACCESS =>
+      _id_FEATURE_TELEPHONY_RADIO_ACCESS.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELEPHONY_SUBSCRIPTION = _class.staticFieldId(
+    r'FEATURE_TELEPHONY_SUBSCRIPTION',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELEPHONY_SUBSCRIPTION`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELEPHONY_SUBSCRIPTION =>
+      _id_FEATURE_TELEPHONY_SUBSCRIPTION.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TELEVISION = _class.staticFieldId(
+    r'FEATURE_TELEVISION',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TELEVISION`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TELEVISION =>
+      _id_FEATURE_TELEVISION.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_THREAD_NETWORK = _class.staticFieldId(
+    r'FEATURE_THREAD_NETWORK',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_THREAD_NETWORK`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_THREAD_NETWORK =>
+      _id_FEATURE_THREAD_NETWORK.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TOUCHSCREEN = _class.staticFieldId(
+    r'FEATURE_TOUCHSCREEN',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TOUCHSCREEN`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TOUCHSCREEN =>
+      _id_FEATURE_TOUCHSCREEN.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TOUCHSCREEN_MULTITOUCH = _class.staticFieldId(
+    r'FEATURE_TOUCHSCREEN_MULTITOUCH',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TOUCHSCREEN_MULTITOUCH`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TOUCHSCREEN_MULTITOUCH =>
+      _id_FEATURE_TOUCHSCREEN_MULTITOUCH.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT =
+      _class.staticFieldId(
+    r'FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT =>
+      _id_FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_TOUCHSCREEN_MULTITOUCH_JAZZHAND =
+      _class.staticFieldId(
+    r'FEATURE_TOUCHSCREEN_MULTITOUCH_JAZZHAND',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_TOUCHSCREEN_MULTITOUCH_JAZZHAND`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_TOUCHSCREEN_MULTITOUCH_JAZZHAND =>
+      _id_FEATURE_TOUCHSCREEN_MULTITOUCH_JAZZHAND.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_USB_ACCESSORY = _class.staticFieldId(
+    r'FEATURE_USB_ACCESSORY',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_USB_ACCESSORY`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_USB_ACCESSORY =>
+      _id_FEATURE_USB_ACCESSORY.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_USB_HOST = _class.staticFieldId(
+    r'FEATURE_USB_HOST',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_USB_HOST`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_USB_HOST =>
+      _id_FEATURE_USB_HOST.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_UWB = _class.staticFieldId(
+    r'FEATURE_UWB',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_UWB`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_UWB =>
+      _id_FEATURE_UWB.getNullable(_class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_VERIFIED_BOOT = _class.staticFieldId(
+    r'FEATURE_VERIFIED_BOOT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_VERIFIED_BOOT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_VERIFIED_BOOT =>
+      _id_FEATURE_VERIFIED_BOOT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_VR_HEADTRACKING = _class.staticFieldId(
+    r'FEATURE_VR_HEADTRACKING',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_VR_HEADTRACKING`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_VR_HEADTRACKING =>
+      _id_FEATURE_VR_HEADTRACKING.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_VR_MODE = _class.staticFieldId(
+    r'FEATURE_VR_MODE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_VR_MODE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_VR_MODE =>
+      _id_FEATURE_VR_MODE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_VR_MODE_HIGH_PERFORMANCE = _class.staticFieldId(
+    r'FEATURE_VR_MODE_HIGH_PERFORMANCE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_VR_MODE_HIGH_PERFORMANCE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_VR_MODE_HIGH_PERFORMANCE =>
+      _id_FEATURE_VR_MODE_HIGH_PERFORMANCE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_VULKAN_DEQP_LEVEL = _class.staticFieldId(
+    r'FEATURE_VULKAN_DEQP_LEVEL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_VULKAN_DEQP_LEVEL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_VULKAN_DEQP_LEVEL =>
+      _id_FEATURE_VULKAN_DEQP_LEVEL.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_VULKAN_HARDWARE_COMPUTE = _class.staticFieldId(
+    r'FEATURE_VULKAN_HARDWARE_COMPUTE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_VULKAN_HARDWARE_COMPUTE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_VULKAN_HARDWARE_COMPUTE =>
+      _id_FEATURE_VULKAN_HARDWARE_COMPUTE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_VULKAN_HARDWARE_LEVEL = _class.staticFieldId(
+    r'FEATURE_VULKAN_HARDWARE_LEVEL',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_VULKAN_HARDWARE_LEVEL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_VULKAN_HARDWARE_LEVEL =>
+      _id_FEATURE_VULKAN_HARDWARE_LEVEL.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_VULKAN_HARDWARE_VERSION = _class.staticFieldId(
+    r'FEATURE_VULKAN_HARDWARE_VERSION',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_VULKAN_HARDWARE_VERSION`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_VULKAN_HARDWARE_VERSION =>
+      _id_FEATURE_VULKAN_HARDWARE_VERSION.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_WALLET_LOCATION_BASED_SUGGESTIONS =
+      _class.staticFieldId(
+    r'FEATURE_WALLET_LOCATION_BASED_SUGGESTIONS',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_WALLET_LOCATION_BASED_SUGGESTIONS`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_WALLET_LOCATION_BASED_SUGGESTIONS =>
+      _id_FEATURE_WALLET_LOCATION_BASED_SUGGESTIONS.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_FEATURE_WATCH = _class.staticFieldId(
+    r'FEATURE_WATCH',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_WATCH`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_WATCH =>
+      _id_FEATURE_WATCH.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_WEBVIEW = _class.staticFieldId(
+    r'FEATURE_WEBVIEW',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_WEBVIEW`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_WEBVIEW =>
+      _id_FEATURE_WEBVIEW.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_WIFI = _class.staticFieldId(
+    r'FEATURE_WIFI',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_WIFI`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_WIFI =>
+      _id_FEATURE_WIFI.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_WIFI_AWARE = _class.staticFieldId(
+    r'FEATURE_WIFI_AWARE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_WIFI_AWARE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_WIFI_AWARE =>
+      _id_FEATURE_WIFI_AWARE.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_WIFI_DIRECT = _class.staticFieldId(
+    r'FEATURE_WIFI_DIRECT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_WIFI_DIRECT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_WIFI_DIRECT =>
+      _id_FEATURE_WIFI_DIRECT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_WIFI_PASSPOINT = _class.staticFieldId(
+    r'FEATURE_WIFI_PASSPOINT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_WIFI_PASSPOINT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_WIFI_PASSPOINT =>
+      _id_FEATURE_WIFI_PASSPOINT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_WIFI_RTT = _class.staticFieldId(
+    r'FEATURE_WIFI_RTT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_WIFI_RTT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_WIFI_RTT =>
+      _id_FEATURE_WIFI_RTT.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_FEATURE_WINDOW_MAGNIFICATION = _class.staticFieldId(
+    r'FEATURE_WINDOW_MAGNIFICATION',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String FEATURE_WINDOW_MAGNIFICATION`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get FEATURE_WINDOW_MAGNIFICATION =>
+      _id_FEATURE_WINDOW_MAGNIFICATION.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  /// from: `static public final int FLAG_PERMISSION_WHITELIST_INSTALLER`
+  static const FLAG_PERMISSION_WHITELIST_INSTALLER = 2;
+
+  /// from: `static public final int FLAG_PERMISSION_WHITELIST_SYSTEM`
+  static const FLAG_PERMISSION_WHITELIST_SYSTEM = 1;
+
+  /// from: `static public final int FLAG_PERMISSION_WHITELIST_UPGRADE`
+  static const FLAG_PERMISSION_WHITELIST_UPGRADE = 4;
+
+  /// from: `static public final int GET_ACTIVITIES`
+  static const GET_ACTIVITIES = 1;
+
+  /// from: `static public final int GET_ATTRIBUTIONS`
+  static const GET_ATTRIBUTIONS = -2147483648;
+
+  /// from: `static public final long GET_ATTRIBUTIONS_LONG`
+  static const GET_ATTRIBUTIONS_LONG = 2147483648;
+
+  /// from: `static public final int GET_CONFIGURATIONS`
+  static const GET_CONFIGURATIONS = 16384;
+
+  /// from: `static public final int GET_DISABLED_COMPONENTS`
+  static const GET_DISABLED_COMPONENTS = 512;
+
+  /// from: `static public final int GET_DISABLED_UNTIL_USED_COMPONENTS`
+  static const GET_DISABLED_UNTIL_USED_COMPONENTS = 32768;
+
+  /// from: `static public final int GET_GIDS`
+  static const GET_GIDS = 256;
+
+  /// from: `static public final int GET_INSTRUMENTATION`
+  static const GET_INSTRUMENTATION = 16;
+
+  /// from: `static public final int GET_INTENT_FILTERS`
+  static const GET_INTENT_FILTERS = 32;
+
+  /// from: `static public final int GET_META_DATA`
+  static const GET_META_DATA = 128;
+
+  /// from: `static public final int GET_PERMISSIONS`
+  static const GET_PERMISSIONS = 4096;
+
+  /// from: `static public final int GET_PROVIDERS`
+  static const GET_PROVIDERS = 8;
+
+  /// from: `static public final int GET_RECEIVERS`
+  static const GET_RECEIVERS = 2;
+
+  /// from: `static public final int GET_RESOLVED_FILTER`
+  static const GET_RESOLVED_FILTER = 64;
+
+  /// from: `static public final int GET_SERVICES`
+  static const GET_SERVICES = 4;
+
+  /// from: `static public final int GET_SHARED_LIBRARY_FILES`
+  static const GET_SHARED_LIBRARY_FILES = 1024;
+
+  /// from: `static public final int GET_SIGNATURES`
+  static const GET_SIGNATURES = 64;
+
+  /// from: `static public final int GET_SIGNING_CERTIFICATES`
+  static const GET_SIGNING_CERTIFICATES = 134217728;
+
+  /// from: `static public final int GET_UNINSTALLED_PACKAGES`
+  static const GET_UNINSTALLED_PACKAGES = 8192;
+
+  /// from: `static public final int GET_URI_PERMISSION_PATTERNS`
+  static const GET_URI_PERMISSION_PATTERNS = 2048;
+
+  /// from: `static public final int INSTALL_REASON_DEVICE_RESTORE`
+  static const INSTALL_REASON_DEVICE_RESTORE = 2;
+
+  /// from: `static public final int INSTALL_REASON_DEVICE_SETUP`
+  static const INSTALL_REASON_DEVICE_SETUP = 3;
+
+  /// from: `static public final int INSTALL_REASON_POLICY`
+  static const INSTALL_REASON_POLICY = 1;
+
+  /// from: `static public final int INSTALL_REASON_UNKNOWN`
+  static const INSTALL_REASON_UNKNOWN = 0;
+
+  /// from: `static public final int INSTALL_REASON_USER`
+  static const INSTALL_REASON_USER = 4;
+
+  /// from: `static public final int INSTALL_SCENARIO_BULK`
+  static const INSTALL_SCENARIO_BULK = 2;
+
+  /// from: `static public final int INSTALL_SCENARIO_BULK_SECONDARY`
+  static const INSTALL_SCENARIO_BULK_SECONDARY = 3;
+
+  /// from: `static public final int INSTALL_SCENARIO_DEFAULT`
+  static const INSTALL_SCENARIO_DEFAULT = 0;
+
+  /// from: `static public final int INSTALL_SCENARIO_FAST`
+  static const INSTALL_SCENARIO_FAST = 1;
+
+  /// from: `static public final int MATCH_ALL`
+  static const MATCH_ALL = 131072;
+
+  /// from: `static public final int MATCH_APEX`
+  static const MATCH_APEX = 1073741824;
+
+  /// from: `static public final long MATCH_ARCHIVED_PACKAGES`
+  static const MATCH_ARCHIVED_PACKAGES = 4294967296;
+
+  /// from: `static public final int MATCH_DEFAULT_ONLY`
+  static const MATCH_DEFAULT_ONLY = 65536;
+
+  /// from: `static public final int MATCH_DIRECT_BOOT_AUTO`
+  static const MATCH_DIRECT_BOOT_AUTO = 268435456;
+
+  /// from: `static public final int MATCH_DIRECT_BOOT_AWARE`
+  static const MATCH_DIRECT_BOOT_AWARE = 524288;
+
+  /// from: `static public final int MATCH_DIRECT_BOOT_UNAWARE`
+  static const MATCH_DIRECT_BOOT_UNAWARE = 262144;
+
+  /// from: `static public final int MATCH_DISABLED_COMPONENTS`
+  static const MATCH_DISABLED_COMPONENTS = 512;
+
+  /// from: `static public final int MATCH_DISABLED_UNTIL_USED_COMPONENTS`
+  static const MATCH_DISABLED_UNTIL_USED_COMPONENTS = 32768;
+
+  /// from: `static public final int MATCH_SYSTEM_ONLY`
+  static const MATCH_SYSTEM_ONLY = 1048576;
+
+  /// from: `static public final int MATCH_UNINSTALLED_PACKAGES`
+  static const MATCH_UNINSTALLED_PACKAGES = 8192;
+
+  /// from: `static public final long MAXIMUM_VERIFICATION_TIMEOUT`
+  static const MAXIMUM_VERIFICATION_TIMEOUT = 3600000;
+
+  /// from: `static public final int PERMISSION_DENIED`
+  static const PERMISSION_DENIED = -1;
+
+  /// from: `static public final int PERMISSION_GRANTED`
+  static const PERMISSION_GRANTED = 0;
+  static final _id_PROPERTY_COMPAT_OVERRIDE_LANDSCAPE_TO_PORTRAIT =
+      _class.staticFieldId(
+    r'PROPERTY_COMPAT_OVERRIDE_LANDSCAPE_TO_PORTRAIT',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String PROPERTY_COMPAT_OVERRIDE_LANDSCAPE_TO_PORTRAIT`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get PROPERTY_COMPAT_OVERRIDE_LANDSCAPE_TO_PORTRAIT =>
+      _id_PROPERTY_COMPAT_OVERRIDE_LANDSCAPE_TO_PORTRAIT.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_PROPERTY_MEDIA_CAPABILITIES = _class.staticFieldId(
+    r'PROPERTY_MEDIA_CAPABILITIES',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String PROPERTY_MEDIA_CAPABILITIES`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get PROPERTY_MEDIA_CAPABILITIES =>
+      _id_PROPERTY_MEDIA_CAPABILITIES.getNullable(_class, jni$_.JString.type)
+          as jni$_.JString?;
+
+  static final _id_PROPERTY_SELF_CERTIFIED_NETWORK_CAPABILITIES =
+      _class.staticFieldId(
+    r'PROPERTY_SELF_CERTIFIED_NETWORK_CAPABILITIES',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String PROPERTY_SELF_CERTIFIED_NETWORK_CAPABILITIES`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get PROPERTY_SELF_CERTIFIED_NETWORK_CAPABILITIES =>
+      _id_PROPERTY_SELF_CERTIFIED_NETWORK_CAPABILITIES.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_PROPERTY_SPECIAL_USE_FGS_SUBTYPE = _class.staticFieldId(
+    r'PROPERTY_SPECIAL_USE_FGS_SUBTYPE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String PROPERTY_SPECIAL_USE_FGS_SUBTYPE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get PROPERTY_SPECIAL_USE_FGS_SUBTYPE =>
+      _id_PROPERTY_SPECIAL_USE_FGS_SUBTYPE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  static final _id_PROPERTY_USE_RESTRICTED_BACKUP_MODE = _class.staticFieldId(
+    r'PROPERTY_USE_RESTRICTED_BACKUP_MODE',
+    r'Ljava/lang/String;',
+  );
+
+  /// from: `static public final java.lang.String PROPERTY_USE_RESTRICTED_BACKUP_MODE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JString? get PROPERTY_USE_RESTRICTED_BACKUP_MODE =>
+      _id_PROPERTY_USE_RESTRICTED_BACKUP_MODE.getNullable(
+          _class, jni$_.JString.type) as jni$_.JString?;
+
+  /// from: `static public final int SIGNATURE_FIRST_NOT_SIGNED`
+  static const SIGNATURE_FIRST_NOT_SIGNED = -1;
+
+  /// from: `static public final int SIGNATURE_MATCH`
+  static const SIGNATURE_MATCH = 0;
+
+  /// from: `static public final int SIGNATURE_NEITHER_SIGNED`
+  static const SIGNATURE_NEITHER_SIGNED = 1;
+
+  /// from: `static public final int SIGNATURE_NO_MATCH`
+  static const SIGNATURE_NO_MATCH = -3;
+
+  /// from: `static public final int SIGNATURE_SECOND_NOT_SIGNED`
+  static const SIGNATURE_SECOND_NOT_SIGNED = -2;
+
+  /// from: `static public final int SIGNATURE_UNKNOWN_PACKAGE`
+  static const SIGNATURE_UNKNOWN_PACKAGE = -4;
+
+  /// from: `static public final int SYNCHRONOUS`
+  static const SYNCHRONOUS = 2;
+  static final _id_TRUST_ALL = _class.staticFieldId(
+    r'TRUST_ALL',
+    r'Ljava/util/List;',
+  );
+
+  /// from: `static public final java.util.List<java.security.cert.Certificate> TRUST_ALL`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JList<Certificate?>? get TRUST_ALL =>
+      _id_TRUST_ALL.getNullable(_class, jni$_.JList.type)
+          as jni$_.JList<Certificate?>?;
+
+  static final _id_TRUST_NONE = _class.staticFieldId(
+    r'TRUST_NONE',
+    r'Ljava/util/List;',
+  );
+
+  /// from: `static public final java.util.List<java.security.cert.Certificate> TRUST_NONE`
+  /// The returned object must be released after use, by calling the [release] method.
+  static jni$_.JList<Certificate?>? get TRUST_NONE =>
+      _id_TRUST_NONE.getNullable(_class, jni$_.JList.type)
+          as jni$_.JList<Certificate?>?;
+
+  /// from: `static public final int VERIFICATION_ALLOW`
+  static const VERIFICATION_ALLOW = 1;
+
+  /// from: `static public final int VERIFICATION_REJECT`
+  static const VERIFICATION_REJECT = -1;
+
+  /// from: `static public final int VERSION_CODE_HIGHEST`
+  static const VERSION_CODE_HIGHEST = -1;
+}
+
+extension PackageManager$$Methods on PackageManager {
+  static final _id_getLaunchIntentForPackage =
+      PackageManager._class.instanceMethodId(
+    r'getLaunchIntentForPackage',
+    r'(Ljava/lang/String;)Landroid/content/Intent;',
+  );
+
+  static final _getLaunchIntentForPackage = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public abstract android.content.Intent getLaunchIntentForPackage(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Intent? getLaunchIntentForPackage(
+    jni$_.JString? string,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getLaunchIntentForPackage(_$$selfRef.pointer,
+            _id_getLaunchIntentForPackage.pointer, _$string.pointer)
+        .object<Intent?>();
+  }
+}
+
+final class $PackageManager$Type$ extends jni$_.JType<PackageManager> {
+  @jni$_.internal
+  const $PackageManager$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/pm/PackageManager;';
+}
+
+/// from: `android.content.res.Resources$NotFoundException`
+extension type Resources$NotFoundException._(jni$_.JObject _$this)
+    implements RuntimeException {
+  static final _class =
+      jni$_.JClass.forName(r'android/content/res/Resources$NotFoundException');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<Resources$NotFoundException> type =
+      $Resources$NotFoundException$Type$();
+  static final _id_new$ = _class.constructorId(
+    r'()V',
+  );
+
+  static final _new$ = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public void <init>()`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory Resources$NotFoundException() {
+    final _$$classRef = _class.reference;
+    return _new$(_$$classRef.pointer, _id_new$.pointer)
+        .object<Resources$NotFoundException>();
+  }
+
+  static final _id_new$1 = _class.constructorId(
+    r'(Ljava/lang/String;)V',
+  );
+
+  static final _new$1 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(java.lang.String string)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory Resources$NotFoundException.new$1(
+    jni$_.JString? string,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _new$1(_$$classRef.pointer, _id_new$1.pointer, _$string.pointer)
+        .object<Resources$NotFoundException>();
+  }
+
+  static final _id_new$2 = _class.constructorId(
+    r'(Ljava/lang/String;Ljava/lang/Exception;)V',
+  );
+
+  static final _new$2 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_NewObject')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void <init>(java.lang.String string, java.lang.Exception exception)`
+  /// The returned object must be released after use, by calling the [release] method.
+  factory Resources$NotFoundException.new$2(
+    jni$_.JString? string,
+    Exception? exception,
+  ) {
+    final _$$classRef = _class.reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$exception = exception?.reference ?? jni$_.jNullReference;
+    return _new$2(_$$classRef.pointer, _id_new$2.pointer, _$string.pointer,
+            _$exception.pointer)
+        .object<Resources$NotFoundException>();
+  }
+}
+
+final class $Resources$NotFoundException$Type$
+    extends jni$_.JType<Resources$NotFoundException> {
+  @jni$_.internal
+  const $Resources$NotFoundException$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/res/Resources$NotFoundException;';
+}
+
+/// from: `android.content.res.Resources$Theme`
+extension type Resources$Theme._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static final _class =
+      jni$_.JClass.forName(r'android/content/res/Resources$Theme');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<Resources$Theme> type = $Resources$Theme$Type$();
+}
+
+extension Resources$Theme$$Methods on Resources$Theme {
+  static final _id_applyStyle = Resources$Theme._class.instanceMethodId(
+    r'applyStyle',
+    r'(IZ)V',
+  );
+
+  static final _applyStyle = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Int32, jni$_.Int32)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, core$_.int, core$_.int)>();
+
+  /// from: `public void applyStyle(int i, boolean z)`
+  void applyStyle(
+    core$_.int i,
+    core$_.bool z,
+  ) {
+    final _$$selfRef = reference;
+    _applyStyle(_$$selfRef.pointer, _id_applyStyle.pointer, i, z ? 1 : 0)
+        .check();
+  }
+
+  static final _id_dump = Resources$Theme._class.instanceMethodId(
+    r'dump',
+    r'(ILjava/lang/String;Ljava/lang/String;)V',
+  );
+
+  static final _dump = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JThrowablePtr Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Int32,
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              core$_.int,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void dump(int i, java.lang.String string, java.lang.String string1)`
+  void dump(
+    core$_.int i,
+    jni$_.JString? string,
+    jni$_.JString? string1,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$string1 = string1?.reference ?? jni$_.jNullReference;
+    _dump(_$$selfRef.pointer, _id_dump.pointer, i, _$string.pointer,
+            _$string1.pointer)
+        .check();
+  }
+
+  static final _id_equals = Resources$Theme._class.instanceMethodId(
+    r'equals',
+    r'(Ljava/lang/Object;)Z',
+  );
+
+  static final _equals = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public boolean equals(java.lang.Object object)`
+  core$_.bool equals(
+    jni$_.JObject? object,
+  ) {
+    final _$$selfRef = reference;
+    final _$object = object?.reference ?? jni$_.jNullReference;
+    return _equals(_$$selfRef.pointer, _id_equals.pointer, _$object.pointer)
+        .boolean;
+  }
+
+  static final _id_getAttributeResolutionStack =
+      Resources$Theme._class.instanceMethodId(
+    r'getAttributeResolutionStack',
+    r'(III)[I',
+  );
+
+  static final _getAttributeResolutionStack =
+      jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<
+                          (
+                            jni$_.Int32,
+                            jni$_.Int32,
+                            jni$_.Int32
+                          )>)>>('globalEnv_CallObjectMethod')
+          .asFunction<
+              jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr, core$_.int, core$_.int, core$_.int)>();
+
+  /// from: `public int[] getAttributeResolutionStack(int i, int i1, int i2)`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JIntArray? getAttributeResolutionStack(
+    core$_.int i,
+    core$_.int i1,
+    core$_.int i2,
+  ) {
+    final _$$selfRef = reference;
+    return _getAttributeResolutionStack(_$$selfRef.pointer,
+            _id_getAttributeResolutionStack.pointer, i, i1, i2)
+        .object<jni$_.JIntArray?>();
+  }
+
+  static final _id_get$changingConfigurations =
+      Resources$Theme._class.instanceMethodId(
+    r'getChangingConfigurations',
+    r'()I',
+  );
+
+  static final _get$changingConfigurations =
+      jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                    jni$_.Pointer<jni$_.Void>,
+                    jni$_.JMethodIDPtr,
+                  )>>('globalEnv_CallIntMethod')
+          .asFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>();
+
+  /// from: `public int getChangingConfigurations()`
+  core$_.int get changingConfigurations {
+    final _$$selfRef = reference;
+    return _get$changingConfigurations(
+            _$$selfRef.pointer, _id_get$changingConfigurations.pointer)
+        .integer;
+  }
+
+  static final _id_getDrawable = Resources$Theme._class.instanceMethodId(
+    r'getDrawable',
+    r'(I)Landroid/graphics/drawable/Drawable;',
+  );
+
+  static final _getDrawable = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<(jni$_.Int32,)>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>, jni$_.JMethodIDPtr, core$_.int)>();
+
+  /// from: `public android.graphics.drawable.Drawable getDrawable(int i)`
+  /// The returned object must be released after use, by calling the [release] method.
+  Drawable? getDrawable(
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    return _getDrawable(_$$selfRef.pointer, _id_getDrawable.pointer, i)
+        .object<Drawable?>();
+  }
+
+  static final _id_getExplicitStyle = Resources$Theme._class.instanceMethodId(
+    r'getExplicitStyle',
+    r'(Landroid/util/AttributeSet;)I',
+  );
+
+  static final _getExplicitStyle = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public int getExplicitStyle(android.util.AttributeSet attributeSet)`
+  core$_.int getExplicitStyle(
+    AttributeSet? attributeSet,
+  ) {
+    final _$$selfRef = reference;
+    final _$attributeSet = attributeSet?.reference ?? jni$_.jNullReference;
+    return _getExplicitStyle(_$$selfRef.pointer, _id_getExplicitStyle.pointer,
+            _$attributeSet.pointer)
+        .integer;
+  }
+
+  static final _id_get$resources = Resources$Theme._class.instanceMethodId(
+    r'getResources',
+    r'()Landroid/content/res/Resources;',
+  );
+
+  static final _get$resources = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public android.content.res.Resources getResources()`
+  /// The returned object must be released after use, by calling the [release] method.
+  Resources? get resources {
+    final _$$selfRef = reference;
+    return _get$resources(_$$selfRef.pointer, _id_get$resources.pointer)
+        .object<Resources?>();
+  }
+
+  static final _id_hashCode$1 = Resources$Theme._class.instanceMethodId(
+    r'hashCode',
+    r'()I',
+  );
+
+  static final _hashCode$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public int hashCode()`
+  core$_.int hashCode$1() {
+    final _$$selfRef = reference;
+    return _hashCode$1(_$$selfRef.pointer, _id_hashCode$1.pointer).integer;
+  }
+
+  static final _id_obtainStyledAttributes =
+      Resources$Theme._class.instanceMethodId(
+    r'obtainStyledAttributes',
+    r'(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;',
+  );
+
+  static final _obtainStyledAttributes = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Int32,
+                        jni$_.Int32
+                      )>)>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>,
+              core$_.int,
+              core$_.int)>();
+
+  /// from: `public android.content.res.TypedArray obtainStyledAttributes(android.util.AttributeSet attributeSet, int[] is, int i, int i1)`
+  /// The returned object must be released after use, by calling the [release] method.
+  TypedArray? obtainStyledAttributes(
+    AttributeSet? attributeSet,
+    jni$_.JIntArray? is$,
+    core$_.int i,
+    core$_.int i1,
+  ) {
+    final _$$selfRef = reference;
+    final _$attributeSet = attributeSet?.reference ?? jni$_.jNullReference;
+    final _$is$ = is$?.reference ?? jni$_.jNullReference;
+    return _obtainStyledAttributes(
+            _$$selfRef.pointer,
+            _id_obtainStyledAttributes.pointer,
+            _$attributeSet.pointer,
+            _$is$.pointer,
+            i,
+            i1)
+        .object<TypedArray?>();
+  }
+
+  static final _id_obtainStyledAttributes$1 =
+      Resources$Theme._class.instanceMethodId(
+    r'obtainStyledAttributes',
+    r'(I[I)Landroid/content/res/TypedArray;',
+  );
+
+  static final _obtainStyledAttributes$1 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Int32, jni$_.Pointer<jni$_.Void>)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, core$_.int, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.res.TypedArray obtainStyledAttributes(int i, int[] is)`
+  /// The returned object must be released after use, by calling the [release] method.
+  TypedArray? obtainStyledAttributes$1(
+    core$_.int i,
+    jni$_.JIntArray? is$,
+  ) {
+    final _$$selfRef = reference;
+    final _$is$ = is$?.reference ?? jni$_.jNullReference;
+    return _obtainStyledAttributes$1(_$$selfRef.pointer,
+            _id_obtainStyledAttributes$1.pointer, i, _$is$.pointer)
+        .object<TypedArray?>();
+  }
+
+  static final _id_obtainStyledAttributes$2 =
+      Resources$Theme._class.instanceMethodId(
+    r'obtainStyledAttributes',
+    r'([I)Landroid/content/res/TypedArray;',
+  );
+
+  static final _obtainStyledAttributes$2 = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public android.content.res.TypedArray obtainStyledAttributes(int[] is)`
+  /// The returned object must be released after use, by calling the [release] method.
+  TypedArray? obtainStyledAttributes$2(
+    jni$_.JIntArray? is$,
+  ) {
+    final _$$selfRef = reference;
+    final _$is$ = is$?.reference ?? jni$_.jNullReference;
+    return _obtainStyledAttributes$2(_$$selfRef.pointer,
+            _id_obtainStyledAttributes$2.pointer, _$is$.pointer)
+        .object<TypedArray?>();
+  }
+
+  static final _id_rebase = Resources$Theme._class.instanceMethodId(
+    r'rebase',
+    r'()V',
+  );
+
+  static final _rebase = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JThrowablePtr Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public void rebase()`
+  void rebase() {
+    final _$$selfRef = reference;
+    _rebase(_$$selfRef.pointer, _id_rebase.pointer).check();
+  }
+
+  static final _id_resolveAttribute = Resources$Theme._class.instanceMethodId(
+    r'resolveAttribute',
+    r'(ILandroid/util/TypedValue;Z)Z',
+  );
+
+  static final _resolveAttribute = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Int32,
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Int32
+                      )>)>>('globalEnv_CallBooleanMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              core$_.int,
+              jni$_.Pointer<jni$_.Void>,
+              core$_.int)>();
+
+  /// from: `public boolean resolveAttribute(int i, android.util.TypedValue typedValue, boolean z)`
+  core$_.bool resolveAttribute(
+    core$_.int i,
+    TypedValue? typedValue,
+    core$_.bool z,
+  ) {
+    final _$$selfRef = reference;
+    final _$typedValue = typedValue?.reference ?? jni$_.jNullReference;
+    return _resolveAttribute(_$$selfRef.pointer, _id_resolveAttribute.pointer,
+            i, _$typedValue.pointer, z ? 1 : 0)
+        .boolean;
+  }
+
+  static final _id_set$to = Resources$Theme._class.instanceMethodId(
+    r'setTo',
+    r'(Landroid/content/res/Resources$Theme;)V',
+  );
+
+  static final _set$to = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JThrowablePtr Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_.VarArgs<(jni$_.Pointer<jni$_.Void>,)>)>>(
+          'globalEnv_CallVoidMethod')
+      .asFunction<
+          jni$_.JThrowablePtr Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public void setTo(android.content.res.Resources$Theme theme)`
+  set to(Resources$Theme? theme) {
+    final _$$selfRef = reference;
+    final _$theme = theme?.reference ?? jni$_.jNullReference;
+    _set$to(_$$selfRef.pointer, _id_set$to.pointer, _$theme.pointer).check();
+  }
+
+  static final _id_toString$1 = Resources$Theme._class.instanceMethodId(
+    r'toString',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _toString$1 = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public java.lang.String toString()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? toString$1() {
+    final _$$selfRef = reference;
+    return _toString$1(_$$selfRef.pointer, _id_toString$1.pointer)
+        .object<jni$_.JString?>();
+  }
+}
+
+final class $Resources$Theme$Type$ extends jni$_.JType<Resources$Theme> {
+  @jni$_.internal
+  const $Resources$Theme$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/res/Resources$Theme;';
+}
+
+/// from: `android.content.res.Resources`
+extension type Resources._(jni$_.JObject _$this) implements jni$_.JObject {
+  static final _class = jni$_.JClass.forName(r'android/content/res/Resources');
+
+  /// The type which includes information such as the signature of this class.
+  static const jni$_.JType<Resources> type = $Resources$Type$();
+
+  /// from: `static public final int ID_NULL`
+  static const ID_NULL = 0;
+}
+
+extension Resources$$Methods on Resources {
+  static final _id_getIdentifier = Resources._class.instanceMethodId(
+    r'getIdentifier',
+    r'(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I',
+  );
+
+  static final _getIdentifier = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                  jni$_.Pointer<jni$_.Void>,
+                  jni$_.JMethodIDPtr,
+                  jni$_.VarArgs<
+                      (
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>,
+                        jni$_.Pointer<jni$_.Void>
+                      )>)>>('globalEnv_CallIntMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>,
+              jni$_.Pointer<jni$_.Void>)>();
+
+  /// from: `public int getIdentifier(java.lang.String string, java.lang.String string1, java.lang.String string2)`
+  core$_.int getIdentifier(
+    jni$_.JString? string,
+    jni$_.JString? string1,
+    jni$_.JString? string2,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    final _$string1 = string1?.reference ?? jni$_.jNullReference;
+    final _$string2 = string2?.reference ?? jni$_.jNullReference;
+    return _getIdentifier(_$$selfRef.pointer, _id_getIdentifier.pointer,
+            _$string.pointer, _$string1.pointer, _$string2.pointer)
+        .integer;
+  }
+}
+
+final class $Resources$Type$ extends jni$_.JType<Resources> {
+  @jni$_.internal
+  const $Resources$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/res/Resources;';
+}
+
 /// from: `android.provider.Telephony$Sms$Inbox`
 extension type Telephony$Sms$Inbox._(jni$_.JObject _$this)
     implements jni$_.JObject, BaseColumns, Telephony$TextBasedSmsColumns {
@@ -3434,6 +17941,112 @@ extension Context$$Methods on Context {
     return _get$contentResolver(
             _$$selfRef.pointer, _id_get$contentResolver.pointer)
         .object<ContentResolver?>();
+  }
+
+  static final _id_get$packageManager = Context._class.instanceMethodId(
+    r'getPackageManager',
+    r'()Landroid/content/pm/PackageManager;',
+  );
+
+  static final _get$packageManager = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public abstract android.content.pm.PackageManager getPackageManager()`
+  /// The returned object must be released after use, by calling the [release] method.
+  PackageManager? get packageManager {
+    final _$$selfRef = reference;
+    return _get$packageManager(
+            _$$selfRef.pointer, _id_get$packageManager.pointer)
+        .object<PackageManager?>();
+  }
+
+  static final _id_get$packageName = Context._class.instanceMethodId(
+    r'getPackageName',
+    r'()Ljava/lang/String;',
+  );
+
+  static final _get$packageName = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public abstract java.lang.String getPackageName()`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString? get packageName {
+    final _$$selfRef = reference;
+    return _get$packageName(_$$selfRef.pointer, _id_get$packageName.pointer)
+        .object<jni$_.JString?>();
+  }
+
+  static final _id_get$resources = Context._class.instanceMethodId(
+    r'getResources',
+    r'()Landroid/content/res/Resources;',
+  );
+
+  static final _get$resources = jni$_.ProtectedJniExtensions.lookup<
+          jni$_.NativeFunction<
+              jni$_.JniResult Function(
+                jni$_.Pointer<jni$_.Void>,
+                jni$_.JMethodIDPtr,
+              )>>('globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(
+            jni$_.Pointer<jni$_.Void>,
+            jni$_.JMethodIDPtr,
+          )>();
+
+  /// from: `public abstract android.content.res.Resources getResources()`
+  /// The returned object must be released after use, by calling the [release] method.
+  Resources? get resources {
+    final _$$selfRef = reference;
+    return _get$resources(_$$selfRef.pointer, _id_get$resources.pointer)
+        .object<Resources?>();
+  }
+
+  static final _id_getSharedPreferences = Context._class.instanceMethodId(
+    r'getSharedPreferences',
+    r'(Ljava/lang/String;I)Landroid/content/SharedPreferences;',
+  );
+
+  static final _getSharedPreferences = jni$_.ProtectedJniExtensions.lookup<
+              jni$_.NativeFunction<
+                  jni$_.JniResult Function(
+                      jni$_.Pointer<jni$_.Void>,
+                      jni$_.JMethodIDPtr,
+                      jni$_
+                          .VarArgs<(jni$_.Pointer<jni$_.Void>, jni$_.Int32)>)>>(
+          'globalEnv_CallObjectMethod')
+      .asFunction<
+          jni$_.JniResult Function(jni$_.Pointer<jni$_.Void>,
+              jni$_.JMethodIDPtr, jni$_.Pointer<jni$_.Void>, core$_.int)>();
+
+  /// from: `public abstract android.content.SharedPreferences getSharedPreferences(java.lang.String string, int i)`
+  /// The returned object must be released after use, by calling the [release] method.
+  SharedPreferences? getSharedPreferences(
+    jni$_.JString? string,
+    core$_.int i,
+  ) {
+    final _$$selfRef = reference;
+    final _$string = string?.reference ?? jni$_.jNullReference;
+    return _getSharedPreferences(_$$selfRef.pointer,
+            _id_getSharedPreferences.pointer, _$string.pointer, i)
+        .object<SharedPreferences?>();
   }
 }
 
@@ -8458,40 +23071,303 @@ final class $Cursor$Type$ extends jni$_.JType<Cursor> {
   String get signature => r'Landroid/database/Cursor;';
 }
 
-/// from: `android.content.Intent`
+/// from: `android.os.Parcel`
 ///
-/// WARNING: Intent is a stub. To generate bindings for this class, include
-/// android.content.Intent in your config's classes list.
+/// WARNING: Parcel is a stub. To generate bindings for this class, include
+/// android.os.Parcel in your config's classes list.
 ///
-extension type Intent._(jni$_.JObject _$this) implements jni$_.JObject {
-  static const jni$_.JType<Intent> type = $Intent$Type$();
+extension type Parcel._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<Parcel> type = $Parcel$Type$();
 }
 
-final class $Intent$Type$ extends jni$_.JType<Intent> {
+final class $Parcel$Type$ extends jni$_.JType<Parcel> {
   @jni$_.internal
-  const $Intent$Type$();
+  const $Parcel$Type$();
 
   @jni$_.internal
   @core$_.override
-  String get signature => r'Landroid/content/Intent;';
+  String get signature => r'Landroid/os/Parcel;';
 }
 
-/// from: `android.provider.BaseColumns`
+/// from: `android.util.SizeF`
 ///
-/// WARNING: BaseColumns is a stub. To generate bindings for this class, include
-/// android.provider.BaseColumns in your config's classes list.
+/// WARNING: SizeF is a stub. To generate bindings for this class, include
+/// android.util.SizeF in your config's classes list.
 ///
-extension type BaseColumns._(jni$_.JObject _$this) implements jni$_.JObject {
-  static const jni$_.JType<BaseColumns> type = $BaseColumns$Type$();
+extension type SizeF._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<SizeF> type = $SizeF$Type$();
 }
 
-final class $BaseColumns$Type$ extends jni$_.JType<BaseColumns> {
+final class $SizeF$Type$ extends jni$_.JType<SizeF> {
   @jni$_.internal
-  const $BaseColumns$Type$();
+  const $SizeF$Type$();
 
   @jni$_.internal
   @core$_.override
-  String get signature => r'Landroid/provider/BaseColumns;';
+  String get signature => r'Landroid/util/SizeF;';
+}
+
+/// from: `java.lang.CharSequence`
+///
+/// WARNING: CharSequence is a stub. To generate bindings for this class, include
+/// java.lang.CharSequence in your config's classes list.
+///
+extension type CharSequence._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<CharSequence> type = $CharSequence$Type$();
+}
+
+final class $CharSequence$Type$ extends jni$_.JType<CharSequence> {
+  @jni$_.internal
+  const $CharSequence$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Ljava/lang/CharSequence;';
+}
+
+/// from: `android.view.LayoutInflater$Filter`
+///
+/// WARNING: LayoutInflater$$Filter is a stub. To generate bindings for this class, include
+/// android.view.LayoutInflater$Filter in your config's classes list.
+///
+extension type LayoutInflater$$Filter._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static const jni$_.JType<LayoutInflater$$Filter> type =
+      $LayoutInflater$$Filter$Type$();
+}
+
+final class $LayoutInflater$$Filter$Type$
+    extends jni$_.JType<LayoutInflater$$Filter> {
+  @jni$_.internal
+  const $LayoutInflater$$Filter$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/view/LayoutInflater$Filter;';
+}
+
+/// from: `android.os.Parcelable`
+///
+/// WARNING: Parcelable is a stub. To generate bindings for this class, include
+/// android.os.Parcelable in your config's classes list.
+///
+extension type Parcelable._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<Parcelable> type = $Parcelable$Type$();
+}
+
+final class $Parcelable$Type$ extends jni$_.JType<Parcelable> {
+  @jni$_.internal
+  const $Parcelable$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/os/Parcelable;';
+}
+
+/// from: `android.os.Parcelable$Creator`
+///
+/// WARNING: Parcelable$$Creator is a stub. To generate bindings for this class, include
+/// android.os.Parcelable$Creator in your config's classes list.
+///
+extension type Parcelable$$Creator._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static const jni$_.JType<Parcelable$$Creator> type =
+      $Parcelable$$Creator$Type$();
+}
+
+final class $Parcelable$$Creator$Type$
+    extends jni$_.JType<Parcelable$$Creator> {
+  @jni$_.internal
+  const $Parcelable$$Creator$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/os/Parcelable$Creator;';
+}
+
+/// from: `java.lang.RuntimeException`
+///
+/// WARNING: RuntimeException is a stub. To generate bindings for this class, include
+/// java.lang.RuntimeException in your config's classes list.
+///
+extension type RuntimeException._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static const jni$_.JType<RuntimeException> type = $RuntimeException$Type$();
+}
+
+final class $RuntimeException$Type$ extends jni$_.JType<RuntimeException> {
+  @jni$_.internal
+  const $RuntimeException$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Ljava/lang/RuntimeException;';
+}
+
+/// from: `java.lang.Exception`
+///
+/// WARNING: Exception is a stub. To generate bindings for this class, include
+/// java.lang.Exception in your config's classes list.
+///
+extension type Exception._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<Exception> type = $Exception$Type$();
+}
+
+final class $Exception$Type$ extends jni$_.JType<Exception> {
+  @jni$_.internal
+  const $Exception$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Ljava/lang/Exception;';
+}
+
+/// from: `java.lang.annotation.Annotation`
+///
+/// WARNING: Annotation is a stub. To generate bindings for this class, include
+/// java.lang.annotation.Annotation in your config's classes list.
+///
+extension type Annotation._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<Annotation> type = $Annotation$Type$();
+}
+
+final class $Annotation$Type$ extends jni$_.JType<Annotation> {
+  @jni$_.internal
+  const $Annotation$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Ljava/lang/annotation/Annotation;';
+}
+
+/// from: `android.view.ViewOutlineProvider`
+///
+/// WARNING: ViewOutlineProvider is a stub. To generate bindings for this class, include
+/// android.view.ViewOutlineProvider in your config's classes list.
+///
+extension type ViewOutlineProvider._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static const jni$_.JType<ViewOutlineProvider> type =
+      $ViewOutlineProvider$Type$();
+}
+
+final class $ViewOutlineProvider$Type$
+    extends jni$_.JType<ViewOutlineProvider> {
+  @jni$_.internal
+  const $ViewOutlineProvider$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/view/ViewOutlineProvider;';
+}
+
+/// from: `android.view.View`
+///
+/// WARNING: View is a stub. To generate bindings for this class, include
+/// android.view.View in your config's classes list.
+///
+extension type View._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<View> type = $View$Type$();
+}
+
+final class $View$Type$ extends jni$_.JType<View> {
+  @jni$_.internal
+  const $View$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/view/View;';
+}
+
+/// from: `android.graphics.Outline`
+///
+/// WARNING: Outline is a stub. To generate bindings for this class, include
+/// android.graphics.Outline in your config's classes list.
+///
+extension type Outline._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<Outline> type = $Outline$Type$();
+}
+
+final class $Outline$Type$ extends jni$_.JType<Outline> {
+  @jni$_.internal
+  const $Outline$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/graphics/Outline;';
+}
+
+/// from: `java.lang.Cloneable`
+///
+/// WARNING: Cloneable is a stub. To generate bindings for this class, include
+/// java.lang.Cloneable in your config's classes list.
+///
+extension type Cloneable._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<Cloneable> type = $Cloneable$Type$();
+}
+
+final class $Cloneable$Type$ extends jni$_.JType<Cloneable> {
+  @jni$_.internal
+  const $Cloneable$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Ljava/lang/Cloneable;';
+}
+
+/// from: `java.lang.Comparable`
+///
+/// WARNING: Comparable is a stub. To generate bindings for this class, include
+/// java.lang.Comparable in your config's classes list.
+///
+extension type Comparable._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<Comparable> type = $Comparable$Type$();
+}
+
+final class $Comparable$Type$ extends jni$_.JType<Comparable> {
+  @jni$_.internal
+  const $Comparable$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Ljava/lang/Comparable;';
+}
+
+/// from: `android.os.Bundle`
+///
+/// WARNING: Bundle is a stub. To generate bindings for this class, include
+/// android.os.Bundle in your config's classes list.
+///
+extension type Bundle._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<Bundle> type = $Bundle$Type$();
+}
+
+final class $Bundle$Type$ extends jni$_.JType<Bundle> {
+  @jni$_.internal
+  const $Bundle$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/os/Bundle;';
+}
+
+/// from: `android.util.AndroidException`
+///
+/// WARNING: AndroidException is a stub. To generate bindings for this class, include
+/// android.util.AndroidException in your config's classes list.
+///
+extension type AndroidException._(jni$_.JObject _$this)
+    implements jni$_.JObject {
+  static const jni$_.JType<AndroidException> type = $AndroidException$Type$();
+}
+
+final class $AndroidException$Type$ extends jni$_.JType<AndroidException> {
+  @jni$_.internal
+  const $AndroidException$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/util/AndroidException;';
 }
 
 /// from: `android.net.Uri`
@@ -8512,22 +23388,256 @@ final class $Uri$Type$ extends jni$_.JType<Uri> {
   String get signature => r'Landroid/net/Uri;';
 }
 
-/// from: `java.lang.CharSequence`
+/// from: `android.content.IntentSender`
 ///
-/// WARNING: CharSequence is a stub. To generate bindings for this class, include
-/// java.lang.CharSequence in your config's classes list.
+/// WARNING: IntentSender is a stub. To generate bindings for this class, include
+/// android.content.IntentSender in your config's classes list.
 ///
-extension type CharSequence._(jni$_.JObject _$this) implements jni$_.JObject {
-  static const jni$_.JType<CharSequence> type = $CharSequence$Type$();
+extension type IntentSender._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<IntentSender> type = $IntentSender$Type$();
 }
 
-final class $CharSequence$Type$ extends jni$_.JType<CharSequence> {
+final class $IntentSender$Type$ extends jni$_.JType<IntentSender> {
   @jni$_.internal
-  const $CharSequence$Type$();
+  const $IntentSender$Type$();
 
   @jni$_.internal
   @core$_.override
-  String get signature => r'Ljava/lang/CharSequence;';
+  String get signature => r'Landroid/content/IntentSender;';
+}
+
+/// from: `android.content.ClipData`
+///
+/// WARNING: ClipData is a stub. To generate bindings for this class, include
+/// android.content.ClipData in your config's classes list.
+///
+extension type ClipData._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<ClipData> type = $ClipData$Type$();
+}
+
+final class $ClipData$Type$ extends jni$_.JType<ClipData> {
+  @jni$_.internal
+  const $ClipData$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/ClipData;';
+}
+
+/// from: `java.io.Serializable`
+///
+/// WARNING: Serializable is a stub. To generate bindings for this class, include
+/// java.io.Serializable in your config's classes list.
+///
+extension type Serializable._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<Serializable> type = $Serializable$Type$();
+}
+
+final class $Serializable$Type$ extends jni$_.JType<Serializable> {
+  @jni$_.internal
+  const $Serializable$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Ljava/io/Serializable;';
+}
+
+/// from: `android.graphics.Rect`
+///
+/// WARNING: Rect is a stub. To generate bindings for this class, include
+/// android.graphics.Rect in your config's classes list.
+///
+extension type Rect._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<Rect> type = $Rect$Type$();
+}
+
+final class $Rect$Type$ extends jni$_.JType<Rect> {
+  @jni$_.internal
+  const $Rect$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/graphics/Rect;';
+}
+
+/// from: `org.xmlpull.v1.XmlPullParser`
+///
+/// WARNING: XmlPullParser is a stub. To generate bindings for this class, include
+/// org.xmlpull.v1.XmlPullParser in your config's classes list.
+///
+extension type XmlPullParser._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<XmlPullParser> type = $XmlPullParser$Type$();
+}
+
+final class $XmlPullParser$Type$ extends jni$_.JType<XmlPullParser> {
+  @jni$_.internal
+  const $XmlPullParser$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Lorg/xmlpull/v1/XmlPullParser;';
+}
+
+/// from: `android.util.AttributeSet`
+///
+/// WARNING: AttributeSet is a stub. To generate bindings for this class, include
+/// android.util.AttributeSet in your config's classes list.
+///
+extension type AttributeSet._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<AttributeSet> type = $AttributeSet$Type$();
+}
+
+final class $AttributeSet$Type$ extends jni$_.JType<AttributeSet> {
+  @jni$_.internal
+  const $AttributeSet$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/util/AttributeSet;';
+}
+
+/// from: `android.content.pm.ActivityInfo`
+///
+/// WARNING: ActivityInfo is a stub. To generate bindings for this class, include
+/// android.content.pm.ActivityInfo in your config's classes list.
+///
+extension type ActivityInfo._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<ActivityInfo> type = $ActivityInfo$Type$();
+}
+
+final class $ActivityInfo$Type$ extends jni$_.JType<ActivityInfo> {
+  @jni$_.internal
+  const $ActivityInfo$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/pm/ActivityInfo;';
+}
+
+/// from: `java.lang.ClassLoader`
+///
+/// WARNING: ClassLoader is a stub. To generate bindings for this class, include
+/// java.lang.ClassLoader in your config's classes list.
+///
+extension type ClassLoader._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<ClassLoader> type = $ClassLoader$Type$();
+}
+
+final class $ClassLoader$Type$ extends jni$_.JType<ClassLoader> {
+  @jni$_.internal
+  const $ClassLoader$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Ljava/lang/ClassLoader;';
+}
+
+/// from: `java.security.cert.Certificate`
+///
+/// WARNING: Certificate is a stub. To generate bindings for this class, include
+/// java.security.cert.Certificate in your config's classes list.
+///
+extension type Certificate._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<Certificate> type = $Certificate$Type$();
+}
+
+final class $Certificate$Type$ extends jni$_.JType<Certificate> {
+  @jni$_.internal
+  const $Certificate$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Ljava/security/cert/Certificate;';
+}
+
+/// from: `android.content.pm.ApkChecksum`
+///
+/// WARNING: ApkChecksum is a stub. To generate bindings for this class, include
+/// android.content.pm.ApkChecksum in your config's classes list.
+///
+extension type ApkChecksum._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<ApkChecksum> type = $ApkChecksum$Type$();
+}
+
+final class $ApkChecksum$Type$ extends jni$_.JType<ApkChecksum> {
+  @jni$_.internal
+  const $ApkChecksum$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/pm/ApkChecksum;';
+}
+
+/// from: `android.graphics.drawable.Drawable`
+///
+/// WARNING: Drawable is a stub. To generate bindings for this class, include
+/// android.graphics.drawable.Drawable in your config's classes list.
+///
+extension type Drawable._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<Drawable> type = $Drawable$Type$();
+}
+
+final class $Drawable$Type$ extends jni$_.JType<Drawable> {
+  @jni$_.internal
+  const $Drawable$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/graphics/drawable/Drawable;';
+}
+
+/// from: `android.content.res.TypedArray`
+///
+/// WARNING: TypedArray is a stub. To generate bindings for this class, include
+/// android.content.res.TypedArray in your config's classes list.
+///
+extension type TypedArray._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<TypedArray> type = $TypedArray$Type$();
+}
+
+final class $TypedArray$Type$ extends jni$_.JType<TypedArray> {
+  @jni$_.internal
+  const $TypedArray$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/content/res/TypedArray;';
+}
+
+/// from: `android.util.TypedValue`
+///
+/// WARNING: TypedValue is a stub. To generate bindings for this class, include
+/// android.util.TypedValue in your config's classes list.
+///
+extension type TypedValue._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<TypedValue> type = $TypedValue$Type$();
+}
+
+final class $TypedValue$Type$ extends jni$_.JType<TypedValue> {
+  @jni$_.internal
+  const $TypedValue$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/util/TypedValue;';
+}
+
+/// from: `android.provider.BaseColumns`
+///
+/// WARNING: BaseColumns is a stub. To generate bindings for this class, include
+/// android.provider.BaseColumns in your config's classes list.
+///
+extension type BaseColumns._(jni$_.JObject _$this) implements jni$_.JObject {
+  static const jni$_.JType<BaseColumns> type = $BaseColumns$Type$();
+}
+
+final class $BaseColumns$Type$ extends jni$_.JType<BaseColumns> {
+  @jni$_.internal
+  const $BaseColumns$Type$();
+
+  @jni$_.internal
+  @core$_.override
+  String get signature => r'Landroid/provider/BaseColumns;';
 }
 
 /// from: `java.lang.Enum`
@@ -8585,24 +23695,6 @@ final class $Account$Type$ extends jni$_.JType<Account> {
   @jni$_.internal
   @core$_.override
   String get signature => r'Landroid/accounts/Account;';
-}
-
-/// from: `android.os.Bundle`
-///
-/// WARNING: Bundle is a stub. To generate bindings for this class, include
-/// android.os.Bundle in your config's classes list.
-///
-extension type Bundle._(jni$_.JObject _$this) implements jni$_.JObject {
-  static const jni$_.JType<Bundle> type = $Bundle$Type$();
-}
-
-final class $Bundle$Type$ extends jni$_.JType<Bundle> {
-  @jni$_.internal
-  const $Bundle$Type$();
-
-  @jni$_.internal
-  @core$_.override
-  String get signature => r'Landroid/os/Bundle;';
 }
 
 /// from: `android.content.SyncStatusObserver`

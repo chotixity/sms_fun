@@ -3,9 +3,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:sms_fun/src/android/incoming_sms.dart';
+import 'package:sms_fun/src/android/message_widget.dart';
 import 'package:sms_fun/src/android/sms_inbox.dart';
+import 'package:sms_fun/src/mpesa_parser.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  registerMessageWidget();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -58,6 +63,8 @@ class _MpesaReceiverPageState extends State<MpesaReceiverPage>
         // Newest first, matching readMpesaMessages().
         _mpesaMessages = [message, ..._mpesaMessages];
       });
+      final balance = parseBalance(message);
+      if (balance != null) updateMessageWidget('Ksh $balance');
     });
   }
 
@@ -89,6 +96,8 @@ class _MpesaReceiverPageState extends State<MpesaReceiverPage>
       setState(() {
         _mpesaMessages = messages;
       });
+      final balance = latestBalance(messages);
+      if (balance != null) updateMessageWidget('Ksh $balance');
     }  catch (e) {
       print("Failed to read MPESA messages: '${e.toString()}'.");
     }

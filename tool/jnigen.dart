@@ -11,6 +11,17 @@ void main(List<String> args) async {
         // App bridge (Kotlin)
         'com.example.sms_fun.SmsBridge',
         'com.example.sms_fun.IncomingSmsListener',
+        'com.example.sms_fun.WidgetBridge',
+        'com.example.sms_fun.WidgetUpdateListener',
+        // Home-widget plumbing, driven entirely from Dart.
+        'android.appwidget.AppWidgetManager',
+        'android.widget.RemoteViews',
+        'android.content.ComponentName',
+        'android.app.PendingIntent',
+        'android.content.Intent',
+        'android.content.SharedPreferences',
+        'android.content.pm.PackageManager',
+        'android.content.res.Resources',
         // Nested classes can't be listed on their own; this pulls in every
         // Telephony$* class, trimmed below by OnlyNestedClasses.
         'android.provider.Telephony',
@@ -41,8 +52,23 @@ void main(List<String> args) async {
         'Sms\$Intents', // getMessagesFromIntent(Intent)
         'TextBasedSmsColumns', // ADDRESS, BODY, DATE
       }),
+      OnlyNestedClasses('android.content.SharedPreferences', {'Editor'}),
       OnlyMethods({
-        'android.content.Context': {'getContentResolver'},
+        'android.content.Context': {
+          'getContentResolver',
+          'getPackageName',
+          'getPackageManager',
+          'getResources',
+          'getSharedPreferences',
+        },
+        'android.appwidget.AppWidgetManager': {'getInstance', 'getAppWidgetIds', 'updateAppWidget'},
+        'android.widget.RemoteViews': {'<init>', 'setTextViewText', 'setOnClickPendingIntent'},
+        'android.content.ComponentName': {'<init>'},
+        'android.app.PendingIntent': {'getActivity'},
+        'android.content.pm.PackageManager': {'getLaunchIntentForPackage'},
+        'android.content.res.Resources': {'getIdentifier'},
+        'android.content.SharedPreferences': {'getString', 'edit'},
+        'android.content.SharedPreferences\$Editor': {'putString', 'apply'},
       }),
     ],
   );
